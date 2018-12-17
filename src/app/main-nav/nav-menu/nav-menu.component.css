@@ -1,0 +1,12 @@
+.mat-expansion-panel {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.mat-icon {
+  margin-right: 10px;
+}
+
+.header-title {
+  padding-top: 3px;
+}

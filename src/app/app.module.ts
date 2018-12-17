@@ -5,13 +5,14 @@ import {MaterialModule} from './material.module';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MainNavComponent} from './main-nav/main-nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
+
+import {MainNavModule} from './main-nav/main-nav.module';
+import {ContentModule} from './content/content.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -19,6 +20,8 @@ import {LayoutModule} from '@angular/cdk/layout';
     MaterialModule,
     AppRoutingModule,
     LayoutModule,
+    MainNavModule,
+    ContentModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

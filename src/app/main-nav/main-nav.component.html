@@ -8,39 +8,8 @@
     [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <mat-sidenav-container>
-        <mat-sidenav>Start</mat-sidenav>
-        <mat-sidenav-content>Main</mat-sidenav-content>
-      </mat-sidenav-container>
-      <mat-sidenav-container>
-        <mat-sidenav>Start</mat-sidenav>
-        <mat-sidenav position="end">End</mat-sidenav>
-        <section>Main</section>
-      </mat-sidenav-container>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Catalog
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">Products</a>
-          <a mat-list-item href="#">Brands</a>
-          <a mat-list-item href="#">Options</a>
-        </mat-nav-list>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Store
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-nav-list>
-          <a mat-list-item href="#">Items</a>
-          <a mat-list-item href="#">Prod</a>
-          <a mat-list-item href="#">Options</a>
-        </mat-nav-list>
-      </mat-expansion-panel>
+      <!--навигация слева-->
+      <app-nav-menu></app-nav-menu>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -54,6 +23,9 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>admin-panel</span>
+      <span class="spacer"></span>
+      <!--меню пользователя-->
+      <app-nav-user></app-nav-user>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>

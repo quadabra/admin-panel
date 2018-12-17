@@ -1,0 +1,10 @@
+<button mat-button [matMenuTriggerFor]="user">
+  <mat-icon>account_box</mat-icon>
+  <span>User</span>
+</button>
+<mat-menu #user="matMenu">
+  <button mat-menu-item>Messages</button>
+  <button mat-menu-item>Tasks</button>
+  <button mat-menu-item>Profile</button>
+  <button mat-menu-item>Log Out</button>
+</mat-menu>
