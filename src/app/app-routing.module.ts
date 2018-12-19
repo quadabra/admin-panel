@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {WelcomeComponent} from './content/welcome/welcome.component';
 import {CatalogProductsComponent} from './content/catalog/catalog-products/catalog-products.component';
 import {CatalogBrandsComponent} from './content/catalog/catalog-brands/catalog-brands.component';
+import {CatalogOptionsComponent} from './content/catalog/catalog-options/catalog-options.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,7 @@ const routes: Routes = [
       },
       {
         path: 'options',
-        component: CatalogProductsComponent,
+        component: CatalogOptionsComponent,
         data: {
           displayName: 'Options',
           iconName: 'settings'
