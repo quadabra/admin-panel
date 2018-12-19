@@ -5,10 +5,13 @@ import {CatalogBrandsComponent} from './catalog-brands/catalog-brands.component'
 import {CatalogOptionsComponent} from './catalog-options/catalog-options.component';
 import {CatalogProductsComponent} from './catalog-products/catalog-products.component';
 
+import {MaterialModule} from '../../material.module';
+
 @NgModule({
   declarations: [CatalogBrandsComponent, CatalogOptionsComponent, CatalogProductsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
   ],
   exports: []
 })
