@@ -3,16 +3,17 @@ export class NavList {
     {
       displayName: 'Catalog',
       iconName: 'reorder',
+      route: 'catalog',
       children: [
         {
           displayName: 'Products',
           iconName: 'list',
-          route: '/products'
+          route: 'products'
         },
         {
           displayName: 'Brands',
           iconName: 'star_border',
-          route: '/brands'
+          route: 'brands'
         },
         {
           displayName: 'Options',
@@ -24,6 +25,7 @@ export class NavList {
     {
       displayName: 'Delivery',
       iconName: 'send',
+      route: 'catalog',
       children: [
         {
           displayName: 'Products',
@@ -45,6 +47,7 @@ export class NavList {
     {
       displayName: 'Store',
       iconName: 'home',
+      route: 'catalog',
       children: [
         {
           displayName: 'Items',
@@ -66,6 +69,7 @@ export class NavList {
     {
       displayName: 'Orders',
       iconName: 'shopping_cart',
+      route: 'catalog',
       children: [
         {
           displayName: 'Items',

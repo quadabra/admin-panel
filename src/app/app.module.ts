@@ -1,3 +1,5 @@
+import {NgtUniversalModule} from '@ng-toolkit/universal';
+import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -15,7 +17,8 @@ import {ContentModule} from './content/content.module';
     AppComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
+    NgtUniversalModule,
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
@@ -24,7 +27,6 @@ import {ContentModule} from './content/content.module';
     ContentModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

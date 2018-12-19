@@ -8,7 +8,7 @@
   <mat-nav-list>
     <a
       mat-list-item
-      href="#"
+      [routerLink]="['/'+navItem.route+'/'+navLink.route]"
       *ngFor="let navLink of navItem.children">
       <mat-icon>{{navLink.iconName}}</mat-icon>
       {{navLink.displayName}}
