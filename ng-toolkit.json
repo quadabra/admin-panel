@@ -1,0 +1,7 @@
+{
+  "universal": {
+    "project": "admin-panel",
+    "skipInstall": false,
+    "directory": "."
+  }
+}
