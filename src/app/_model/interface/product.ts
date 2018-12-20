@@ -51,15 +51,4 @@ export interface IProduct {
     ];
   product_videos: [{}];
   items: [any];
-  parsed_options: {
-    color: {},
-    height: {},
-    size: {}
-  };
-  selected: {
-    color: string,
-    size: string,
-    height: string,
-    quantity: number
-  };
 }

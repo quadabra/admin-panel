@@ -11,6 +11,7 @@
       </mat-select>
     </mat-form-field>
   </div>
+
   <mat-table [dataSource]="dataSource" matSort>
 
     <!--- Note that these columns can be defined in any order.
@@ -18,26 +19,41 @@
 
     <!-- Position Column -->
     <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef> Id</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.entry}} </mat-cell>
+    </ng-container>
+    <!--image column-->
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <img [src]="'http://img.grey-line.com/g/'+ element.product_image[0].image + '?s=small'"
+             alt=""
+             width="50"
+             height="50"
+             style="padding: 10px">
+      </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
     <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
     </ng-container>
 
     <!-- Weight Column -->
     <ng-container matColumnDef="brand">
-      <mat-header-cell *matHeaderCellDef> Brand</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.brand}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef> Brand </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.brand_name}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.product_status_name}} </mat-cell>
+    </ng-container>
     <!--Expanded Content Column - The detail row is made up of this one column-->
     <ng-container matColumnDef="expandedDetail">
       <mat-cell *matCellDef="let detail">
-        The symbol for {{detail.element.name}} is {{detail.element.symbol}}
+        About:{{detail.description}}
       </mat-cell>
     </ng-container>
 
@@ -52,4 +68,5 @@
              style="overflow: hidden">
     </mat-row>
   </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
