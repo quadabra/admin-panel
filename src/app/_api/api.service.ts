@@ -10,10 +10,10 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ApiService {
   private _apiUrl = {
-    menu: 'http://api.grey-shop.com/v1/menu',
-    products: 'http://api.grey-shop.com/v1/product?category_id=',
-    product: 'http://api.grey-shop.com/v1/product/',
-    image: 'http://img.grey-line.com/g/',
+    menu: 'https://api.grey-shop.com/v1/menu',
+    products: 'https://api.grey-shop.com/v1/product?category_id=',
+    product: 'https://api.grey-shop.com/v1/product/',
+    image: 'https://img.grey-line.com/g/',
     auth: 'https://auth.grey-shop.com/app/login'
   };
 
