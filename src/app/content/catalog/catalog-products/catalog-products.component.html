@@ -12,7 +12,7 @@
     </mat-form-field>
   </div>
 
-  <mat-table [dataSource]="dataSource" matSort>
+  <mat-table [dataSource]="dataSource">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -52,8 +52,8 @@
     </ng-container>
     <!--Expanded Content Column - The detail row is made up of this one column-->
     <ng-container matColumnDef="expandedDetail">
-      <mat-cell *matCellDef="let detail">
-        About:{{detail.description}}
+      <mat-cell *matCellDef="let element">
+        About:{{element.description}}
       </mat-cell>
     </ng-container>
 

@@ -1,8 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {DataSource} from '@angular/cdk/collections';
-import {MatSort, MatPaginator, MatTableDataSource} from '@angular/material';
+import {MatPaginator} from '@angular/material';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {ApiService} from '../../../_api/api.service';
 import {IProduct} from '../../../_model/interface/product';
 import {ActivatedRoute} from '@angular/router';
 
@@ -22,16 +20,11 @@ export class CatalogProductsComponent implements OnInit {
   displayedColumns = ['id', 'image', 'name', 'brand', 'status'];
   expandedElement: any;
   dataSource: IProduct[];
-  errormessage = '';
   selected = this.displayedColumns[1];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
-  constructor(
-    private api: ApiService,
-    private route: ActivatedRoute
-  ) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
