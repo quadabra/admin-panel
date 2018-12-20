@@ -25,3 +25,20 @@
 .element-row.expanded {
   border-bottom-color: transparent;
 }
+
+.mat-form-field {
+  font-size: 14px;
+}
+
+.table-filter {
+  display: flex;
+  padding: 10px;
+}
+
+.table-filter__input {
+  width: 70%;
+}
+.table-filter__select {
+  width: 15%;
+  margin-left: auto;
+}

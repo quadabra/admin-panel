@@ -1,13 +1,25 @@
 <div class="example-container mat-elevation-z8">
-  <mat-table [dataSource]="dataSource">
+  <div class="table-filter">
+    <mat-form-field class="table-filter__input">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    <mat-form-field class="table-filter__select">
+      <mat-select [(value)]="selected">
+        <mat-option
+          *ngFor="let option of displayedColumns"
+          value="{{option}}">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-table [dataSource]="dataSource" matSort>
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
     <!-- Position Column -->
     <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef> No.</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef> Id</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
     </ng-container>
 
     <!-- Name Column -->
@@ -18,8 +30,8 @@
 
     <!-- Weight Column -->
     <ng-container matColumnDef="brand">
-      <mat-header-cell *matHeaderCellDef> Weight</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+      <mat-header-cell *matHeaderCellDef> Brand</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.brand}} </mat-cell>
     </ng-container>
 
     <!--Expanded Content Column - The detail row is made up of this one column-->

@@ -1,7 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {DataSource} from '@angular/cdk/collections';
-import {Observable, of} from 'rxjs';
+import {MatSort, MatTableDataSource} from '@angular/material';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ApiService} from '../../../_api/api.service';
+import {IProduct} from '../../../_model/interface/product';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-catalog-products',
@@ -18,66 +21,29 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 export class CatalogProductsComponent implements OnInit {
   displayedColumns = ['id', 'name', 'brand'];
   expandedElement: any;
-  dataSource = new ExampleDataSource();
+  dataSource: IProduct[];
+  errormessage = '';
+  selected = this.displayedColumns[1];
 
-  constructor() {
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(
+    private api: ApiService,
+    private route: ActivatedRoute
+  ) {
   }
 
   ngOnInit() {
+    this.route.data.subscribe(
+      data => {
+        this.dataSource = data['productList'];
+      }
+    );
   }
 
   isExpansionDetailRow = (i: number, row: Object) => row.hasOwnProperty('detailRow');
 
-}
-
-const data = [
-  {
-    id: 101,
-    name: 'partizan',
-    brand: 'sso',
-    status: 'enabled',
-    category: 'suits',
-    image: 'none',
-    position: '0'
-  },
-  {
-    id: 102,
-    name: 'partizan',
-    brand: 'sso',
-    status: 'disabled',
-    category: 'suits',
-    image: 'none',
-    position: '1'
-  },
-  {
-    id: 103,
-    name: 'partizan',
-    brand: 'sso',
-    status: 'enabled',
-    category: 'suits',
-    image: 'none',
-    position: '2'
-  },
-  {
-    id: 104,
-    name: 'partizan',
-    brand: 'sso',
-    status: 'enabled',
-    category: 'suits',
-    image: 'none',
-    position: '3'
-  }
-];
-
-export class ExampleDataSource extends DataSource<any> {
-  /** Connect function called by the table to retrieve one stream containing the data to render. */
-  connect(): Observable<Element[]> {
-    const rows = [];
-    data.forEach(element => rows.push(element, {detailRow: true, element}));
-    console.log(rows);
-    return of(rows);
-  }
-
-  disconnect() {
+  applyFilter(filterValue: string) {
   }
 }
+
