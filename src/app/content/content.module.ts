@@ -9,7 +9,7 @@ import {CatalogOptionsComponent} from './catalog/catalog-options/catalog-options
 import {CatalogProductsComponent} from './catalog/catalog-products/catalog-products.component';
 
 import {CatalogResolverService} from './catalog/catalog-products/catalog-resolver.service';
-import { ProductDetailsComponent } from './catalog/catalog-products/product-details/product-details.component';
+import {ProductDetailsComponent} from './catalog/catalog-products/product-details/product-details.component';
 
 @NgModule({
   declarations: [

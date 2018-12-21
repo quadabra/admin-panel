@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {MatPaginator} from '@angular/material';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {IProduct} from '../../../_model/interface/product';
 
@@ -17,28 +17,28 @@ import {IProduct} from '../../../_model/interface/product';
   ],
 })
 export class CatalogProductsComponent implements OnInit {
-  displayedColumns = ['id', 'image', 'name', 'brand', 'buy', 'sell', 'status', 'edit'];
+  displayedColumns: string[] = ['id', 'image', 'name', 'brand', 'buy', 'sell', 'status', 'edit'];
   expandedElement: any;
-  dataSource: IProduct[];
+  dataSource: MatTableDataSource<IProduct[]>;
   selected = this.displayedColumns[2];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.route.data.subscribe(
-      data => {
-        const rows = [];
-        const rawData = data['productList'];
-        rawData.forEach(item => rows.push(item, { storeInfo: true, item }));
-        this.dataSource = rows;
-        console.log(rows);
-      }
-    );
+    this.route.data.subscribe(data => this.dataSource = new MatTableDataSource(data['productList']));
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
-  applyFilter(filterValue: string) {}
-  isExpansionDetailRow = (i: number, row: Object) => row.hasOwnProperty('storeInfo');
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 }
 
