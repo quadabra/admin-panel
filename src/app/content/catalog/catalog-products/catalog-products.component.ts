@@ -38,7 +38,7 @@ export class CatalogProductsComponent implements OnInit {
       }
     );
   }
-
+  applyFilter(filterValue: string) {}
   isExpansionDetailRow = (i: number, row: Object) => row.hasOwnProperty('storeInfo');
 }
 
