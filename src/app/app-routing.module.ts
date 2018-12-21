@@ -5,6 +5,7 @@ import {CatalogProductsComponent} from './content/catalog/catalog-products/catal
 import {CatalogBrandsComponent} from './content/catalog/catalog-brands/catalog-brands.component';
 import {CatalogOptionsComponent} from './content/catalog/catalog-options/catalog-options.component';
 import {CatalogResolverService} from './content/catalog/catalog-products/catalog-resolver.service';
+import {ProductDetailsComponent} from './content/catalog/catalog-products/product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,12 @@ const routes: Routes = [
         path: 'products',
         component: CatalogProductsComponent,
         resolve: {productList: CatalogResolverService},
+        children: [
+          {
+            path: ':id',
+            component: ProductDetailsComponent,
+          }
+        ],
         data: {
           displayName: 'Products',
           iconName: 'list'

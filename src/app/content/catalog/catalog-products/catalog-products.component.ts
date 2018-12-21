@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 import {MatPaginator} from '@angular/material';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {IProduct} from '../../../_model/interface/product';
-import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-catalog-products',
@@ -17,10 +17,10 @@ import {ActivatedRoute} from '@angular/router';
   ],
 })
 export class CatalogProductsComponent implements OnInit {
-  displayedColumns = ['id', 'image', 'name', 'brand', 'status'];
+  displayedColumns = ['id', 'image', 'name', 'brand', 'buy', 'sell', 'status', 'edit'];
   expandedElement: any;
   dataSource: IProduct[];
-  selected = this.displayedColumns[1];
+  selected = this.displayedColumns[2];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -30,14 +30,15 @@ export class CatalogProductsComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(
       data => {
-        this.dataSource = data['productList'];
+        const rows = [];
+        const rawData = data['productList'];
+        rawData.forEach(item => rows.push(item, { storeInfo: true, item }));
+        this.dataSource = rows;
+        console.log(rows);
       }
     );
   }
 
-  isExpansionDetailRow = (i: number, row: Object) => row.hasOwnProperty('detailRow');
-
-  applyFilter(filterValue: string) {
-  }
+  isExpansionDetailRow = (i: number, row: Object) => row.hasOwnProperty('storeInfo');
 }
 

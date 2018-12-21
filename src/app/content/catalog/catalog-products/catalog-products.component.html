@@ -1,18 +1,20 @@
-<div class="example-container mat-elevation-z8">
-  <div class="table-filter">
-    <mat-form-field class="table-filter__input">
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-    </mat-form-field>
-    <mat-form-field class="table-filter__select">
-      <mat-select [(value)]="selected">
-        <mat-option
-          *ngFor="let option of displayedColumns"
-          value="{{option}}">{{option}}</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
+<div class="table-filter">
+  <mat-form-field class="table-filter__input">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  <mat-form-field class="table-filter__select">
+    <mat-select [(value)]="selected">
+      <mat-option
+        *ngFor="let option of displayedColumns"
+        value="{{option}}">{{option}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
 
-  <mat-table [dataSource]="dataSource">
+<div class="example-container mat-elevation-z8">
+
+
+  <mat-table #table [dataSource]="dataSource">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -46,14 +48,33 @@
       <mat-cell *matCellDef="let element"> {{element.brand_name}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="buy">
+      <mat-header-cell *matHeaderCellDef> Price buy </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.price_buy}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="sell">
+      <mat-header-cell *matHeaderCellDef> Price sell </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.price_sell}} </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="status">
       <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.product_status_name}} </mat-cell>
     </ng-container>
-    <!--Expanded Content Column - The detail row is made up of this one column-->
-    <ng-container matColumnDef="expandedDetail">
+
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
       <mat-cell *matCellDef="let element">
-        About:{{element.description}}
+        <a mat-raised-button color="accent" >Edit</a>
+      </mat-cell>
+    </ng-container>
+
+    <!--Expanded Content Column - The detail row is made up of this one column-->
+
+    <ng-container matColumnDef="expandedDetail">
+      <mat-cell *matCellDef="let details">
+        About: some info {{details.item.description}}
       </mat-cell>
     </ng-container>
 
@@ -62,9 +83,9 @@
              matRipple
              class="element-row"
              [class.expanded]="expandedElement == row"
-             (click)="expandedElement = row"></mat-row>
+             (click)="expandedElement = expandedElement === row ? null : row"></mat-row>
     <mat-row *matRowDef="let row; columns: ['expandedDetail']; when: isExpansionDetailRow"
-             [@detailExpand]="row.element == expandedElement ? 'expanded' : 'collapsed'"
+             [@detailExpand]="row.item == expandedElement ? 'expanded' : 'collapsed'"
              style="overflow: hidden">
     </mat-row>
   </mat-table>
