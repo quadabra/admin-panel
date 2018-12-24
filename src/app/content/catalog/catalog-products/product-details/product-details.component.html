@@ -1,4 +1,15 @@
-<p>
+<h3>
   {{dataSource.name}}
-</p>
-<p [innerHTML]="dataSource.description"></p>
+</h3>
+<mat-tab-group>
+  <mat-tab label="description">
+    <p [innerHTML]="dataSource.description"></p>
+  </mat-tab>
+  <mat-tab label="options">
+    <p>{{dataSource.options}}</p>
+  </mat-tab>
+  <mat-tab label="images">
+    <p>images</p>
+  </mat-tab>
+</mat-tab-group>
+
