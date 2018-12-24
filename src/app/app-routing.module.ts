@@ -6,6 +6,7 @@ import {CatalogBrandsComponent} from './content/catalog/catalog-brands/catalog-b
 import {CatalogOptionsComponent} from './content/catalog/catalog-options/catalog-options.component';
 import {CatalogResolverService} from './content/catalog/catalog-products/catalog-resolver.service';
 import {ProductDetailsComponent} from './content/catalog/catalog-products/product-details/product-details.component';
+import {ProductResolverService} from './content/catalog/catalog-products/product-resolver.service';
 
 const routes: Routes = [
   {
@@ -24,12 +25,16 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: CatalogProductsComponent,
-        resolve: {productList: CatalogResolverService},
         children: [
+          {
+            path: '',
+            component: CatalogProductsComponent,
+            resolve: {productList: CatalogResolverService},
+          },
           {
             path: ':id',
             component: ProductDetailsComponent,
+            resolve: {product: ProductResolverService},
           }
         ],
         data: {
