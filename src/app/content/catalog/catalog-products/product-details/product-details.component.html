@@ -26,7 +26,11 @@
               </mat-form-field>
             </mat-card>
             <mat-card>
-              <h4>Seo</h4>
+              <div class="heading">
+                <h4>Seo</h4>
+                <span class="spacer"></span>
+                <button mat-stroked-button color="primary">Auto</button>
+              </div>
               <div class="seo__block">
                 <mat-form-field *ngFor="let option of seoOptions">
                   <input matInput type="text" placeholder="{{option}}">
@@ -39,7 +43,11 @@
           </div>
           <div class="description-grid__params">
             <mat-card class="description-grid__params-col">
-              <h4>{{brands.groupName}}</h4>
+              <div class="heading">
+                <h4>{{brands.groupName}}</h4>
+                <span class="spacer"></span>
+                <button mat-stroked-button color="primary">Auto</button>
+              </div>
               <mat-form-field *ngFor="let option of brands.options">
                 <mat-select placeholder="{{option.fieldName}}">
                   <mat-option *ngFor="let brand of option.list" [value]="brand.value">
@@ -49,23 +57,56 @@
               </mat-form-field>
               <h4>{{prices.groupName}}</h4>
               <mat-form-field *ngFor="let option of prices.options">
-                <input matInput type="number" placeholder="{{option.fieldName}}" [defaultValue]="option.value">
+                <input matInput type="text" placeholder="{{option.fieldName}}" [defaultValue]="option.value">
               </mat-form-field>
+              <h4>Categories</h4>
+              <mat-form-field>
+                <mat-select placeholder="Categories" [formControl]="productCategories" multiple>
+                  <mat-option *ngFor="let option of categoryList" [value]="option">{{option}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <h4>Time to wait</h4>
+              <div class="slider-container">
+                <span>Min</span>
+                <mat-slider
+                  thumbLabel
+                  multiple
+                  [displayWith]="formatLabel"
+                  min="1"
+                  max="100">
+                </mat-slider>
+              </div>
+              <div class="slider-container">
+                <span>Max</span>
+                <mat-slider
+                  thumbLabel
+                  multiple
+                  [displayWith]="formatLabel"
+                  min="1"
+                  max="100">
+                </mat-slider>
+              </div>
             </mat-card>
+            <span class="spacer"></span>
             <mat-card class="description-grid__params-col">
               <h4>Parameters</h4>
               <mat-form-field *ngFor="let option of textfields">
                 <input matInput type="text" placeholder="{{option.viewValue}}" [defaultValue]="option.value">
               </mat-form-field>
-            </mat-card>
-            <mat-card class="description-grid__params-col">
-              <h4>Some Slider</h4>
-              <mat-slider
-                thumbLabel
-                [displayWith]="formatLabel"
-                tickInterval="1000"
-                min="1"
-                max="100"></mat-slider>
+              <mat-form-field>
+                <mat-select placeholder="Availability">
+                  <mat-option *ngFor="let option of availability" [value]="option.value">
+                    {{option.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Status">
+                  <mat-option *ngFor="let option of status" [value]="option.value">
+                    {{option.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
             </mat-card>
           </div>
         </div>

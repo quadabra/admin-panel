@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {IProduct} from '../../../../_model/interface/product';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-product-details',
@@ -50,14 +51,29 @@ export class ProductDetailsComponent implements OnInit {
     options: [
       {
         fieldName: 'Price Buy',
-        value: '2000'
+        value: '2000',
       },
       {
         fieldName: 'Price Sell',
-        value: '3000'
+        value: '3000',
       }
     ]
   };
+
+  productCategories = new FormControl();
+  categoryList: string[] = ['Option A', 'Mushroom', 'Option C', 'Option Z', 'Option S', 'Option XXXL'];
+
+  availability = [
+    {value: 'a10', viewValue: 'Preorder'},
+    {value: 'a11', viewValue: 'Dropship'},
+    {value: 'a12', viewValue: 'WH only'},
+  ];
+
+  status = [
+    {value: 'a10', viewValue: 'Enabled'},
+    {value: 'a11', viewValue: 'Disabled'},
+    {value: 'a12', viewValue: 'By availability'},
+  ];
 
   constructor(private route: ActivatedRoute) {
   }

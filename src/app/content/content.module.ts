@@ -4,6 +4,7 @@ import {RouterModule} from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 
 import {MaterialModule} from '../material.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {CatalogBrandsComponent} from './catalog/catalog-brands/catalog-brands.component';
 import {CatalogOptionsComponent} from './catalog/catalog-options/catalog-options.component';
@@ -25,6 +26,8 @@ import {ProductDetailsComponent} from './catalog/catalog-products/product-detail
     CommonModule,
     RouterModule,
     MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     WelcomeComponent,
