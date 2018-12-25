@@ -33,17 +33,19 @@ button {
 }
 
 .description-grid__info {
-  width: 47.5%;
+  width: 49.5%;
 }
 
 .description-grid__params {
-  width: 47.5%;
+  width: 49.5%;
   margin-left: auto;
   display: flex;
   flex-direction: row;
+  align-content: space-between;
 }
 
 .description-grid__params-col {
+  width: 30%;
   display: flex;
   flex-direction: column;
 }

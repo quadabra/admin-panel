@@ -28,14 +28,8 @@
             <mat-card>
               <h4>Seo</h4>
               <div class="seo__block">
-                <mat-form-field>
-                  <input matInput type="text" placeholder="Link">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput type="text" placeholder="Title">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput type="text" placeholder="Keywords">
+                <mat-form-field *ngFor="let option of seoOptions">
+                  <input matInput type="text" placeholder="{{option}}">
                 </mat-form-field>
                 <mat-form-field>
                   <textarea matInput placeholder="Description" [value]="dataSource.description" rows="6"></textarea>
@@ -45,21 +39,33 @@
           </div>
           <div class="description-grid__params">
             <mat-card class="description-grid__params-col">
-              <h4>Brand</h4>
-              <mat-form-field>
-                <mat-select placeholder="Brand">
-                  <mat-option *ngFor="let brand of brands" [value]="brand.value">
+              <h4>{{brands.groupName}}</h4>
+              <mat-form-field *ngFor="let option of brands.options">
+                <mat-select placeholder="{{option.fieldName}}">
+                  <mat-option *ngFor="let brand of option.list" [value]="brand.value">
                     {{brand.viewValue}}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-              <mat-form-field>
-                <mat-select placeholder="Manufacturer">
-                  <mat-option *ngFor="let manufacrurer of manufacrurers" [value]="manufacrurer.value">
-                    {{manufacrurer.viewValue}}
-                  </mat-option>
-                </mat-select>
+              <h4>{{prices.groupName}}</h4>
+              <mat-form-field *ngFor="let option of prices.options">
+                <input matInput type="number" placeholder="{{option.fieldName}}" [defaultValue]="option.value">
               </mat-form-field>
+            </mat-card>
+            <mat-card class="description-grid__params-col">
+              <h4>Parameters</h4>
+              <mat-form-field *ngFor="let option of textfields">
+                <input matInput type="text" placeholder="{{option.viewValue}}" [defaultValue]="option.value">
+              </mat-form-field>
+            </mat-card>
+            <mat-card class="description-grid__params-col">
+              <h4>Some Slider</h4>
+              <mat-slider
+                thumbLabel
+                [displayWith]="formatLabel"
+                tickInterval="1000"
+                min="1"
+                max="100"></mat-slider>
             </mat-card>
           </div>
         </div>
