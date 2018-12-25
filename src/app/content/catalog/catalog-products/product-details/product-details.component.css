@@ -1,0 +1,53 @@
+.description__text-input {
+  width: 100%;
+}
+
+textarea {
+  resize: none !important;
+}
+
+mat-tab {
+  margin: 5px;
+}
+
+mat-card {
+  margin: 10px 0 10px 0;
+}
+
+.seo__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  align-items: baseline;
+}
+
+button {
+  margin: 5px;
+}
+
+.description-grid {
+  display: flex;
+}
+
+.description-grid__info {
+  width: 47.5%;
+}
+
+.description-grid__params {
+  width: 47.5%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.description-grid__params-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading-title {
+  margin: 0;
+}

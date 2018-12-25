@@ -1,14 +1,68 @@
-<h3>
-  {{dataSource.name}}
-</h3>
+<mat-card class="heading">
+  <h3 class="heading-title">
+    {{dataSource.name}}
+  </h3>
+  <span class="spacer"></span>
+  <button mat-stroked-button>Back</button>
+  <button mat-stroked-button color="primary">Save</button>
+  <button mat-stroked-button color="warn">Delete</button>
+</mat-card>
 <mat-tab-group>
   <mat-tab label="description">
-    <mat-tab-group style="width: 45%">
-      <mat-tab label="En">
-        <p [innerHTML]="dataSource.description"></p>
-      </mat-tab>
-      <mat-tab label="Ru">
-        <p [innerHTML]="dataSource.description"></p>
+    <mat-tab-group style="margin-top: 10px">
+      <mat-tab label="{{lang}}" *ngFor="let lang of langs">
+        <div class="description-grid">
+          <div class="description-grid__info">
+            <mat-card>
+              <h4>Description</h4>
+              <mat-form-field class="description__text-input">
+                <input matInput placeholder="Name" [value]="dataSource.name">
+              </mat-form-field>
+              <mat-form-field class="description__text-input">
+                <textarea matInput placeholder="Description" [value]="dataSource.description" rows="8"></textarea>
+              </mat-form-field>
+              <mat-form-field class="description__text-input">
+                <input matInput placeholder="Youtube Link" [value]="">
+              </mat-form-field>
+            </mat-card>
+            <mat-card>
+              <h4>Seo</h4>
+              <div class="seo__block">
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Link">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Title">
+                </mat-form-field>
+                <mat-form-field>
+                  <input matInput type="text" placeholder="Keywords">
+                </mat-form-field>
+                <mat-form-field>
+                  <textarea matInput placeholder="Description" [value]="dataSource.description" rows="6"></textarea>
+                </mat-form-field>
+              </div>
+            </mat-card>
+          </div>
+          <div class="description-grid__params">
+            <mat-card class="description-grid__params-col">
+              <h4>Brand</h4>
+              <mat-form-field>
+                <mat-select placeholder="Brand">
+                  <mat-option *ngFor="let brand of brands" [value]="brand.value">
+                    {{brand.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Manufacturer">
+                  <mat-option *ngFor="let manufacrurer of manufacrurers" [value]="manufacrurer.value">
+                    {{manufacrurer.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-card>
+          </div>
+        </div>
       </mat-tab>
     </mat-tab-group>
   </mat-tab>
@@ -19,4 +73,3 @@
     <p>images</p>
   </mat-tab>
 </mat-tab-group>
-
