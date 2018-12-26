@@ -8,6 +8,7 @@
   <button mat-stroked-button color="warn">Delete</button>
 </mat-card>
 <mat-tab-group>
+  <!--descrition section omfg must be a component-->
   <mat-tab label="description">
     <mat-tab-group style="margin-top: 10px">
       <mat-tab label="{{lang}}" *ngFor="let lang of langs">
@@ -57,7 +58,7 @@
               </mat-form-field>
               <h4>{{prices.groupName}}</h4>
               <mat-form-field *ngFor="let option of prices.options">
-                <input matInput type="text" placeholder="{{option.fieldName}}" [defaultValue]="option.value">
+                <input matInput type="text" placeholder="{{option.fieldName}}" [value]="option.value">
               </mat-form-field>
               <h4>Categories</h4>
               <mat-form-field>
@@ -70,8 +71,6 @@
                 <span>Min</span>
                 <mat-slider
                   thumbLabel
-                  multiple
-                  [displayWith]="formatLabel"
                   min="1"
                   max="100">
                 </mat-slider>
@@ -80,8 +79,6 @@
                 <span>Max</span>
                 <mat-slider
                   thumbLabel
-                  multiple
-                  [displayWith]="formatLabel"
                   min="1"
                   max="100">
                 </mat-slider>
@@ -91,7 +88,7 @@
             <mat-card class="description-grid__params-col">
               <h4>Parameters</h4>
               <mat-form-field *ngFor="let option of textfields">
-                <input matInput type="text" placeholder="{{option.viewValue}}" [defaultValue]="option.value">
+                <input matInput type="text" placeholder="{{option.viewValue}}" [value]="option.value">
               </mat-form-field>
               <mat-form-field>
                 <mat-select placeholder="Availability">
@@ -114,7 +111,41 @@
     </mat-tab-group>
   </mat-tab>
   <mat-tab label="options">
-    <p>{{dataSource.options}}</p>
+    <!--options component zomg -->
+    <div>
+      <mat-card class="options-grid__params">
+        <div class="options-heading">
+          <mat-form-field class="options-heading__input" *ngFor="let option of options">
+            <input matInput type="text" placeholder="{{option.viewValue}}" [value]="option.value">
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="options-tabs">
+          <div class="options-tabs__heading">
+            <span class="spacer"></span>
+            <mat-form-field>
+              <input matInput type="text" #newTabName placeholder="New option">
+            </mat-form-field>
+            <button mat-stroked-button
+                    class="example-add-tab-button"
+                    (click)="addTab(newTabName.value)">
+              Add new
+            </button>
+          </div>
+          <mat-tab-group [selectedIndex]="selected.value"
+                         (selectedIndexChange)="selected.setValue($event)">
+            <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+              <button mat-raised-button
+                      class="example-delete-tab-button"
+                      [disabled]="tabs.length === 1"
+                      (click)="removeTab(index)">
+                Delete
+              </button>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </mat-card>
+    </div>
   </mat-tab>
   <mat-tab label="images">
     <p>images</p>

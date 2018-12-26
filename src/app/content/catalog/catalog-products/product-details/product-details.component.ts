@@ -75,6 +75,26 @@ export class ProductDetailsComponent implements OnInit {
     {value: 'a12', viewValue: 'By availability'},
   ];
 
+  options = [
+    {value: '2', viewValue: 'Weight'},
+    {value: '3400', viewValue: 'Price Sell'},
+    {value: '666', viewValue: 'Article'},
+  ];
+
+  tabs = ['Height', 'Color', 'Size'];
+  selected = new FormControl(0);
+
+  addTab(name: string) {
+    if (name) {
+      this.tabs.push(name);
+      this.selected.setValue(this.tabs.length - 1);
+    }
+  }
+
+  removeTab(index: number) {
+    this.tabs.splice(index, 1);
+  }
+
   constructor(private route: ActivatedRoute) {
   }
 
