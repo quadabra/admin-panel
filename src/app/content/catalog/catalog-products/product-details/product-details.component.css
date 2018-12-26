@@ -80,3 +80,7 @@ button {
   display: flex;
   align-items: center;
 }
+
+.table-field {
+  width: 80%;
+}

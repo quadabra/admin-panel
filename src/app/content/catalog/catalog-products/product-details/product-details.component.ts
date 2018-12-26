@@ -81,6 +81,59 @@ export class ProductDetailsComponent implements OnInit {
     {value: '666', viewValue: 'Article'},
   ];
 
+  setupOptionsTable = ['Remove', 'Value', 'Image', 'Weight', 'Price', 'Article'];
+
+  setupOptions = [
+    {
+      value: '3-4',
+      image: 'none',
+      weight: {
+        view: 'Weight',
+        value: '32'
+      },
+      price: {
+        view: 'Price',
+        value: '100500',
+      },
+      article: {
+        view: 'Article',
+        value: ''
+      },
+    },
+    {
+      value: '3-4',
+      image: 'none',
+      weight: {
+        view: 'Weight',
+        value: ''
+      },
+      price: {
+        view: 'Price',
+        value: '',
+      },
+      article: {
+        view: 'Article',
+        value: 'asdasd'
+      },
+    },
+    {
+      value: '3-4',
+      image: 'none',
+      weight: {
+        view: 'Weight',
+        value: '77'
+      },
+      price: {
+        view: 'Price',
+        value: '2432',
+      },
+      article: {
+        view: 'Article',
+        value: 'zhopa'
+      },
+    }
+  ];
+
   tabs = ['Height', 'Color', 'Size'];
   selected = new FormControl(0);
 

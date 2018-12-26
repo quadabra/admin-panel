@@ -124,10 +124,9 @@
           <div class="options-tabs__heading">
             <span class="spacer"></span>
             <mat-form-field>
-              <input matInput type="text" #newTabName placeholder="New option">
+              <input matInput type="text" #newTabName placeholder="New option tab">
             </mat-form-field>
             <button mat-stroked-button
-                    class="example-add-tab-button"
                     (click)="addTab(newTabName.value)">
               Add new
             </button>
@@ -135,12 +134,66 @@
           <mat-tab-group [selectedIndex]="selected.value"
                          (selectedIndexChange)="selected.setValue($event)">
             <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
-              <button mat-raised-button
-                      class="example-delete-tab-button"
-                      [disabled]="tabs.length === 1"
-                      (click)="removeTab(index)">
-                Delete
-              </button>
+              <div class="flex">
+                <span class="spacer"></span>
+                <button mat-stroked-button
+                        color="primary">
+                  Add option
+                </button>
+              </div>
+
+              <table mat-table [dataSource]="setupOptions" style="width: 100%">
+                <ng-container matColumnDef="Remove">
+                  <th mat-header-cell *matHeaderCellDef> Value </th>
+                  <td mat-cell *matCellDef="let element">
+                    <button mat-mini-fab color="warn"><mat-icon>clear</mat-icon></button>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="Value">
+                  <th mat-header-cell *matHeaderCellDef> Value </th>
+                  <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Image">
+                  <th mat-header-cell *matHeaderCellDef> Image </th>
+                  <td mat-cell *matCellDef="let element"> {{element.image}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Weight">
+                  <th mat-header-cell *matHeaderCellDef> Weight </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field>
+                      <input matInput type="text" [value]="element.weight.value">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="Price">
+                  <th mat-header-cell *matHeaderCellDef> Price </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field>
+                      <input matInput type="text" [value]="element.price.value">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+                <ng-container matColumnDef="Article">
+                  <th mat-header-cell *matHeaderCellDef> Article </th>
+                  <td mat-cell *matCellDef="let element">
+                    <mat-form-field class="table-field">
+                      <input matInput type="text" [value]="element.article.value">
+                    </mat-form-field>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="setupOptionsTable"></tr>
+                <tr mat-row *matRowDef="let row; columns: setupOptionsTable;"></tr>
+              </table>
+              <div class="flex">
+                <span class="spacer"></span>
+                <button mat-stroked-button
+                        color="warn"
+                        [disabled]="tabs.length === 1"
+                        (click)="removeTab(index)">
+                  Delete option tab
+                </button>
+              </div>
             </mat-tab>
           </mat-tab-group>
         </div>
