@@ -134,6 +134,12 @@ export class ProductDetailsComponent implements OnInit {
     }
   ];
 
+  setOptions = [
+    {view: 'height', values: ['4-5', '2-3', '3-4']},
+    {view: 'color', values: ['tiger', 'atags', 'olive']},
+    {view: 'size', values: ['48-50', '52-54', '56-64']}
+  ];
+
   tabs = ['Height', 'Color', 'Size'];
   selected = new FormControl(0);
 

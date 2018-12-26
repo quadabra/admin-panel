@@ -65,6 +65,10 @@ button {
   width: 60%;
 }
 
+.options-grid__sets {
+  width: 35%;
+}
+
 .options-heading {
   display: flex;
   align-items: center;
@@ -83,4 +87,9 @@ button {
 
 .table-field {
   width: 80%;
+}
+
+.options-config {
+  display: flex;
+  align-items: stretch;
 }

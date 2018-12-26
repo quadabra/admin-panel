@@ -68,16 +68,18 @@
               </mat-form-field>
               <h4>Time to wait</h4>
               <div class="slider-container">
-                <span>Min</span>
+                <span>Min  {{minSlider.value}} days</span>
                 <mat-slider
+                  #minSlider
                   thumbLabel
                   min="1"
                   max="100">
                 </mat-slider>
               </div>
               <div class="slider-container">
-                <span>Max</span>
+                <span>Max  {{maxSlider.value}} days</span>
                 <mat-slider
+                  #maxSlider
                   thumbLabel
                   min="1"
                   max="100">
@@ -112,7 +114,7 @@
   </mat-tab>
   <mat-tab label="options">
     <!--options component zomg -->
-    <div>
+    <div class="options-config">
       <mat-card class="options-grid__params">
         <div class="options-heading">
           <mat-form-field class="options-heading__input" *ngFor="let option of options">
@@ -134,7 +136,7 @@
           <mat-tab-group [selectedIndex]="selected.value"
                          (selectedIndexChange)="selected.setValue($event)">
             <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
-              <div class="flex">
+              <div>
                 <span class="spacer"></span>
                 <button mat-stroked-button
                         color="primary">
@@ -196,6 +198,26 @@
               </div>
             </mat-tab>
           </mat-tab-group>
+        </div>
+      </mat-card>
+      <span class="spacer"></span>
+      <mat-card class="options-grid__sets">
+        <h4>Option Sets</h4>
+        <mat-divider></mat-divider>
+        <div class="flex" *ngFor="let option of setOptions">
+          <span>{{option.view}}</span>
+          <span class="spacer"></span>
+          <mat-form-field style="width: 60%">
+            <mat-select placeholder="{{option.view}}">
+              <mat-option *ngFor="let value of option.values" [value]="value">
+                {{value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="flex">
+          <span class="spacer"></span>
+          <button mat-stroked-button color="primary">Add set</button>
         </div>
       </mat-card>
     </div>
