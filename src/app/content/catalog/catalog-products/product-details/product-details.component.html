@@ -10,10 +10,10 @@
 <mat-tab-group>
   <!--descrition section omfg must be a component-->
   <mat-tab label="description">
-    <mat-tab-group style="margin-top: 10px">
-      <mat-tab label="{{lang}}" *ngFor="let lang of langs">
-        <div class="description-grid">
-          <div class="description-grid__info">
+    <div class="description-grid">
+      <div class="description-grid__info">
+        <mat-tab-group style="margin-top: 10px">
+          <mat-tab label="{{lang}}" *ngFor="let lang of langs">
             <mat-card>
               <h4>Description</h4>
               <mat-form-field class="description__text-input">
@@ -22,95 +22,114 @@
               <mat-form-field class="description__text-input">
                 <textarea matInput placeholder="Description" [value]="dataSource.description" rows="8"></textarea>
               </mat-form-field>
-              <mat-form-field class="description__text-input">
-                <input matInput placeholder="Youtube Link" [value]="">
-              </mat-form-field>
             </mat-card>
-            <mat-card>
-              <div class="heading">
-                <h4>Seo</h4>
-                <span class="spacer"></span>
-                <button mat-stroked-button color="primary">Auto</button>
-              </div>
-              <div class="seo__block">
-                <mat-form-field *ngFor="let option of seoOptions">
-                  <input matInput type="text" placeholder="{{option}}">
-                </mat-form-field>
-                <mat-form-field>
-                  <textarea matInput placeholder="Description" [value]="dataSource.description" rows="6"></textarea>
-                </mat-form-field>
-              </div>
-            </mat-card>
-          </div>
-          <div class="description-grid__params">
-            <mat-card class="description-grid__params-col">
-              <div class="heading">
-                <h4>{{brands.groupName}}</h4>
-                <span class="spacer"></span>
-                <button mat-stroked-button color="primary">Auto</button>
-              </div>
-              <mat-form-field *ngFor="let option of brands.options">
-                <mat-select placeholder="{{option.fieldName}}">
-                  <mat-option *ngFor="let brand of option.list" [value]="brand.value">
-                    {{brand.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <h4>{{prices.groupName}}</h4>
-              <mat-form-field *ngFor="let option of prices.options">
-                <input matInput type="text" placeholder="{{option.fieldName}}" [value]="option.value">
-              </mat-form-field>
-              <h4>Categories</h4>
-              <mat-form-field>
-                <mat-select placeholder="Categories" [formControl]="productCategories" multiple>
-                  <mat-option *ngFor="let option of categoryList" [value]="option">{{option}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <h4>Time to wait</h4>
-              <div class="slider-container">
-                <span>Min  {{minSlider.value}} days</span>
-                <mat-slider
-                  #minSlider
-                  thumbLabel
-                  min="1"
-                  max="100">
-                </mat-slider>
-              </div>
-              <div class="slider-container">
-                <span>Max  {{maxSlider.value}} days</span>
-                <mat-slider
-                  #maxSlider
-                  thumbLabel
-                  min="1"
-                  max="100">
-                </mat-slider>
-              </div>
-            </mat-card>
+          </mat-tab>
+        </mat-tab-group>
+        <mat-card>
+          <div class="heading">
+            <h4>Seo</h4>
             <span class="spacer"></span>
-            <mat-card class="description-grid__params-col">
-              <h4>Parameters</h4>
-              <mat-form-field *ngFor="let option of textfields">
-                <input matInput type="text" placeholder="{{option.viewValue}}" [value]="option.value">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-select placeholder="Availability">
-                  <mat-option *ngFor="let option of availability" [value]="option.value">
-                    {{option.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-              <mat-form-field>
-                <mat-select placeholder="Status">
-                  <mat-option *ngFor="let option of status" [value]="option.value">
-                    {{option.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </mat-card>
+            <button mat-stroked-button color="primary">Auto</button>
           </div>
+          <div class="seo__block">
+            <mat-form-field *ngFor="let option of seoOptions">
+              <input matInput type="text" placeholder="{{option}}">
+            </mat-form-field>
+            <mat-form-field>
+              <textarea matInput placeholder="Description" [value]="dataSource.description" rows="6"></textarea>
+            </mat-form-field>
+          </div>
+        </mat-card>
+      </div>
+      <div class="description-grid__params">
+
+        <div class="description-grid__params-col">
+
+          <mat-card>
+            <div class="heading">
+              <h4>{{brands.groupName}}</h4>
+              <span class="spacer"></span>
+              <button mat-stroked-button color="primary">Auto</button>
+            </div>
+            <mat-form-field *ngFor="let option of brands.options">
+              <mat-select placeholder="{{option.fieldName}}">
+                <mat-option *ngFor="let brand of option.list" [value]="brand.value">
+                  {{brand.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-card>
+
+          <mat-card>
+            <div class="heading">
+            <h4>{{prices.groupName}}</h4>
+              <span class="spacer"></span>
+              <button mat-stroked-button color="primary">Auto</button>
+            </div>
+            <mat-form-field *ngFor="let option of prices.options">
+              <input matInput type="text" placeholder="{{option.fieldName}}" [value]="option.value">
+            </mat-form-field>
+          </mat-card>
+          <mat-card>
+            <div class="heading">
+              <h4>Categories</h4>
+              <span class="spacer"></span>
+              <button mat-stroked-button color="primary">Auto</button>
+            </div>
+            <mat-form-field>
+              <mat-select placeholder="Categories" [formControl]="productCategories" multiple>
+                <mat-option *ngFor="let option of categoryList" [value]="option">{{option}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-card>
+
+          <mat-card>
+            <h4>Time to wait</h4>
+            <div class="slider-container">
+              <span>Min  {{minSlider.value}} days</span>
+              <mat-slider
+                #minSlider
+                thumbLabel
+                min="1"
+                max="100">
+              </mat-slider>
+            </div>
+            <div class="slider-container">
+              <span>Max  {{maxSlider.value}} days</span>
+              <mat-slider
+                #maxSlider
+                thumbLabel
+                min="1"
+                max="100">
+              </mat-slider>
+            </div>
+          </mat-card>
+
         </div>
-      </mat-tab>
-    </mat-tab-group>
+
+        <span class="spacer"></span>
+        <mat-card class="description-grid__params-col">
+          <h4>Parameters</h4>
+          <mat-form-field *ngFor="let option of textfields">
+            <input matInput type="text" placeholder="{{option.viewValue}}" [value]="option.value">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="Availability">
+              <mat-option *ngFor="let option of availability" [value]="option.value">
+                {{option.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="Status">
+              <mat-option *ngFor="let option of status" [value]="option.value">
+                {{option.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-card>
+      </div>
+    </div>
   </mat-tab>
   <mat-tab label="options">
     <!--options component zomg -->
@@ -146,21 +165,23 @@
 
               <table mat-table [dataSource]="setupOptions" style="width: 100%">
                 <ng-container matColumnDef="Remove">
-                  <th mat-header-cell *matHeaderCellDef> Value </th>
+                  <th mat-header-cell *matHeaderCellDef> Delete</th>
                   <td mat-cell *matCellDef="let element">
-                    <button mat-mini-fab color="warn"><mat-icon>clear</mat-icon></button>
+                    <button mat-mini-fab color="warn">
+                      <mat-icon>clear</mat-icon>
+                    </button>
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="Value">
-                  <th mat-header-cell *matHeaderCellDef> Value </th>
+                  <th mat-header-cell *matHeaderCellDef> Value</th>
                   <td mat-cell *matCellDef="let element"> {{element.value}} </td>
                 </ng-container>
                 <ng-container matColumnDef="Image">
-                  <th mat-header-cell *matHeaderCellDef> Image </th>
+                  <th mat-header-cell *matHeaderCellDef> Image</th>
                   <td mat-cell *matCellDef="let element"> {{element.image}} </td>
                 </ng-container>
                 <ng-container matColumnDef="Weight">
-                  <th mat-header-cell *matHeaderCellDef> Weight </th>
+                  <th mat-header-cell *matHeaderCellDef> Weight</th>
                   <td mat-cell *matCellDef="let element">
                     <mat-form-field>
                       <input matInput type="text" [value]="element.weight.value">
@@ -168,7 +189,7 @@
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="Price">
-                  <th mat-header-cell *matHeaderCellDef> Price </th>
+                  <th mat-header-cell *matHeaderCellDef> Price</th>
                   <td mat-cell *matCellDef="let element">
                     <mat-form-field>
                       <input matInput type="text" [value]="element.price.value">
@@ -176,7 +197,7 @@
                   </td>
                 </ng-container>
                 <ng-container matColumnDef="Article">
-                  <th mat-header-cell *matHeaderCellDef> Article </th>
+                  <th mat-header-cell *matHeaderCellDef> Article</th>
                   <td mat-cell *matCellDef="let element">
                     <mat-form-field class="table-field">
                       <input matInput type="text" [value]="element.article.value">
@@ -223,6 +244,6 @@
     </div>
   </mat-tab>
   <mat-tab label="images">
-    <p>images</p>
+    <app-details-images></app-details-images>
   </mat-tab>
 </mat-tab-group>

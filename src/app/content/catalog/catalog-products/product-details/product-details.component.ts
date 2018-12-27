@@ -9,7 +9,7 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  langs = ['En', 'Ru', 'De', 'Fr'];
+  langs = ['En', 'Ru'];
   dataSource: IProduct;
 
   seoOptions = ['Link', 'Title', 'Keyword'];

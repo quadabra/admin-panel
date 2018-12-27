@@ -13,6 +13,7 @@ import {CatalogProductsComponent} from './catalog/catalog-products/catalog-produ
 import {CatalogResolverService} from './catalog/catalog-products/catalog-resolver.service';
 import {ProductResolverService} from './catalog/catalog-products/product-resolver.service';
 import {ProductDetailsComponent} from './catalog/catalog-products/product-details/product-details.component';
+import { DetailsImagesComponent } from './catalog/catalog-products/product-details/details-images/details-images.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ProductDetailsComponent} from './catalog/catalog-products/product-detail
     CatalogBrandsComponent,
     CatalogOptionsComponent,
     CatalogProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    DetailsImagesComponent
   ],
   imports: [
     CommonModule,
