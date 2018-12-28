@@ -87,6 +87,8 @@ table {
 
 .example-box2 {
   width: 300px;
+  height: 150px;
+  border: solid 1px #ccc;
   padding: 10px 10px;
   color: rgba(0, 0, 0, 0.87);
   display: flex;
