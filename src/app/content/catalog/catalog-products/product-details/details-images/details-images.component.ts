@@ -34,7 +34,7 @@ export class DetailsImagesComponent implements OnInit {
     {position: 10, name: 'COLOR 10', list: []},
   ];
 
-  displayedColumns: string[] = ['Position', 'Color', 'Images'];
+  displayedColumns: string[] = ['Color', 'Images'];
 
   timePeriods = [
     'Bronze age',

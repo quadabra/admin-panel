@@ -22,9 +22,9 @@
                cdkDropListOrientation="horizontal"
                [cdkDropListData]="element.list"
                class="example-list" (cdkDropListDropped)="drop($event)">
-            <div class="example-box2" *ngFor="let item of element.list" cdkDrag>
+            <div class="example-box2 mat-elevation-z2" *ngFor="let item of element.list" cdkDrag>
               <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-              {{item.name}}
+              <img src="../../../../../../assets/img/image.png" alt="" width="250" style="display: block">
               <!--<div class="options-container">-->
                 <!--<mat-form-field *ngFor="let option of item.options">-->
                   <!--<mat-select placeholder="{{option.optionName}}" [formControl]="option.optionValues" multiple>-->
@@ -49,9 +49,9 @@
       [cdkDropListData]="colors"
       class="example-list2"
       (cdkDropListDropped)="drop($event)">
-      <div class="example-box2" *ngFor="let item of colors" cdkDrag>
+      <div class="example-box2 mat-elevation-z2" *ngFor="let item of colors" cdkDrag>
         <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-        {{item.name}}
+        <img src="../../../../../../assets/img/image.png" alt="" width="250" style="display: block">
         <!--<div class="options-container">-->
           <!--<mat-form-field *ngFor="let option of item.options">-->
             <!--<mat-select placeholder="{{option.optionName}}" [formControl]="option.optionValues" multiple>-->
