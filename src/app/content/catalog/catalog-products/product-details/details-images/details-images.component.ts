@@ -8,7 +8,21 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class DetailsImagesComponent implements OnInit {
   dataSource = [
-    {position: 1, name: 'ATAGS', list: []},
+    {position: 1, name: 'ATAGS', list: [
+        {
+          name: 'Color7',
+          options: [
+            {
+              optionName: 'size',
+              optionValues: ['raz', 'dva', 'tri']
+            },
+            {
+              optionName: 'height',
+              optionValues: ['raz', 'dva', 'tri']
+            }
+          ]
+        }
+      ]},
     {position: 2, name: 'TIGER', list: []},
     {position: 3, name: 'OLIVE', list: []},
     {position: 4, name: 'COLOR 4', list: []},
@@ -45,7 +59,88 @@ export class DetailsImagesComponent implements OnInit {
     'Walk dog'
   ];
 
-  drop2(event: CdkDragDrop<string[]>) {
+  colors = [
+    {
+      name: 'Color1',
+      options: [
+        {
+          optionName: 'size',
+          optionValues: ['raz', 'dva', 'tri']
+        },
+        {
+          optionName: 'height',
+          optionValues: ['raz', 'dva', 'tri']
+        }
+      ]
+    },
+    {
+      name: 'Color2',
+      options: [
+        {
+          optionName: 'size',
+          optionValues: ['raz', 'dva', 'tri']
+        },
+        {
+          optionName: 'height',
+          optionValues: ['raz', 'dva', 'tri']
+        }
+      ]
+    },
+    {
+      name: 'Color3',
+      options: [
+        {
+          optionName: 'size',
+          optionValues: ['raz', 'dva', 'tri']
+        },
+        {
+          optionName: 'height',
+          optionValues: ['raz', 'dva', 'tri']
+        }
+      ]
+    },
+    {
+      name: 'Color4',
+      options: [
+        {
+          optionName: 'size',
+          optionValues: ['raz', 'dva', 'tri']
+        },
+        {
+          optionName: 'height',
+          optionValues: ['raz', 'dva', 'tri']
+        }
+      ]
+    },
+    {
+      name: 'Color5',
+      options: [
+        {
+          optionName: 'size',
+          optionValues: ['raz', 'dva', 'tri']
+        },
+        {
+          optionName: 'height',
+          optionValues: ['raz', 'dva', 'tri']
+        }
+      ]
+    },
+    {
+      name: 'Color6',
+      options: [
+        {
+          optionName: 'size',
+          optionValues: ['raz', 'dva', 'tri']
+        },
+        {
+          optionName: 'height',
+          optionValues: ['raz', 'dva', 'tri']
+        }
+      ]
+    }
+  ];
+
+  drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -54,9 +149,6 @@ export class DetailsImagesComponent implements OnInit {
         event.previousIndex,
         event.currentIndex);
     }
-  }
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.timePeriods, event.previousIndex, event.currentIndex);
   }
 
   constructor() {
