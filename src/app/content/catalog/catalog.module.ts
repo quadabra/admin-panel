@@ -11,7 +11,8 @@ import {DetailsPropertiesComponent} from './catalog-products/product-details/det
 import {DetailsImagesComponent} from './catalog-products/product-details/details-images/details-images.component';
 import {CatalogResolverService} from './catalog-products/catalog-resolver.service';
 import {ProductResolverService} from './catalog-products/product-resolver.service';
-import { DetailsOptionsComponent } from './catalog-products/product-details/details-options/details-options.component';
+import {DetailsOptionsComponent} from './catalog-products/product-details/details-options/details-options.component';
+import {DetailsImageFormComponent} from './catalog-products/product-details/details-images/details-image-form/details-image-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DetailsOptionsComponent } from './catalog-products/product-details/deta
     CatalogProductsComponent,
     ProductDetailsComponent,
     DetailsImagesComponent,
-    DetailsOptionsComponent
+    DetailsOptionsComponent,
+    DetailsImageFormComponent
   ],
   imports: [
     CommonModule,

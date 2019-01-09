@@ -11,23 +11,29 @@
             <textarea matInput placeholder="Description" [value]="dataSource.description" rows="8"></textarea>
           </mat-form-field>
         </mat-card>
+        <mat-card>
+          <div class="heading">
+            <h4>Seo</h4>
+            <span class="spacer"></span>
+            <button mat-stroked-button color="primary">Auto</button>
+          </div>
+          <div class="seo__block">
+            <mat-form-field *ngFor="let option of seoOptions">
+              <input matInput type="text" placeholder="{{option}}">
+            </mat-form-field>
+            <mat-form-field>
+              <textarea matInput placeholder="Description" [value]="dataSource.description" rows="6"></textarea>
+            </mat-form-field>
+          </div>
+        </mat-card>
       </mat-tab>
     </mat-tab-group>
     <mat-card>
-      <div class="heading">
-        <h4>Seo</h4>
-        <span class="spacer"></span>
-        <button mat-stroked-button color="primary">Auto</button>
-      </div>
-      <div class="seo__block">
-        <mat-form-field *ngFor="let option of seoOptions">
-          <input matInput type="text" placeholder="{{option}}">
-        </mat-form-field>
-        <mat-form-field>
-          <textarea matInput placeholder="Description" [value]="dataSource.description" rows="6"></textarea>
-        </mat-form-field>
-      </div>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Seo Link">
+      </mat-form-field>
     </mat-card>
+
   </div>
   <div class="description-grid__params">
 
@@ -61,8 +67,6 @@
       <mat-card>
         <div class="heading">
           <h4>Categories</h4>
-          <span class="spacer"></span>
-          <button mat-stroked-button color="primary">Auto</button>
         </div>
         <mat-form-field>
           <mat-select placeholder="Categories" [formControl]="productCategories" multiple>
@@ -70,29 +74,6 @@
           </mat-select>
         </mat-form-field>
       </mat-card>
-
-      <mat-card>
-        <h4>Time to wait</h4>
-        <div class="slider-container">
-          <span>Min  {{minSlider.value}} days</span>
-          <mat-slider
-            #minSlider
-            thumbLabel
-            min="1"
-            max="100">
-          </mat-slider>
-        </div>
-        <div class="slider-container">
-          <span>Max  {{maxSlider.value}} days</span>
-          <mat-slider
-            #maxSlider
-            thumbLabel
-            min="1"
-            max="100">
-          </mat-slider>
-        </div>
-      </mat-card>
-
     </div>
 
     <span class="spacer"></span>

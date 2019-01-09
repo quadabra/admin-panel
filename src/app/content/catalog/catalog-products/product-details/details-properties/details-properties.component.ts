@@ -11,7 +11,7 @@ export class DetailsPropertiesComponent implements OnInit {
   @Input() dataSource: IProduct;
   langs = ['En', 'Ru'];
 
-  seoOptions = ['Link', 'Title', 'Keyword'];
+  seoOptions = ['Title', 'Keyword'];
 
   textfields = [
     {value: 'weight', viewValue: 'Weight'},

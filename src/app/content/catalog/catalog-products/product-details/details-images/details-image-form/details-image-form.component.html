@@ -1,0 +1,11 @@
+<p>
+  {{dataSource.name}}
+</p>
+<div *ngFor="let option of dataSource.options">
+  <mat-form-field>
+    <mat-select placeholder="{{option.optionName}}" [formControl]="imageOptions" multiple>
+      <mat-option *ngFor="let value of option.optionValues" [value]="value">{{value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
