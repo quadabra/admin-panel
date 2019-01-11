@@ -1,0 +1,9 @@
+.image__image {
+  width: 100px;
+  height: auto;
+}
+
+.image__params {
+  margin-left: 10px;
+  margin-right: 10px;
+}
