@@ -60,8 +60,8 @@ table {
 }
 
 .example-custom-placeholder {
-  background: #ccc !important;
-  border: dotted 3px #999 !important;
+  background: #ccc;
+  border: dotted 3px #999;
   min-height: 170px;
   transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }
@@ -128,7 +128,7 @@ table {
 
 .example-box:hover > .example-box__del {
   display: block;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .example-box__del:hover {
