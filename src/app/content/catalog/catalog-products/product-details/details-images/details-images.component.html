@@ -25,24 +25,23 @@
     </div>
 
     <mat-card class="images-loader mat-elevation-z4">
+      <button class="image-add mat-elevation-z4">
+        Add Images
+      </button>
 
       <div class="example-container2">
         <div
           cdkDropList
           cdkDropListOrientation="horizontal"
           [cdkDropListData]="colors"
-          class="example-list2"
+          class="example-list"
           (cdkDropListDropped)="drop($event)">
           <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-          <div class="example-box2 mat-elevation-z2" *ngFor="let item of colors" cdkDrag>
+          <div class="example-box mat-elevation-z2" *ngFor="let item of colors" cdkDrag>
 
-            <img class="image__image" [src]="'http://img.grey-line.com/g/'+ '2e6d694c253609244e065fa03abd9011' + '?s=small'" alt="">
+            <app-details-image-form [dataSource]="item"></app-details-image-form>
           </div>
         </div>
-      </div>
-      <div class="flex">
-        <span class="spacer"></span>
-        <button mat-raised-button color="primary">Add Image</button>
       </div>
     </mat-card>
   </div>
