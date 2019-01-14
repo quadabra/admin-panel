@@ -2,13 +2,13 @@
   <div class="table-container mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
 
-      <!-- Position Column -->
+
       <ng-container matColumnDef="Position">
         <th mat-header-cell *matHeaderCellDef> No.</th>
         <td mat-cell *matCellDef="let element"> {{element.position}} </td>
       </ng-container>
 
-      <!-- Name Column -->
+
       <ng-container matColumnDef="Color">
         <th mat-header-cell *matHeaderCellDef> Color</th>
         <td mat-cell *matCellDef="let element">
@@ -17,7 +17,7 @@
         </td>
       </ng-container>
 
-      <!-- Weight Column -->
+
       <ng-container matColumnDef="Images">
         <th mat-header-cell *matHeaderCellDef> Images</th>
         <td mat-cell *matCellDef="let element">
@@ -25,8 +25,10 @@
                cdkDropListOrientation="horizontal"
                [cdkDropListData]="element.list"
                class="example-list" (cdkDropListDropped)="drop($event)">
-            <div class="example-box2 mat-elevation-z2" *ngFor="let item of element.list" cdkDrag>
+            <div class="example-box mat-elevation-z2" *ngFor="let item of element.list" cdkDrag>
+              <button class="example-box__del" mat-mini-fab color="warn"><mat-icon>clear</mat-icon></button>
               <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+
               <app-details-image-form [dataSource]="item"></app-details-image-form>
             </div>
           </div>
@@ -46,7 +48,8 @@
       (cdkDropListDropped)="drop($event)">
       <div class="example-box2 mat-elevation-z2" *ngFor="let item of colors" cdkDrag>
         <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-        <app-details-image-form [dataSource]="item"></app-details-image-form>
+
+        <img class="image__image" [src]="'http://img.grey-line.com/g/'+ '2e6d694c253609244e065fa03abd9011' + '?s=small'" alt="">
       </div>
     </div>
   </div>
