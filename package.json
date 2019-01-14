@@ -30,6 +30,7 @@
     "@angular/router": "~7.0.0",
     "@angular/service-worker": "^7.0.4",
     "@ng-toolkit/universal": "^1.1.47",
+    "@ngrx/store": "^7.0.0",
     "@nguniversal/express-engine": "~7.0.0",
     "@nguniversal/module-map-ngfactory-loader": "~7.0.0",
     "core-js": "^2.5.4",

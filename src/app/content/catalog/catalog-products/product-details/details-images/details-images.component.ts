@@ -36,29 +36,6 @@ export class DetailsImagesComponent implements OnInit {
 
   displayedColumns: string[] = ['Color', 'Images'];
 
-  timePeriods = [
-    'Bronze age',
-    'Iron age',
-    'Middle ages',
-    'Early modern period',
-    'Long nineteenth century'
-  ];
-
-  todo = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-  ];
-
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
-  ];
-
   colors = [
     {
       name: 'Color1',

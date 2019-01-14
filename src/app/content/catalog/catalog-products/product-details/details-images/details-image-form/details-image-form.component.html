@@ -1,11 +1,15 @@
-<div class="flex">
-  <img class="image__image" [src]="'http://img.grey-line.com/g/'+ '2e6d694c253609244e065fa03abd9011' + '?s=small'" alt="">
-
-  <div class="image__params">
-    <mat-form-field *ngFor="let option of dataSource.options">
-      <mat-select placeholder="{{option.optionName}}" [formControl]="imageOptions" multiple>
-        <mat-option *ngFor="let value of option.optionValues" [value]="value">{{value}}</mat-option>
-      </mat-select>
-    </mat-form-field>
+<div class="flex image__container">
+  <div>
+    <img class="image__image" [src]="'http://img.grey-line.com/g/'+ '2e6d694c253609244e065fa03abd9011' + '?s=small'" alt="">
+    <div class="flex priority__container">
+      <button class="button button__priority_first mat-elevation-z2">1</button>
+      <button class="button button__priority_second mat-elevation-z2">2</button>
+    </div>
+  </div>
+  <div class="image__params flex">
+    <div *ngFor="let param of params">
+      <p>{{param.name}}</p>
+      <button *ngFor="let value of param.values">{{value}}</button>
+    </div>
   </div>
 </div>

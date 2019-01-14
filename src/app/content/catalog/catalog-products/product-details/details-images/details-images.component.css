@@ -2,16 +2,11 @@
   display: flex;
   flex-direction: row;
   align-items: stretch;
-}
-
-table {
-  width: 100%;
+  margin-bottom: 300px;
 }
 
 .table-container {
-  height: 66vh;
-  overflow: auto;
-  width: 77vw;
+  width: 100%;
 }
 
 .options-container {
@@ -20,10 +15,10 @@ table {
 
 .example-list {
   margin: 5px;
-  width: 70vw;
+  width: 100%;
+  min-width: 90%;
   min-height: 190px;
   max-width: 100%;
-  border: solid 1px #ccc;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -68,21 +63,24 @@ table {
 
 
 .example-container2 {
-  height: 65vh;
-  width: 190px;
-  max-width: 100%;
-  margin: 0 10px;
-  vertical-align: top;
-  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 200px;
+  width: 100%;
+  margin: 10px;
 }
 
 .example-list2 {
+  margin: 0 auto;
+  width: 98%;
   border: solid 1px #ccc;
-  min-height: 300px;
   background: white;
   border-radius: 4px;
   overflow: hidden;
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
 }
 
 .example-box2 {
@@ -103,8 +101,9 @@ table {
 
 .example-box__del {
   position: absolute;
-  top: 3px;
-  left: 3px;
+  transform: scale(0.8);
+  top: -15px;
+  left: -15px;
   display: none;
   opacity: 1;
 }
@@ -162,4 +161,19 @@ table {
 .image__image {
   width: 150px;
   height: auto;
+}
+
+.images-loader {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 200px;
+  height: 250px;
+  z-index: 100 !important;
+}
+
+.color-group {
+  background-color: #FFFFFF;
+  margin: 5px 0;
+  border-radius: 4px;
 }
