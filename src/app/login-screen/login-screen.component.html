@@ -1,0 +1,34 @@
+<div>
+  <mat-card>
+    <form
+      novalidate
+      class="user-login__container"
+      (ngSubmit)="logIn()"
+      [formGroup]="loginForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Login</mat-label>
+        <input
+          matInput
+          placeholder="Enter Login"
+          formControlName="userEmail">
+        <mat-icon matSuffix>account_box</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+          formControlName="userPassword">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        title="go"
+        [disabled]="(loginForm.get('userEmail').errors || loginForm.get('userPassword').errors)">
+        Log in
+      </button>
+    </form>
+  </mat-card>
+</div>

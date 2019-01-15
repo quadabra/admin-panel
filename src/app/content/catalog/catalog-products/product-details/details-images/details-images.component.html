@@ -1,50 +1,50 @@
 <div cdkDropListGroup class="drop-list">
-  <div class="table-container">
-
-    <div class="flex color-group mat-elevation-z2" *ngFor="let color of dataSource">
-      <div>
-        <p></p>{{color.name}}
-        <img src="../../../../../../assets/img/color.png" alt="" width="50" height="50" style="display: block">
+  <div class="drop-list__container">
+    <div class="flex drop-list__group mat-elevation-z2" *ngFor="let color of dataSource">
+      <!--Photo block for each color-->
+      <div class="drop-list__group-heading">
+        <!--color name and preview image-->
+        <p class="drop-list__group-title">{{color.name}}</p>
+        <img src="../../../../../../assets/img/color.png" alt="" width="50" height="50" style="display: block; margin-bottom: 10px">
       </div>
-
+      <!--drag&drop list for images with generating options for each image-->
       <div cdkDropList
            cdkDropListOrientation="horizontal"
            [cdkDropListData]="color.list"
-           class="example-list" (cdkDropListDropped)="drop($event)">
-
-        <div class="example-box mat-elevation-z2" *ngFor="let item of color.list" cdkDrag>
-          <button class="example-box__del" mat-mini-fab color="warn">
+           class="drop-list__images-list" (cdkDropListDropped)="drop($event)">
+        <div class="drop-list__images-box mat-elevation-z2" *ngFor="let item of color.list" cdkDrag>
+          <button class="drop-list__images-box-del" mat-mini-fab color="warn">
             <mat-icon>clear</mat-icon>
           </button>
-
-
+          <!--image details form component-->
           <app-details-image-form [dataSource]="item"></app-details-image-form>
         </div>
       </div>
-
     </div>
-
+    <!--image loader-->
     <mat-card class="images-loader mat-elevation-z4">
+      <!--new images loader will behere-->
       <button class="image-add mat-elevation-z4" matTooltip="Drop images here">
         Add Images
       </button>
-
+      <!--unsorted images list-->
       <div class="example-container2">
         <div
           cdkDropList
           cdkDropListOrientation="horizontal"
           [cdkDropListData]="colors"
-          class="example-list"
+          class="drop-list__images-list"
           (cdkDropListDropped)="drop($event)">
-          <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-          <div class="example-box mat-elevation-z2" *ngFor="let item of colors" cdkDrag>
-
+          <div class="drop-list__custom-placeholder" *cdkDragPlaceholder></div>
+          <div class="drop-list__images-box mat-elevation-z2" *ngFor="let item of colors" cdkDrag>
+            <button class="drop-list__images-box-del" mat-mini-fab color="warn">
+              <mat-icon>clear</mat-icon>
+            </button>
             <app-details-image-form [dataSource]="item"></app-details-image-form>
           </div>
         </div>
       </div>
     </mat-card>
   </div>
-
 </div>
 

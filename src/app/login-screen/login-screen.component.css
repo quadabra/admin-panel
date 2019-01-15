@@ -1,0 +1,21 @@
+div {
+  width: 100vw;
+  height: 100vh;
+  background-color: #121213;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-card {
+  margin: 0 auto 150px auto;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+.user-login__container {
+  display: flex;
+  flex-direction: column;
+}
