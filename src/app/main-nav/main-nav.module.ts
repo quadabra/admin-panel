@@ -6,6 +6,7 @@ import {MaterialModule} from '../material.module';
 import {MainNavComponent} from './main-nav.component';
 import {NavMenuComponent} from './nav-menu/nav-menu.component';
 import { NavUserComponent } from './nav-user/nav-user.component';
+import { NavHeaderComponent } from './nav-header/nav-header.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { NavUserComponent } from './nav-user/nav-user.component';
   declarations: [
     MainNavComponent,
     NavMenuComponent,
-    NavUserComponent
+    NavUserComponent,
+    NavHeaderComponent
   ],
   providers: [],
   exports: [MainNavComponent]

@@ -1,0 +1,17 @@
+:host {
+  width: 100%;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.heading-title {
+  margin: 0 0 0 10px;
+}
+
+button {
+  margin: 0 5px;
+}

@@ -22,10 +22,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>admin-panel</span>
-      <span class="spacer"></span>
-      <!--меню пользователя-->
-      <app-nav-user></app-nav-user>
+      <app-nav-header></app-nav-header>
     </mat-toolbar>
     <ng-content></ng-content>
   </mat-sidenav-content>

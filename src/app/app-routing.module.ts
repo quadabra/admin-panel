@@ -13,7 +13,7 @@ const routes: Routes = [
     path: 'index',
     component: WelcomeComponent,
     data: {
-      breadcrumb: 'index'
+      displayName: 'index'
     }
   },
   {
@@ -21,7 +21,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: WelcomeComponent
+        component: WelcomeComponent,
+        data: {
+          displayName: 'Admin-panel'
+        },
       },
       {
         path: 'products',
@@ -30,11 +33,13 @@ const routes: Routes = [
             path: '',
             component: CatalogProductsComponent,
             resolve: {productList: CatalogResolverService},
+            data: {displayName: 'Products'},
           },
           {
             path: ':id',
             component: ProductDetailsComponent,
             resolve: {product: ProductResolverService},
+            data: {displayName: 'Products'}
           }
         ],
         data: {
