@@ -1,15 +1,17 @@
-<mat-tab-group>
-  <!--descrition section now a component-->
-  <mat-tab label="description">
+<form [formGroup]="parentForm">
+  <mat-tab-group>
+    <!--descrition section now a component-->
+    <mat-tab label="description">
 
-    <app-details-properties [dataSource]="dataSource"></app-details-properties>
+      <app-details-properties [dataSource]="dataSource" [formGroup]="parentForm"></app-details-properties>
 
-  </mat-tab>
-  <mat-tab label="options">
-    <!--options component zomg -->
-    <app-details-options [dataSource]="dataSource"></app-details-options>
-  </mat-tab>
-  <mat-tab label="images">
-    <app-details-images></app-details-images>
-  </mat-tab>
-</mat-tab-group>
+    </mat-tab>
+    <mat-tab label="options">
+      <!--options component zomg -->
+      <app-details-options [dataSource]="dataSource" [formGroup]="parentForm"></app-details-options>
+    </mat-tab>
+    <mat-tab label="images">
+      <app-details-images></app-details-images>
+    </mat-tab>
+  </mat-tab-group>
+</form>

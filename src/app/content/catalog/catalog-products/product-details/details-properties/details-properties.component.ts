@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IProduct} from '../../../../../_model/interface/product';
-import {FormControl} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-details-properties',
@@ -9,6 +9,7 @@ import {FormControl} from '@angular/forms';
 })
 export class DetailsPropertiesComponent implements OnInit {
   @Input() dataSource: IProduct;
+  @Input() parentForm: FormGroup;
   langs = ['En', 'Ru'];
 
   seoOptions = ['Title', 'Keyword'];

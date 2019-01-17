@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {IProduct} from '../../../../_model/interface/product';
-import {FormControl} from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-product-details',
@@ -10,13 +10,18 @@ import {FormControl} from '@angular/forms';
 })
 export class ProductDetailsComponent implements OnInit {
   dataSource: IProduct;
+  parentForm: FormGroup;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private fb: FormBuilder) {
   }
 
   ngOnInit() {
     this.dataSource = this.route.snapshot.data['product'];
-    // this.route.data.subscribe(data => this.dataSource = data['product']);
+    this.parentForm = this.fb.group({
+      name: ['', Validators.required]
+    });
+    this.parentForm.valueChanges.subscribe(newVal => console.log(newVal));
   }
 
 }
