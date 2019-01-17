@@ -1,27 +1,41 @@
 .example-container {
   display: flex;
   flex-direction: column;
-  max-height: 500px;
   min-width: 300px;
-}
-
-.mat-table {
-  overflow: auto;
-  max-height: 500px;
 }
 
 .element-row {
   position: relative;
 }
 
-.element-row:not(.expanded) {
-  cursor: pointer;
+.element-row.expanded {
+  border-bottom-color: transparent;
 }
 
-.element-row:not(.expanded):hover {
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.heading-title {
+  margin: 0 0 0 10px;
+}
+
+a, button {
+  margin: 0 5px;
+}
+
+.actions_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.element-row:hover {
   background: #f5f5f5;
 }
 
-.element-row.expanded {
-  border-bottom-color: transparent;
+.control__button {
+  margin: 10px;
 }
