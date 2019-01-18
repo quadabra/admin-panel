@@ -7,6 +7,7 @@ import {CatalogOptionsComponent} from './content/catalog/catalog-options/catalog
 import {CatalogResolverService} from './content/catalog/catalog-products/catalog-resolver.service';
 import {ProductDetailsComponent} from './content/catalog/catalog-products/product-details/product-details.component';
 import {ProductResolverService} from './content/catalog/catalog-products/product-resolver.service';
+import {CatalogOptionsEditComponent} from './content/catalog/catalog-options/catalog-options-edit/catalog-options-edit.component';
 
 const routes: Routes = [
   {
@@ -57,11 +58,19 @@ const routes: Routes = [
       },
       {
         path: 'options',
-        component: CatalogOptionsComponent,
-        data: {
-          displayName: 'Options',
-          iconName: 'settings'
-        }
+        children: [
+          {
+            path: '',
+            component: CatalogOptionsComponent,
+            data: {
+              displayName: 'Options'
+            }
+          },
+          {
+            path: 'edit',
+            component: CatalogOptionsEditComponent,
+          }
+        ]
       },
     ],
     data: {

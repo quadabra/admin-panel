@@ -1,0 +1,49 @@
+.options-editor {
+
+}
+
+.options-editor__input-group {
+  margin: 0 20px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.options-editor__input-stroke {
+  margin-left: 50px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.options-editor__input-group_short {
+  width: 20%;
+}
+
+.options-editor__props {
+
+}
+
+.options-editor__values {
+  margin-top: 10px;
+}
+
+.options-editor__content {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.options-editor__content-values {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  margin: 0 10px 0 0;
+}
+
+.heading {
+  margin-bottom: 10px;
+}

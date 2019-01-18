@@ -13,6 +13,7 @@ import {CatalogResolverService} from './catalog-products/catalog-resolver.servic
 import {ProductResolverService} from './catalog-products/product-resolver.service';
 import {DetailsOptionsComponent} from './catalog-products/product-details/details-options/details-options.component';
 import {DetailsImageFormComponent} from './catalog-products/product-details/details-images/details-image-form/details-image-form.component';
+import { CatalogOptionsEditComponent } from './catalog-options/catalog-options-edit/catalog-options-edit.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {DetailsImageFormComponent} from './catalog-products/product-details/deta
     ProductDetailsComponent,
     DetailsImagesComponent,
     DetailsOptionsComponent,
-    DetailsImageFormComponent
+    DetailsImageFormComponent,
+    CatalogOptionsEditComponent
   ],
   imports: [
     CommonModule,

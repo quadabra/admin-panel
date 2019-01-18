@@ -11,3 +11,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .spacer {
   flex: 1 1 auto;
 }
+
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.heading-title {
+  margin: 0 0 0 10px;
+}
