@@ -7,7 +7,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
   styleUrls: ['./catalog-options-edit.component.css']
 })
 export class CatalogOptionsEditComponent implements OnInit {
-  hide: true;
+  hide = false;
   optionForm: FormGroup;
   selected = 'Color';
   optionTypes = ['Color', 'Size', 'Height', 'Special'];
