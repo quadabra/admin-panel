@@ -3,9 +3,12 @@
 }
 
 table {
-  width: 100%;
+  width: 95%;
+  margin: 20px auto 20px auto;
 }
 
 th {
-  background-color: #F5F5F5;
+  /*background-color: #F5F5F5;*/
+  font-size: 15px;
+  font-weight: 600;
 }

@@ -3,11 +3,14 @@
 }
 
 table {
-  width: 100%;
+  width: 90%;
+  margin: 20px auto 30px auto;
 }
 
 th {
-  background-color: #F4F4F4;
+  /*background-color: #F4F4F4;*/
+  font-size: 16px;
+  font-weight: 600;
 }
 
 tr.example-detail-row {
@@ -20,6 +23,11 @@ tr.example-element-row:not(.example-expanded-row):hover {
 
 tr.example-element-row:not(.example-expanded-row):active {
   background: #efefef;
+}
+
+.example-expanded-row {
+  background-color: #cccccc;
+  cursor: pointer;
 }
 
 .example-element-row td {
