@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-catalog-options-edit',
@@ -18,8 +18,9 @@ export class CatalogOptionsEditComponent implements OnInit {
 
   ngOnInit() {
     this.optionForm = this.fb.group({
-      name: ['', Validators.required]
+      optionName: ['', Validators.required]
     });
   }
 
+  optionSave(): void {}
 }

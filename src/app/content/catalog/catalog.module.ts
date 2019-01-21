@@ -13,7 +13,9 @@ import {CatalogResolverService} from './catalog-products/catalog-resolver.servic
 import {ProductResolverService} from './catalog-products/product-resolver.service';
 import {DetailsOptionsComponent} from './catalog-products/product-details/details-options/details-options.component';
 import {DetailsImageFormComponent} from './catalog-products/product-details/details-images/details-image-form/details-image-form.component';
-import { CatalogOptionsEditComponent } from './catalog-options/catalog-options-edit/catalog-options-edit.component';
+import {CatalogOptionsEditComponent} from './catalog-options/catalog-options-edit/catalog-options-edit.component';
+import { ProductItemsComponent } from './catalog-products/product-items/product-items.component';
+import { ItemsWhInfoComponent } from './catalog-products/product-items/items-whinfo/items-wh-info.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { CatalogOptionsEditComponent } from './catalog-options/catalog-options-e
     DetailsImagesComponent,
     DetailsOptionsComponent,
     DetailsImageFormComponent,
-    CatalogOptionsEditComponent
+    CatalogOptionsEditComponent,
+    ProductItemsComponent,
+    ItemsWhInfoComponent
   ],
   imports: [
     CommonModule,
