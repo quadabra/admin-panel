@@ -14,8 +14,10 @@ import {ProductResolverService} from './catalog-products/product-resolver.servic
 import {DetailsOptionsComponent} from './catalog-products/product-details/details-options/details-options.component';
 import {DetailsImageFormComponent} from './catalog-products/product-details/details-images/details-image-form/details-image-form.component';
 import {CatalogOptionsEditComponent} from './catalog-options/catalog-options-edit/catalog-options-edit.component';
-import { ProductItemsComponent } from './catalog-products/product-items/product-items.component';
-import { ItemsWhInfoComponent } from './catalog-products/product-items/items-whinfo/items-wh-info.component';
+import {ProductItemsComponent} from './catalog-products/product-items/product-items.component';
+import {ItemsWhInfoComponent} from './catalog-products/product-items/items-whinfo/items-wh-info.component';
+import {ManufacturerEditComponent} from './catalog-brands/manufacturer-edit/manufacturer-edit.component';
+import {BrandEditComponent} from './catalog-brands/brand-edit/brand-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ItemsWhInfoComponent } from './catalog-products/product-items/items-whi
     DetailsImageFormComponent,
     CatalogOptionsEditComponent,
     ProductItemsComponent,
-    ItemsWhInfoComponent
+    ItemsWhInfoComponent,
+    ManufacturerEditComponent,
+    BrandEditComponent
   ],
   imports: [
     CommonModule,

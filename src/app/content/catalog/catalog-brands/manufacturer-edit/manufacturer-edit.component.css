@@ -1,0 +1,25 @@
+.manufacturer-edit__header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.manufacturer-edit__header-input {
+  width: 30%;
+}
+
+.manufacturer-edit__form-item {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.mat-form-field-wrapper {
+  padding: 0;
+}
+
+.manufacturer-edit__input {
+  width: 100%;
+}

@@ -1,0 +1,34 @@
+<form [formGroup]="manufacturerForm" class="manufacturer-edit" autocomplete="off">
+  <mat-card>
+    <div class="manufacturer-edit__header-container">
+      <mat-form-field
+        appearance="outline"
+        class="manufacturer-edit__header-input">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter name" value="{{dataSource.name}}">
+      </mat-form-field>
+      <mat-form-field
+        appearance="outline"
+        class="manufacturer-edit__header-input">
+        <mat-label>Added value</mat-label>
+        <input matInput placeholder="Enter name" value="{{dataSource.addedValue}}" type="number">
+      </mat-form-field>
+      <mat-form-field
+        appearance="outline"
+        class="manufacturer-edit__header-input">
+        <mat-label>Color</mat-label>
+        <input id="zzd" matInput placeholder="Enter name" value="{{dataSource.addedValue}}" type="color" formControlName="bgColor">
+      </mat-form-field>
+    </div>
+    <div class="manufacturer-edit__form">
+      <div *ngFor="let item of dataSource.info" class="manufacturer-edit__form-item">
+          <mat-form-field
+            appearance="outline"
+            class="manufacturer-edit__input">
+            <mat-label>{{item.name}}</mat-label>
+            <input matInput placeholder="Enter name" value="{{item.value}}">
+          </mat-form-field>
+      </div>
+    </div>
+  </mat-card>
+</form>

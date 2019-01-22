@@ -8,6 +8,8 @@ import {CatalogResolverService} from './content/catalog/catalog-products/catalog
 import {ProductDetailsComponent} from './content/catalog/catalog-products/product-details/product-details.component';
 import {ProductResolverService} from './content/catalog/catalog-products/product-resolver.service';
 import {CatalogOptionsEditComponent} from './content/catalog/catalog-options/catalog-options-edit/catalog-options-edit.component';
+import {ManufacturerEditComponent} from './content/catalog/catalog-brands/manufacturer-edit/manufacturer-edit.component';
+import {BrandEditComponent} from './content/catalog/catalog-brands/brand-edit/brand-edit.component';
 
 const routes: Routes = [
   {
@@ -50,11 +52,20 @@ const routes: Routes = [
       },
       {
         path: 'brands',
-        component: CatalogBrandsComponent,
-        data: {
-          displayName: 'Brands',
-          iconName: 'star_border'
-        }
+        children: [
+          {
+            path: '',
+            component: CatalogBrandsComponent,
+          },
+          {
+            path: 'edit',
+            component: ManufacturerEditComponent,
+          },
+          {
+            path: 'brand',
+            component: BrandEditComponent,
+          }
+        ]
       },
       {
         path: 'options',

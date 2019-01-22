@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-catalog-brands',
@@ -6,8 +6,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./catalog-brands.component.css']
 })
 export class CatalogBrandsComponent implements OnInit {
+  dataSource = [
+    {
+      name: 'SSO',
+      overprice: 70,
+      brands: [
+        {
+          name: 'SSO'
+        },
+        {
+          name: 'huita'
+        },
+        {
+          name: 'azaza'
+        }
+      ]
+    },
+    {
+      name: 'Anatomiya',
+      overprice: 50,
+      brands: [
+        {
+          name: 'ANA'
+        }
+      ]
+    },
+    {
+      name: 'Techincom',
+      overprice: 30,
+      brands: [
+        {
+          name: 'Techincome'
+        }
+      ]
+    }
+  ];
 
-  constructor() { }
+  brandList = ['ANA', 'SSO', 'Techincome'];
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
