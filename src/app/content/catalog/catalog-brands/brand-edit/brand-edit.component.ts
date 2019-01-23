@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-brand-edit',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./brand-edit.component.css']
 })
 export class BrandEditComponent implements OnInit {
+  langs = ['En', 'Ru'];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

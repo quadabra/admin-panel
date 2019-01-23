@@ -1,7 +1,61 @@
-<div>
+<form class="brand-form">
   <mat-card>
-    <div>
-
+    <div class="brand-container">
+      <div class="brand-description">
+        <mat-tab-group>
+          <mat-tab
+            *ngFor="let lang of langs"
+            label="{{lang}}">
+            <div class="brand-lang__tab-container">
+              <mat-form-field
+                appearance="outline"
+                class="example-full-width">
+                <mat-label>Name of brand</mat-label>
+                <input matInput placeholder="Enter name" value="">
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="description__text-input">
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Description" [value]="" rows="10"></textarea>
+              </mat-form-field>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="brand-options">
+        <div class="brand-options__image-container">
+          <div class="heading">
+            <h5 class="heading-title">Logo</h5>
+          </div>
+          <div class="brand-options__image">
+            <input type="file" placeholder="image here">
+          </div>
+        </div>
+        <div class="brand-options__props-container">
+          <div class="heading">
+            <h5 class="heading-title">Properties</h5>
+          </div>
+          <div class="brand-options__props">
+            <mat-form-field
+              appearance="outline"
+              class="">
+              <mat-label>Priority</mat-label>
+              <input matInput placeholder="Priority" value="" type="number">
+            </mat-form-field>
+            <mat-form-field
+              appearance="outline"
+              class="">
+              <mat-label>Power of priority</mat-label>
+              <input matInput placeholder="Enter power" value="">
+            </mat-form-field>
+            <mat-form-field
+              appearance="outline"
+              class="">
+              <mat-label>Seo keyword</mat-label>
+              <input matInput placeholder="Enter word" value="">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
     </div>
   </mat-card>
-</div>
+</form>
