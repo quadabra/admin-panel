@@ -10,6 +10,7 @@ import {ProductResolverService} from './content/catalog/catalog-products/product
 import {CatalogOptionsEditComponent} from './content/catalog/catalog-options/catalog-options-edit/catalog-options-edit.component';
 import {ManufacturerEditComponent} from './content/catalog/catalog-brands/manufacturer-edit/manufacturer-edit.component';
 import {BrandEditComponent} from './content/catalog/catalog-brands/brand-edit/brand-edit.component';
+import {CatalogDeliveryComponent} from './content/catalog/catalog-delivery/catalog-delivery.component';
 
 const routes: Routes = [
   {
@@ -83,6 +84,15 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: 'delivery',
+        children: [
+          {
+            path: '',
+            component: CatalogDeliveryComponent,
+          }
+        ]
+      }
     ],
     data: {
       displayName: 'Catalog',

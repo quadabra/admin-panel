@@ -18,66 +18,71 @@ export class NavList {
         {
           displayName: 'Options',
           iconName: 'settings',
-          route: '/options'
+          route: 'options'
+        },
+        {
+          displayName: 'Delivery',
+          iconName: 'flight',
+          route: 'delivery'
         }
       ]
     },
     {
-      displayName: 'Delivery',
+      displayName: 'Warehouse',
       iconName: 'send',
       route: 'catalog',
       children: [
         {
-          displayName: 'Products',
+          displayName: 'Store',
           iconName: 'list',
-          route: '/products'
+          route: 'store'
         },
         {
-          displayName: 'Brands',
+          displayName: 'Orders',
           iconName: 'star_border',
-          route: '/brands'
+          route: 'orders'
         },
         {
-          displayName: 'Options',
+          displayName: 'Incoming',
           iconName: 'settings',
-          route: '/options'
+          route: 'incoming'
         }
       ]
     },
     {
-      displayName: 'Store',
-      iconName: 'home',
-      route: 'catalog',
-      children: [
-        {
-          displayName: 'Items',
-          iconName: 'list',
-          route: '/products'
-        },
-        {
-          displayName: 'Suppliers',
-          iconName: 'star_border',
-          route: '/brands'
-        },
-        {
-          displayName: 'Options',
-          iconName: 'settings',
-          route: '/options'
-        }
-      ]
-    },
-    {
-      displayName: 'Orders',
+      displayName: 'Grey-shop',
       iconName: 'shopping_cart',
       route: 'catalog',
       children: [
         {
-          displayName: 'Items',
+          displayName: 'Main',
+          iconName: 'list',
+          route: 'products'
+        },
+        {
+          displayName: 'News',
+          iconName: 'star_border',
+          route: '/brands'
+        },
+        {
+          displayName: 'Options',
+          iconName: 'settings',
+          route: '/options'
+        }
+      ]
+    },
+    {
+      displayName: 'Administration',
+      iconName: 'home',
+      route: 'catalog',
+      children: [
+        {
+          displayName: 'Users',
           iconName: 'list',
           route: '/products'
         },
         {
-          displayName: 'Suppliers',
+          displayName: 'Service',
           iconName: 'star_border',
           route: '/brands'
         },
