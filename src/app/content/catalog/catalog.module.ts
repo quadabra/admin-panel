@@ -19,6 +19,7 @@ import {ItemsWhInfoComponent} from './catalog-products/product-items/items-whinf
 import {ManufacturerEditComponent} from './catalog-brands/manufacturer-edit/manufacturer-edit.component';
 import {BrandEditComponent} from './catalog-brands/brand-edit/brand-edit.component';
 import {CatalogDeliveryComponent} from './catalog-delivery/catalog-delivery.component';
+import {CatalogDeliveryEditComponent} from './catalog-delivery/catalog-delivery-edit/catalog-delivery-edit.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {CatalogDeliveryComponent} from './catalog-delivery/catalog-delivery.comp
     ItemsWhInfoComponent,
     ManufacturerEditComponent,
     BrandEditComponent,
-    CatalogDeliveryComponent
+    CatalogDeliveryComponent,
+    CatalogDeliveryEditComponent
   ],
   imports: [
     CommonModule,

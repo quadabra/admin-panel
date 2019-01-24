@@ -11,6 +11,7 @@ import {CatalogOptionsEditComponent} from './content/catalog/catalog-options/cat
 import {ManufacturerEditComponent} from './content/catalog/catalog-brands/manufacturer-edit/manufacturer-edit.component';
 import {BrandEditComponent} from './content/catalog/catalog-brands/brand-edit/brand-edit.component';
 import {CatalogDeliveryComponent} from './content/catalog/catalog-delivery/catalog-delivery.component';
+import {CatalogDeliveryEditComponent} from './content/catalog/catalog-delivery/catalog-delivery-edit/catalog-delivery-edit.component';
 
 const routes: Routes = [
   {
@@ -90,7 +91,11 @@ const routes: Routes = [
           {
             path: '',
             component: CatalogDeliveryComponent,
-          }
+          },
+          {
+            path: 'edit',
+            component: CatalogDeliveryEditComponent,
+          },
         ]
       }
     ],

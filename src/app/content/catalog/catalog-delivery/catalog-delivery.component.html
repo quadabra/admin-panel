@@ -10,12 +10,31 @@
       </a>
     </div>
   </mat-card>
-  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let movie of movies" cdkDrag>
+  <div
+    cdkDropList
+    class="delivery-info mat-elevation-z4"
+    (cdkDropListDropped)="drop($event)">
+    <div
+      class="delivery-info__box"
+      [ngClass]="[!delivery.isEnabled ? 'delivery-info__box_disabled' : '']"
+      *ngFor="let delivery of deliveryTypes; let i = index"
+      cdkDrag>
       <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-      <div>
-      {{movie}}
-        <a mat-raised-button color="accent">
+      <div class="delivery-info__container">
+        <div class="delivery-info__details">
+          <div class="delivery-info__image">image</div>
+          <div class="delivery-info__status-container">
+            <h4>{{delivery.name+': ' + (i+1)}} </h4>
+            <p class="delivery-info__status">
+              Status:
+              <span [ngClass]="[delivery.isEnabled ? 'delivery-info__status_enabled' : 'delivery-info__status_disabled']">
+                {{delivery.isEnabled ? 'Enabled' : 'Disabled'}}
+              </span>
+            </p>
+          </div>
+        </div>
+        <span class="spacer"></span>
+        <a mat-raised-button color="accent" [routerLink]="['./edit']">
           <mat-icon>edit</mat-icon>
         </a>
       </div>

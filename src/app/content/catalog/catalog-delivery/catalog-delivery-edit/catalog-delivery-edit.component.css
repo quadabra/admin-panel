@@ -1,0 +1,51 @@
+.delivery-edit {
+
+}
+
+.delivery-edit__container {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.delivery-edit__description {
+  width: 32%;
+}
+
+.full-width {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.delivery-edit__image-container {
+  width: 32%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5F5F5;
+}
+
+.delivery-edit__image {
+  width: 300px;
+  height: 300px;
+}
+
+.delivery-edit__options {
+  width: 32%;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}

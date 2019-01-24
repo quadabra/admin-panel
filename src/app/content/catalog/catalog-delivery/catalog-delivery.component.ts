@@ -7,15 +7,27 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   styleUrls: ['./catalog-delivery.component.css']
 })
 export class CatalogDeliveryComponent implements OnInit {
-  movies = [
-    'Episode I - The Phantom Menace',
-    'Episode II - Attack of the Clones',
-    'Episode III - Revenge of the Sith',
-    'Episode IV - A New Hope',
-    'Episode V - The Empire Strikes Back',
-    'Episode VI - Return of the Jedi',
-    'Episode VII - The Force Awakens',
-    'Episode VIII - The Last Jedi'
+  deliveryTypes = [
+    {
+      name: 'UPS',
+      isEnabled: true
+    },
+    {
+      name: 'EMS',
+      isEnabled: false
+    },
+    {
+      name: 'Go Postal',
+      isEnabled: true
+    },
+    {
+      name: 'vzhopy',
+      isEnabled: false
+    },
+    {
+      name: 'slow pochta',
+      isEnabled: false
+    },
   ];
 
   constructor() {
@@ -25,6 +37,6 @@ export class CatalogDeliveryComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.deliveryTypes, event.previousIndex, event.currentIndex);
   }
 }
