@@ -36,6 +36,10 @@ export class CatalogDeliveryComponent implements OnInit {
   ngOnInit() {
   }
 
+  switch(i): void {
+    this.deliveryTypes[i].isEnabled = !this.deliveryTypes[i].isEnabled;
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.deliveryTypes, event.previousIndex, event.currentIndex);
   }

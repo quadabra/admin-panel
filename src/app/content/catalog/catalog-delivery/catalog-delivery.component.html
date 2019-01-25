@@ -34,6 +34,9 @@
           </div>
         </div>
         <span class="spacer"></span>
+        <button mat-raised-button (click)="switch(i)" color="warn">
+          <mat-icon>{{delivery.isEnabled ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </button>
         <a mat-raised-button color="accent" [routerLink]="['./edit']">
           <mat-icon>edit</mat-icon>
         </a>
