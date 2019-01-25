@@ -44,4 +44,75 @@
       </div>
     </div>
   </mat-card>
+  <div class="delivery-zones">
+    <mat-card class="delivery-zones__heading">
+      <div class="heading">
+        <h3 class="heading-title">Zones</h3>
+        <span class="spacer"></span>
+        <button mat-raised-button color="accent">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+    <div class="delivery-zones__container">
+      <mat-card class="mat-elevation-z4" *ngFor="let zone of zones; let i = index">
+        <div class="delivery-zones__zone-container">
+          <div class="heading">
+            <h4 class="heading">Zone: {{i + 1}}</h4>
+            <span class="spacer"></span>
+            <button mat-raised-button color="warn">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+          <div>
+            <div *ngFor="let country of zone.country_list" class="zone__country-name">
+              <span>{{country}}</span>
+              <span class="spacer"></span>
+              <button class="zone__country-del" mat-mini-fab color="warn">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+            <div class="zone__country-name">
+              <span>New</span>
+              <span class="spacer"></span>
+              <button class="zone__country-del" mat-mini-fab color="accent">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div class="prices-table">
+            <table mat-table [dataSource]="zone.prices">
+
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Weight</th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-form-field class="zone-form__field">
+                    <input matInput type="text" value="{{element.weight}}">
+                  </mat-form-field>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="cost">
+                <th mat-header-cell *matHeaderCellDef> Cost</th>
+                <td mat-cell *matCellDef="let element">
+                  <mat-form-field class="zone-form__field">
+                    <input matInput type="text" value="{{element.cost}}">
+                  </mat-form-field>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+          </div>
+          <div class="zone-footer">
+            <span class="spacer"></span>
+            <button mat-raised-button color="accent">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
 </form>
