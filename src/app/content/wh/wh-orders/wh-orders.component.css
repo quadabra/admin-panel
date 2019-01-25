@@ -1,0 +1,35 @@
+.orders-filter__datepickers {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.orders-filter__datepicker {
+  width: 25%;
+  min-width: 200px;
+  margin-right: 20px;
+}
+
+.orders-filter__datepicker-btn {
+  margin-left: 10px;
+}
+
+.orders-list {
+  margin-top: 20px;
+}
+
+.orders-grid {
+  list-style: none;
+  padding: 5px;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+}
+
+.orders-grid__card {
+  padding-left: 10px;
+  min-width: 400px;
+  min-height: 100px;
+}

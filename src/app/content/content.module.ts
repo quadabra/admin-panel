@@ -4,6 +4,7 @@ import {RouterModule} from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 
 import {CatalogModule} from './catalog/catalog.module';
+import {WhModule} from './wh/wh.module';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,12 @@ import {CatalogModule} from './catalog/catalog.module';
   imports: [
     CommonModule,
     RouterModule,
+    WhModule,
   ],
   exports: [
     WelcomeComponent,
-    CatalogModule
+    CatalogModule,
+    WhModule,
   ],
 })
 export class ContentModule {

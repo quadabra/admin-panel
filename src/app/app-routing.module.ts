@@ -12,6 +12,7 @@ import {ManufacturerEditComponent} from './content/catalog/catalog-brands/manufa
 import {BrandEditComponent} from './content/catalog/catalog-brands/brand-edit/brand-edit.component';
 import {CatalogDeliveryComponent} from './content/catalog/catalog-delivery/catalog-delivery.component';
 import {CatalogDeliveryEditComponent} from './content/catalog/catalog-delivery/catalog-delivery-edit/catalog-delivery-edit.component';
+import {WhOrdersComponent} from './content/wh/wh-orders/wh-orders.component';
 
 const routes: Routes = [
   {
@@ -103,6 +104,19 @@ const routes: Routes = [
       displayName: 'Catalog',
       iconName: 'reorder'
     }
+  },
+  {
+    path: 'warehouse',
+    children: [
+      {
+        path: '',
+        component: WelcomeComponent,
+      },
+      {
+        path: 'orders',
+        component: WhOrdersComponent
+      }
+    ]
   },
   {path: '', redirectTo: 'index', pathMatch: 'full'},
   {path: '**', component: WelcomeComponent},

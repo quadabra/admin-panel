@@ -30,7 +30,7 @@ export class NavList {
     {
       displayName: 'Warehouse',
       iconName: 'send',
-      route: 'catalog',
+      route: 'warehouse',
       children: [
         {
           displayName: 'Store',

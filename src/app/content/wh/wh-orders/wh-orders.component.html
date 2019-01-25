@@ -1,0 +1,37 @@
+<div>
+  <mat-card class="orders-filter">
+    <div class="orders-filter__datepickers">
+      <mat-form-field class="orders-filter__datepicker" appearance="outline">
+        <mat-label>Start date</mat-label>
+        <input matInput [matDatepicker]="pickerStart" placeholder="Choose a start date">
+        <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="orders-filter__datepicker" appearance="outline">
+        <mat-label>End date</mat-label>
+        <input matInput [matDatepicker]="pickerEnd" placeholder="Choose a end date">
+        <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
+      <span class="spacer"></span>
+      <button mat-raised-button color="primary" class="orders-filter__datepicker-btn">Today</button>
+      <button mat-raised-button color="warn" class="orders-filter__datepicker-btn">Clear</button>
+    </div>
+  </mat-card>
+  <mat-card class="orders-list">
+    <mat-tab-group>
+      <mat-tab *ngFor="let tab of tabs" label="{{tab}}">
+        <ul class="orders-grid">
+          <li *ngFor="let order of orders; let i = index;"
+            class="orders-grid__card mat-elevation-z4">
+            <div>
+              <p>{{order.id}}</p>
+              <p>{{order.user_name}}</p>
+              <p>{{order.shop}}</p>
+            </div>
+          </li>
+        </ul>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
