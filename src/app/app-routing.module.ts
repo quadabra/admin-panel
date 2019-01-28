@@ -13,6 +13,8 @@ import {BrandEditComponent} from './content/catalog/catalog-brands/brand-edit/br
 import {CatalogDeliveryComponent} from './content/catalog/catalog-delivery/catalog-delivery.component';
 import {CatalogDeliveryEditComponent} from './content/catalog/catalog-delivery/catalog-delivery-edit/catalog-delivery-edit.component';
 import {WhOrdersComponent} from './content/wh/wh-orders/wh-orders.component';
+import {WhIncomingComponent} from './content/wh/wh-incoming/wh-incoming.component';
+import {WhIncomingEditComponent} from './content/wh/wh-incoming/wh-incoming-edit/wh-incoming-edit.component';
 
 const routes: Routes = [
   {
@@ -114,8 +116,21 @@ const routes: Routes = [
       },
       {
         path: 'orders',
-        component: WhOrdersComponent
-      }
+        component: WhOrdersComponent,
+      },
+      {
+        path: 'incoming',
+        children: [
+          {
+            path: '',
+            component: WhIncomingComponent,
+          },
+          {
+            path: 'edit',
+            component: WhIncomingEditComponent,
+          }
+        ]
+      },
     ]
   },
   {path: '', redirectTo: 'index', pathMatch: 'full'},
