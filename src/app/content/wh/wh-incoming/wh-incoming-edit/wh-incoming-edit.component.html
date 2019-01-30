@@ -5,8 +5,9 @@
     </div>
   </mat-card>
   <div class="invoice-form">
-    <form class="invoice-form__form" autocomplete="off">
-      <mat-card class="invoice-form__form-container">
+    <mat-card class="invoice-form__form-container">
+      <form class="invoice-form__form" autocomplete="off">
+
         <mat-form-field class="invoice-form__input" appearance="outline">
           <mat-label>Invoice number</mat-label>
           <input matInput type="text" placeholder="Enter number">
@@ -15,6 +16,8 @@
           <mat-label>Comment</mat-label>
           <input matInput type="text" placeholder="Enter comment">
         </mat-form-field>
+      </form>
+      <form action="" class="invoice-form__form">
 
         <mat-form-field class="invoice-form__form-input" appearance="outline">
           <mat-label>Manufacturer</mat-label>
@@ -36,10 +39,11 @@
         </mat-form-field>
         <div class="flex">
           <span class="spacer"></span>
-        <button mat-raised-button color="accent">Add</button>
+          <button mat-raised-button color="accent">Add</button>
         </div>
-      </mat-card>
-    </form>
+
+      </form>
+    </mat-card>
 
     <div class="invoice-form__table">
       <mat-card>
