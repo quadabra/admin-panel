@@ -15,6 +15,7 @@ import {CatalogDeliveryEditComponent} from './content/catalog/catalog-delivery/c
 import {WhOrdersComponent} from './content/wh/wh-orders/wh-orders.component';
 import {WhIncomingComponent} from './content/wh/wh-incoming/wh-incoming.component';
 import {WhIncomingEditComponent} from './content/wh/wh-incoming/wh-incoming-edit/wh-incoming-edit.component';
+import {WhOrderDetailsComponent} from './content/wh/wh-orders/wh-order-details/wh-order-details.component';
 
 const routes: Routes = [
   {
@@ -116,7 +117,16 @@ const routes: Routes = [
       },
       {
         path: 'orders',
-        component: WhOrdersComponent,
+        children: [
+          {
+            path: '',
+            component: WhOrdersComponent,
+          },
+          {
+            path: 'order',
+            component: WhOrderDetailsComponent,
+          }
+        ],
       },
       {
         path: 'incoming',

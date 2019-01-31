@@ -51,7 +51,8 @@ export class WhIncomingEditComponent implements OnInit {
       manufacturer: 'ANA',
       quantity: 16,
       image: 'no image'
-    },{
+    },
+    {
       name: 'item1',
       options: [{type: 'color', value: 'color1'}, {type: 'size', value: 'size1'}, {type: 'height', value: 'height1'}],
       manufacturer: 'ANA',
