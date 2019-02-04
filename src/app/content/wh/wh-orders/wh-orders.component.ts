@@ -10,7 +10,7 @@ export class WhOrdersComponent implements OnInit {
   tabs = ['In progress', 'Waiting', 'Special', 'Completed'];
   orders = [
     {
-      id: '0101',
+      id: '010189',
       country: 'japan',
       user_name: 'Andrew Vodkins',
       date: '01.01.01',

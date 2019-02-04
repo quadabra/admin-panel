@@ -24,7 +24,7 @@
   padding: 5px;
   margin: 10px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: 10px;
 }
 
@@ -35,7 +35,7 @@
 
 .orders-list__btn-new {
   position: absolute;
-  right: 20px;
+  right: 15px;
   top: 15px;
   z-index: 2;
 }
