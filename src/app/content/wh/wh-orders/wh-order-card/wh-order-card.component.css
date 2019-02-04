@@ -1,0 +1,41 @@
+.order-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.order-card:hover {
+  background-color: rgba(200, 200, 200, 0.3);
+}
+
+.order-card__text-container {
+  padding: 0 5px;
+}
+
+.order-card__text {
+  display: block;
+  margin: 5px 0;
+}
+
+.order-card__text_large {
+  font-size: 20px;
+}
+
+.order-card__text_small {
+  font-size: 12px;
+}
+
+.order-card__controls-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-card__controls-container > a {
+  margin-right: 10px;
+}

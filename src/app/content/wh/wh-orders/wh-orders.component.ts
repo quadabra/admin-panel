@@ -93,6 +93,7 @@ export class WhOrdersComponent implements OnInit {
   delivers = new FormControl();
 
   deliveryList: string[] = ['DHL', 'EMS', 'Post', 'Air', 'UPS', 'RS-28'];
+  checkTypes: string[] = ['payment', 'comment', 'waiting', 'assembly', 'depart'];
   constructor() {
   }
 
@@ -103,13 +104,13 @@ export class WhOrdersComponent implements OnInit {
     let style = '';
     switch (delivery) {
       case 'dhl':
-        style = 'rgba(255, 255, 0, 0.5)';
+        style = '3px 3px 5px 0 rgba(255, 165, 0, 0.8)';
         break;
       case 'ups':
-        style = 'rgba(255, 110, 64, 0.5)';
+        style = '3px 3px 5px 0 rgba(255, 110, 64, 0.8)';
         break;
       case 'ems':
-        style = 'rgba(68, 138, 255, 0.5)';
+        style = '3px 3px 5px 0 rgba(68, 138, 255, 0.8)';
         break;
       default:
         style = null;

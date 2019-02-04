@@ -31,20 +31,20 @@
     </div>
   </mat-card>
   <mat-card class="orders-list">
+    <a [routerLink]="['./order']" mat-raised-button color="accent" class="orders-list__btn-new">New</a>
     <mat-tab-group>
       <mat-tab *ngFor="let tab of tabs" label="{{tab}}">
-        <ul class="orders-grid">
-          <li *ngFor="let order of orders; let i = index;"
-              [ngStyle]="{'background-color': setDeliveryColor(order.delivery)}"
-              class="orders-grid__card mat-elevation-z4">
-            <a [routerLink]="['./order']">
-              <span>Order ID: {{order.id}}</span>
-              <span>Name: {{order.user_name}}</span>
-              <span>Country: {{order.country}}</span>
-              <span>Items: {{order.items}}</span>
-            </a>
-          </li>
-        </ul>
+        <div class="orders-list__section" *ngFor="let check of checkTypes">
+          <h4 class="orders-list__section-header">{{check}}</h4>
+          <!--map here order list by check type-->
+          <ul class="orders-grid">
+            <li *ngFor="let order of orders; let i = index;"
+                [ngStyle]="{'box-shadow': setDeliveryColor(order.delivery)}"
+                class="orders-grid__card">
+              <app-wh-order-card [order]="order"></app-wh-order-card>
+            </li>
+          </ul>
+        </div>
       </mat-tab>
     </mat-tab-group>
   </mat-card>

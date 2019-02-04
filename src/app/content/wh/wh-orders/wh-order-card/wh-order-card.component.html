@@ -1,0 +1,23 @@
+<div class="order-card">
+  <div class="order-card__text-container">
+    <span class="order-card__text order-card__text_large">{{order.id}}</span>
+    <span class="order-card__text order-card__text_small">{{order.user_name}}</span>
+  </div>
+  <div class="order-card__text-container">
+    <span class="order-card__text order-card__text_small">{{order.country}}</span>
+    <span class="order-card__text order-card__text_small">{{order.shop}}</span>
+  </div>
+  <div class="order-card__text-container">
+    <span class="order-card__text order-card__text_small">500$</span>
+    <span class="order-card__text order-card__text_small">{{order.date}}</span>
+  </div>
+  <span class="spacer"></span>
+  <div class="order-card__controls-container">
+    <a [routerLink]="['./order']" mat-raised-button color="primary">
+      <mat-icon>edit</mat-icon>
+    </a>
+    <button mat-raised-button color="accent">
+      <mat-icon>check</mat-icon>
+    </button>
+  </div>
+</div>
