@@ -1,3 +1,15 @@
-<p>
-  wh-order-details works!
-</p>
+<div class="order-details">
+  <mat-card class="order-details__header">
+    <h4>{{orderDetails.id}}</h4>
+    <p>{{orderDetails.date}}</p>
+    <p>{{orderDetails.status}}</p>
+  </mat-card>
+  <mat-tab-group>
+    <mat-tab label="Data">
+      <app-wh-order-details-data [dataSource]="orderDetails"></app-wh-order-details-data>
+    </mat-tab>
+    <mat-tab label="History">
+      <app-wh-order-details-history></app-wh-order-details-history>
+    </mat-tab>
+  </mat-tab-group>
+</div>

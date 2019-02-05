@@ -1,0 +1,7 @@
+.order-details {
+  /*display: grid;*/
+}
+
+.order-details__header {
+  display: flex;
+}

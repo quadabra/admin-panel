@@ -9,9 +9,11 @@ import { WhIncomingExpandComponent } from './wh-incoming/wh-incoming-expand/wh-i
 import { WhIncomingEditComponent } from './wh-incoming/wh-incoming-edit/wh-incoming-edit.component';
 import { WhOrderDetailsComponent } from './wh-orders/wh-order-details/wh-order-details.component';
 import { WhOrderCardComponent } from './wh-orders/wh-order-card/wh-order-card.component';
+import { WhOrderDetailsDataComponent } from './wh-orders/wh-order-details/wh-order-details-data/wh-order-details-data.component';
+import { WhOrderDetailsHistoryComponent } from './wh-orders/wh-order-details/wh-order-details-history/wh-order-details-history.component';
 
 @NgModule({
-  declarations: [WhOrdersComponent, WhIncomingComponent, WhIncomingExpandComponent, WhIncomingEditComponent, WhOrderDetailsComponent, WhOrderCardComponent],
+  declarations: [WhOrdersComponent, WhIncomingComponent, WhIncomingExpandComponent, WhIncomingEditComponent, WhOrderDetailsComponent, WhOrderCardComponent, WhOrderDetailsDataComponent, WhOrderDetailsHistoryComponent],
   imports: [
     CommonModule,
     RouterModule,
