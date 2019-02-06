@@ -1,0 +1,49 @@
+.order-data {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+}
+
+.order-data__user {
+  grid-column: 1/2;
+}
+
+.order-data__user-table {
+  display: flex;
+  border-bottom: 1px solid rgba(190, 190, 190, 0.3);
+}
+
+.order-data__user-filed {
+  width: 50%;
+}
+
+.order-data__shipping {
+  grid-column: 2/3;
+}
+
+.order-data__delivery {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+
+.order-data__items {
+  grid-column: 3/5;
+}
+
+.order-data__controls {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.order-data__client-comment {
+  grid-column: 3/5;
+}
+
+.order-data__work-comment {
+  grid-column: 3/5;
+}

@@ -1,5 +1,67 @@
 <div class="order-data">
-  <div class="order-data__user">
-    
-  </div>
+  <mat-card class="order-data__user">
+    <div class="heading">
+      <h4>User</h4>
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent" matTooltip="Edit">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    <div class="order-data__user-table" *ngFor="let data of dataSource.userData">
+      <p class="order-data__user-filed">{{data.fieldName}}</p>
+      <p class="order-data__user-filed">{{data.fieldValue}}</p>
+    </div>
+  </mat-card>
+  <mat-card class="order-data__shipping">
+    <div class="heading">
+      <h4>Shipping</h4>
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent" matTooltip="Add new">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+  <mat-card class="order-data__delivery">
+    <h4>Delivery Type</h4>
+  </mat-card>
+  <mat-card class="order-data__items">
+    <div class="heading">
+      <h4>Items</h4>
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent" matTooltip="Add new">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+  <mat-card class="order-data__controls">
+    <button mat-raised-button color="accent" matTooltip="Stop">
+      <mat-icon>stop</mat-icon>
+    </button>
+    <button mat-raised-button color="accent" matTooltip="Speed UP">
+      <mat-icon>speed</mat-icon>
+    </button>
+    <button mat-raised-button color="accent" matTooltip="Go">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+  </mat-card>
+  <mat-card class="order-data__client-comment">
+    <h5>User comment</h5>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar, purus in hendrerit facilisis, erat ante placerat sem,
+      sit amet rhoncus tortor diam eget ex. Mauris vulputate ultricies erat sit amet volutpat. Nulla efficitur enim eu mattis consequat.
+      Proin scelerisque diam in nibh interdum, vitae sagittis augue pharetra. Etiam at dolor ut urna sagittis mollis nec nec velit.
+      Curabitur nec arcu purus. Cras scelerisque nisi justo.</p>
+  </mat-card>
+  <mat-card class="order-data__work-comment">
+    <div>
+      <h5>User comment</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar, purus in hendrerit facilisis, erat ante placerat sem,
+        sit amet rhoncus tortor diam eget ex.</p>
+    </div>
+    <div>
+      <h5>User comment</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar, purus in hendrerit facilisis, erat ante placerat sem,
+        sit amet rhoncus tortor diam eget ex. Mauris vulputate ultricies erat sit amet volutpat. Nulla efficitur enim eu mattis consequat.
+        Proin scelerisque diam in nibh interdum, vitae sagittis augue pharetra.</p>
+    </div>
+  </mat-card>
 </div>

@@ -10,18 +10,17 @@ export class WhOrderDetailsComponent implements OnInit {
     id: '132534',
     date: '01.05.2019',
     status: 'processing',
-    user: {
-      name: {first: 'User', last: 'Name'},
-      address: {
-        country: 'Germany',
-        region: 'region666',
-        city: 'city',
-        addressLine: 'address1 5',
-        postalCode: '324353',
-        phone: '6667777'
-      },
-      email: 'email@email.com'
-    },
+    userData: [
+      {fieldName: 'First Name', fieldValue: 'User'},
+      {fieldName: 'Last Name', fieldValue: 'Name'},
+      {fieldName: 'Address1', fieldValue: 'Street1488'},
+      {fieldName: 'City', fieldValue: 'CityAzaza'},
+      {fieldName: 'Postcode', fieldValue: '432633'},
+      {fieldName: 'Phone', fieldValue: '666 77 88'},
+      {fieldName: 'Region/State', fieldValue: 'Kukuevo'},
+      {fieldName: 'Country', fieldValue: 'Фино-монгольская граница'},
+      {fieldName: 'Email', fieldValue: 'email@email.com'},
+    ],
   };
 
   constructor() {
