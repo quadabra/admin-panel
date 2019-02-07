@@ -7,9 +7,13 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class WhOrderDetailsDataComponent implements OnInit {
   @Input() dataSource;
+  displayedColumns = ['id', 'name', 'options', 'status', 'price'];
   constructor() { }
 
   ngOnInit() {
   }
 
+  getTotalCost() {
+    return this.dataSource.cartData.map(t => t.price).reduce((acc, value) => acc + value, 0);
+  }
 }

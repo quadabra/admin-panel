@@ -16,10 +16,45 @@ export class WhOrderDetailsComponent implements OnInit {
       {fieldName: 'Address1', fieldValue: 'Street1488'},
       {fieldName: 'City', fieldValue: 'CityAzaza'},
       {fieldName: 'Postcode', fieldValue: '432633'},
-      {fieldName: 'Phone', fieldValue: '666 77 88'},
+      {fieldName: 'Phone', fieldValue: '000 77 88'},
       {fieldName: 'Region/State', fieldValue: 'Kukuevo'},
       {fieldName: 'Country', fieldValue: 'Фино-монгольская граница'},
       {fieldName: 'Email', fieldValue: 'email@email.com'},
+    ],
+    cartData: [
+      {
+        id: '010101',
+        name: 'Shmotka',
+        options: [
+          {optionName: 'color', optionValue: 'zeleniy'},
+          {optionName: 'size', optionValue: 'XXXXXXXXL'},
+          {optionName: 'height', optionValue: '3'},
+          ],
+        status: 'reserved',
+        price: 100
+      },
+      {
+        id: '010101',
+        name: 'Shmotka',
+        options: [
+          {optionName: 'color', optionValue: 'zeleniy'},
+          {optionName: 'size', optionValue: 'XXXXXXXXL'},
+          {optionName: 'height', optionValue: '3'},
+        ],
+        status: 'reserved',
+        price: 140
+      },
+      {
+        id: '010101',
+        name: 'Shmotka',
+        options: [
+          {optionName: 'color', optionValue: 'zeleniy'},
+          {optionName: 'size', optionValue: 'XXXXXXXXL'},
+          {optionName: 'height', optionValue: '3'},
+        ],
+        status: 'reserved',
+        price: 170
+      }
     ],
   };
 
