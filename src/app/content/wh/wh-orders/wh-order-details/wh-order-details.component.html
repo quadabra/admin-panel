@@ -1,8 +1,19 @@
 <div class="order-details">
   <mat-card class="order-details__header">
-    <h4>{{orderDetails.id}}</h4>
-    <p>{{orderDetails.date}}</p>
-    <p>{{orderDetails.status}}</p>
+    <span> <b>Order ID:</b> {{orderDetails.id}}&nbsp;</span>
+    <span> Order date: {{orderDetails.date}}&nbsp;</span>
+    <span> Order status: {{orderDetails.status}}</span>
+    <span> Order status change: {{orderDetails.date}}</span>
+    <span> Total: $100500</span>
+    <span class="spacer"></span>
+    <div class="order-details__controls">
+      <button mat-raised-button color="accent" matTooltip="Stop">
+        <img src="../../../../../assets/img/stop.svg" alt="stop">
+      </button>
+      <button mat-raised-button color="accent" matTooltip="Speed up">
+        <img src="../../../../../assets/img/tools-and-utensils_1.svg" alt="">
+      </button>
+    </div>
   </mat-card>
   <mat-tab-group>
     <mat-tab label="Data">

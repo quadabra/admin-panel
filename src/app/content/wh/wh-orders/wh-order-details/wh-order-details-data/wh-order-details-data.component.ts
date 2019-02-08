@@ -8,6 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class WhOrderDetailsDataComponent implements OnInit {
   @Input() dataSource;
   displayedColumns = ['id', 'name', 'options', 'status', 'price'];
+  deliveryTypes = ['DHL', 'EMS', 'POST'];
   constructor() { }
 
   ngOnInit() {
