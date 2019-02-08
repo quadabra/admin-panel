@@ -1,14 +1,31 @@
 .invoice-form {
   margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: auto;
 }
 
 .invoice-form__form {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.invoice-form__form-horizontal {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 20px;
+}
+
+.invoice-form__heading-form {
+  grid-column: 1/6;
+  grid-row: 1/2;
+}
+
+.invoice-form__item-form {
+  grid-column: 1/3;
+  grid-row: 2/3;
 }
 
 .invoice-form__form-container {
@@ -22,9 +39,8 @@
 }
 
 .invoice-form__table {
-  margin-left: auto;
-  width: 66%;
-  max-height: 400px;
+  grid-column: 3/6;
+  grid-row: 2/4;
 }
 
 table {
