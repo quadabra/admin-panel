@@ -5,7 +5,7 @@
 .order-details__header {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: baseline;
 }
 
 .order-details__header > span {

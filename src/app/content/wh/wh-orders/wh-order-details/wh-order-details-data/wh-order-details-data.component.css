@@ -39,6 +39,10 @@
   grid-row: 3/4;
 }
 
+.order-data__delivery > span {
+  margin-left: 10px;
+}
+
 .order-data__items {
   grid-column: 1/5;
   grid-row: auto;
@@ -77,7 +81,7 @@ table {
 }
 
 .image-temp {
-  margin-left: 20px;
+  margin: 0 30px;
   width: 100px;
   height: 100px;
   display: flex;

@@ -40,16 +40,17 @@
       </mat-form-field>
     </div>
     <div class="image-temp"><span>DHL</span></div>
+    <span>to &nbsp;</span>
+    <span class="text_large">United States</span>
+    <span class="text_large">~1.5 kg &nbsp;</span>
+    <span class="text_large">~3 kgv &nbsp;</span>
+    <span class="text_large">$50</span>
   </mat-card>
 
 
   <mat-card class="order-data__items">
     <div class="heading">
       <h4>Items</h4>
-      <span class="spacer"></span>
-      <button mat-raised-button color="accent" matTooltip="Add new">
-        <mat-icon>add</mat-icon>
-      </button>
     </div>
     <table class="mat-elevation-z4" mat-table [dataSource]="dataSource.cartData">
 
@@ -108,12 +109,6 @@
       <mat-label>Add Comment</mat-label>
       <textarea matInput type="text" placeholder="comment text" rows="7"></textarea>
     </mat-form-field>
-    <div class="flex">
-      <span class="spacer"></span>
-      <button mat-raised-button matTooltip="Add comment" color="accent">
-        <mat-icon>check</mat-icon>
-      </button>
-    </div>
   </mat-card>
 
 
