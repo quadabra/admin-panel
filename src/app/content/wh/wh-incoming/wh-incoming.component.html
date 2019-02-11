@@ -73,8 +73,15 @@
       </ng-container>
 
       <ng-container matColumnDef="comment">
-        <th mat-header-cell *matHeaderCellDef> Comment</th>
-        <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+      <th mat-header-cell *matHeaderCellDef> Comment</th>
+      <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+    </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action</th>
+        <td mat-cell *matCellDef="let element">
+          <a mat-raised-button color="accent" [routerLink]="['./check']">Check</a>
+        </td>
       </ng-container>
 
       <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->

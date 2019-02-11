@@ -16,6 +16,7 @@ import {WhOrdersComponent} from './content/wh/wh-orders/wh-orders.component';
 import {WhIncomingComponent} from './content/wh/wh-incoming/wh-incoming.component';
 import {WhIncomingEditComponent} from './content/wh/wh-incoming/wh-incoming-edit/wh-incoming-edit.component';
 import {WhOrderDetailsComponent} from './content/wh/wh-orders/wh-order-details/wh-order-details.component';
+import {WhIncomingCheckComponent} from './content/wh/wh-incoming/wh-incoming-check/wh-incoming-check.component';
 
 const routes: Routes = [
   {
@@ -138,6 +139,10 @@ const routes: Routes = [
           {
             path: 'edit',
             component: WhIncomingEditComponent,
+          },
+          {
+            path: 'check',
+            component: WhIncomingCheckComponent,
           }
         ]
       },

@@ -72,7 +72,7 @@ export class WhIncomingComponent implements OnInit {
       ]
     }
   ];
-  columnsToDisplay = ['number', 'date', 'time', 'manufacturers', 'invoice', 'status', 'comment'];
+  columnsToDisplay = ['number', 'date', 'time', 'manufacturers', 'invoice', 'status', 'comment', 'action'];
   expandedElement: any;
   constructor() { }
 

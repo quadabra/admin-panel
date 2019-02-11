@@ -11,9 +11,10 @@ import { WhOrderDetailsComponent } from './wh-orders/wh-order-details/wh-order-d
 import { WhOrderCardComponent } from './wh-orders/wh-order-card/wh-order-card.component';
 import { WhOrderDetailsDataComponent } from './wh-orders/wh-order-details/wh-order-details-data/wh-order-details-data.component';
 import { WhOrderDetailsHistoryComponent } from './wh-orders/wh-order-details/wh-order-details-history/wh-order-details-history.component';
+import { WhIncomingCheckComponent } from './wh-incoming/wh-incoming-check/wh-incoming-check.component';
 
 @NgModule({
-  declarations: [WhOrdersComponent, WhIncomingComponent, WhIncomingExpandComponent, WhIncomingEditComponent, WhOrderDetailsComponent, WhOrderCardComponent, WhOrderDetailsDataComponent, WhOrderDetailsHistoryComponent],
+  declarations: [WhOrdersComponent, WhIncomingComponent, WhIncomingExpandComponent, WhIncomingEditComponent, WhOrderDetailsComponent, WhOrderCardComponent, WhOrderDetailsDataComponent, WhOrderDetailsHistoryComponent, WhIncomingCheckComponent],
   imports: [
     CommonModule,
     RouterModule,
