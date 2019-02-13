@@ -1,12 +1,12 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+
+// components
 import {WelcomeComponent} from './content/welcome/welcome.component';
 import {CatalogProductsComponent} from './content/catalog/catalog-products/catalog-products.component';
 import {CatalogBrandsComponent} from './content/catalog/catalog-brands/catalog-brands.component';
 import {CatalogOptionsComponent} from './content/catalog/catalog-options/catalog-options.component';
-import {CatalogResolverService} from './content/catalog/catalog-products/catalog-resolver.service';
 import {ProductDetailsComponent} from './content/catalog/catalog-products/product-details/product-details.component';
-import {ProductResolverService} from './content/catalog/catalog-products/product-resolver.service';
 import {CatalogOptionsEditComponent} from './content/catalog/catalog-options/catalog-options-edit/catalog-options-edit.component';
 import {ManufacturerEditComponent} from './content/catalog/catalog-brands/manufacturer-edit/manufacturer-edit.component';
 import {BrandEditComponent} from './content/catalog/catalog-brands/brand-edit/brand-edit.component';
@@ -17,6 +17,11 @@ import {WhIncomingComponent} from './content/wh/wh-incoming/wh-incoming.componen
 import {WhIncomingEditComponent} from './content/wh/wh-incoming/wh-incoming-edit/wh-incoming-edit.component';
 import {WhOrderDetailsComponent} from './content/wh/wh-orders/wh-order-details/wh-order-details.component';
 import {WhIncomingCheckComponent} from './content/wh/wh-incoming/wh-incoming-check/wh-incoming-check.component';
+
+//  resolvers
+import {CatalogResolverService} from './content/catalog/catalog-products/catalog-resolver.service';
+import {ProductResolverService} from './content/catalog/catalog-products/product-resolver.service';
+import {CatalogBrandsResolverService} from './content/catalog/catalog-brands/catalog-brands-resolver.service';
 
 const routes: Routes = [
   {
@@ -63,6 +68,7 @@ const routes: Routes = [
           {
             path: '',
             component: CatalogBrandsComponent,
+            resolve: {manufacturers: CatalogBrandsResolverService}
           },
           {
             path: 'edit',

@@ -1,66 +1,53 @@
-<div class="brands-block">
-  <mat-card class="manufacturers-setup">
+<div cdkDropListGroup class="brands-setup">
+  <mat-card class="brands-setup__container-manufacturers">
     <div class="heading">
-      <h4 class="heading-title">
-        Manufacturers
-      </h4>
+      <h4 class="heading-title">Manufacturers</h4>
       <span class="spacer"></span>
-      <a mat-raised-button color="accent">
+      <a mat-raised-button [routerLink]="['./edit']">
         <mat-icon>add</mat-icon>
       </a>
     </div>
-    <div class="divider-wrapper">
-      <mat-divider></mat-divider>
-    </div>
-    <div class="manufacturers-setup__item" *ngFor="let item of dataSource">
-      <div class="manufacturers-setup__item-container">
-        <div class="manufacturers-setup__item-info">
-          <span>{{item.name}}</span>
-        <span class="spacer"></span>
-          <span>{{item.overprice + '%'}}</span>
-          <a mat-raised-button color="accent" [routerLink]="['./edit']">
+    <div class="manufacturers-list">
+
+      <div *ngFor="let manufacturer of dataSource" class="manufacturers-list__item mat-elevation-z6">
+        <div class="heading">
+          <p>{{manufacturer.name}}</p>
+          <span class="spacer"></span>
+          <a mat-raised-button [routerLink]="['./brand']" color="accent">
             <mat-icon>edit</mat-icon>
           </a>
         </div>
-
-
-
-        <div class="manufacturers-setup__brands" dropzone="move">
-          <div class="brands-setup__item" *ngFor="let brand of item.brands"  draggable="true">
-            <span>{{brand.name}}</span>
-            <span class="spacer"></span>
-            <a mat-raised-button color="accent" [routerLink]="['./brand']">
-              <mat-icon>edit</mat-icon>
-            </a>
+        <div
+          cdkDropList
+          [cdkDropListData]="manufacturer.brands"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of manufacturer.brands" cdkDrag>
+            <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+            {{item.name}}
           </div>
         </div>
-
-      </div>
-      <div class="divider-wrapper">
-        <mat-divider></mat-divider>
       </div>
     </div>
   </mat-card>
-  <mat-card class="brands-setup">
-    <div class="heading">
-      <h4 class="heading-title">
-        Brands
-      </h4>
-      <span class="spacer"></span>
-      <a mat-raised-button color="accent">
-        <mat-icon>add</mat-icon>
-      </a>
-    </div>
-    <div class="divider-wrapper">
-      <mat-divider></mat-divider>
-    </div>
-    <div class="brands-setup__container">
-      <div class="brands-setup__item" *ngFor="let brand of brandList">
-        <span>{{brand}}</span>
+  <mat-card class="brands-setup__container-brands">
+    <div>
+      <div class="heading">
+        <h4 class="heading-title">Brands</h4>
         <span class="spacer"></span>
-        <a mat-raised-button color="accent">
-          <mat-icon>edit</mat-icon>
+        <a mat-raised-button [routerLink]="['./brand']">
+          <mat-icon>add</mat-icon>
         </a>
+      </div>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="brandList"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of brandList" cdkDrag>
+          <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+          {{item.name}}</div>
       </div>
     </div>
   </mat-card>

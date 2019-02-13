@@ -6,6 +6,8 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
+import {IManufacturer} from '../_model/interface/manufacturer';
+import {IBrand} from '../_model/interface/brand';
 
 @Injectable()
 export class ApiService {
@@ -14,10 +16,12 @@ export class ApiService {
     products: 'https://api.grey-shop.com/v1/product?category_id=',
     product: 'https://api.grey-shop.com/v1/product/',
     image: 'https://img.grey-line.com/g/',
-    auth: 'https://auth.grey-shop.com/app/login'
+    auth: 'https://auth.grey-shop.com/app/login',
+    manufacturers: 'https://api.grey-shop.com/v1/manufacturer',
+    brands: 'https://api.grey-shop.com/v1/brand'
   };
 
-  constructor(private _http: HttpClient) {
+  constructor(private http: HttpClient) {
   }
 
   getAuthLink(): string {
@@ -25,15 +29,30 @@ export class ApiService {
   }
 
   getProducts(): Observable<IProduct[]> {
-    return this._http.get<IProduct[]>(this._apiUrl.products + '40');
+    return this.http.get<IProduct[]>(this._apiUrl.products + '40');
   }
 
   getProduct(prod_id: number): Observable<IProduct> {
-    return this._http.get<IProduct>(this._apiUrl.product + prod_id);
+    return this.http.get<IProduct>(this._apiUrl.product + prod_id);
+  }
+
+  getAllManufacturers(): Observable<IManufacturer[]> {
+    return this.http.get<IManufacturer[]>(this._apiUrl.manufacturers);
+  }
+
+  getAllBrands(): Observable<any> {
+    return this.http.get(this._apiUrl.brands)
+      .map(data => {
+        if (data) {
+          return data;
+        }
+      })
+      .do(data => console.log('getProducts: ' + JSON.stringify(data)))
+      .catch(this.handleError);
   }
 
   getImageByHash(hash: string): Observable<any> {
-    return this._http.get(this._apiUrl.image + hash + '?s=medium');
+    return this.http.get(this._apiUrl.image + hash + '?s=medium');
   }
 
   private handleError(err: HttpErrorResponse) {

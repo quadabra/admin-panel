@@ -1,4 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {IManufacturer} from '../../../_model/interface/manufacturer';
+import {ActivatedRoute} from '@angular/router';
+import {ApiService} from '../../../_api/api.service';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-catalog-brands',
@@ -6,48 +10,31 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./catalog-brands.component.css']
 })
 export class CatalogBrandsComponent implements OnInit {
-  dataSource = [
-    {
-      name: 'SSO',
-      overprice: 70,
-      brands: [
-        {
-          name: 'SSO'
-        },
-        {
-          name: 'huita'
-        },
-        {
-          name: 'azaza'
-        }
-      ]
-    },
-    {
-      name: 'Anatomiya',
-      overprice: 50,
-      brands: [
-        {
-          name: 'ANA'
-        }
-      ]
-    },
-    {
-      name: 'Techincom',
-      overprice: 30,
-      brands: [
-        {
-          name: 'Techincome'
-        }
-      ]
-    }
-  ];
+  dataSource: IManufacturer[];
+  brandList;
+  errorMessage;
 
-  brandList = ['ANA', 'SSO', 'Techincome'];
-
-  constructor() {
+  constructor(private route: ActivatedRoute,
+              private api: ApiService) {
   }
 
   ngOnInit() {
+    this.dataSource = this.route.snapshot.data['manufacturers'];
+    this.api.getAllBrands()
+      .subscribe(brands => this.brandList = brands,
+        error => this.errorMessage = <any>error);
+    console.log(this.brandList);
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+    }
   }
 
 }
