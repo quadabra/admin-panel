@@ -1,0 +1,40 @@
+.incoming-item {
+  margin-top: 10px;
+}
+
+.incoming-item__container {
+  width: 100%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(5, auto);
+}
+
+.incoming-item__image {
+  background-color: green;
+  width: 100px;
+  height: 100px;
+}
+
+.incoming-item__text {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.incoming-item__checkbox {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-checkbox {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
