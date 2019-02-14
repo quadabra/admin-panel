@@ -49,49 +49,49 @@ export class NavList {
         }
       ]
     },
-    {
-      displayName: 'Grey-shop',
-      iconName: 'shopping_cart',
-      route: 'catalog',
-      children: [
-        {
-          displayName: 'Main',
-          iconName: 'list',
-          route: 'products'
-        },
-        {
-          displayName: 'News',
-          iconName: 'star_border',
-          route: '/brands'
-        },
-        {
-          displayName: 'Options',
-          iconName: 'settings',
-          route: '/options'
-        }
-      ]
-    },
-    {
-      displayName: 'Administration',
-      iconName: 'home',
-      route: 'catalog',
-      children: [
-        {
-          displayName: 'Users',
-          iconName: 'list',
-          route: '/products'
-        },
-        {
-          displayName: 'Service',
-          iconName: 'star_border',
-          route: '/brands'
-        },
-        {
-          displayName: 'Options',
-          iconName: 'settings',
-          route: '/options'
-        }
-      ]
-    },
+    // {
+    //   displayName: 'Grey-shop',
+    //   iconName: 'shopping_cart',
+    //   route: 'catalog',
+    //   children: [
+    //     {
+    //       displayName: 'Main',
+    //       iconName: 'list',
+    //       route: 'products'
+    //     },
+    //     {
+    //       displayName: 'News',
+    //       iconName: 'star_border',
+    //       route: '/brands'
+    //     },
+    //     {
+    //       displayName: 'Options',
+    //       iconName: 'settings',
+    //       route: '/options'
+    //     }
+    //   ]
+    // },
+    // {
+    //   displayName: 'Administration',
+    //   iconName: 'home',
+    //   route: 'catalog',
+    //   children: [
+    //     {
+    //       displayName: 'Users',
+    //       iconName: 'list',
+    //       route: '/products'
+    //     },
+    //     {
+    //       displayName: 'Service',
+    //       iconName: 'star_border',
+    //       route: '/brands'
+    //     },
+    //     {
+    //       displayName: 'Options',
+    //       iconName: 'settings',
+    //       route: '/options'
+    //     }
+    //   ]
+    // },
   ];
 }

@@ -11,6 +11,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class CatalogBrandsComponent implements OnInit {
   dataSource: IManufacturer[];
+  manufacturersList: IManufacturer[];
   brandList;
   errorMessage;
 
@@ -20,6 +21,7 @@ export class CatalogBrandsComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = this.route.snapshot.data['manufacturers'];
+    this.manufacturersList = this.dataSource.map(data =>  data);
     this.api.getAllBrands()
       .subscribe(brands => this.brandList = brands,
         error => this.errorMessage = <any>error);
