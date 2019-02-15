@@ -7,15 +7,11 @@ import {IUser} from '../_model/interface/user';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService implements OnInit {
+export class AuthService {
   user: IUser;
 
   constructor(private _api: ApiService,
               private _http: HttpClient) {
-  }
-
-  ngOnInit(): void {
-    this.initUser();
   }
 
   logIn(login: string, password: string) {
@@ -31,7 +27,6 @@ export class AuthService implements OnInit {
         if (user && user.auth_key) {
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.setUser(user);
-          console.log(JSON.stringify(user));
         }
         return user;
       }));
@@ -39,6 +34,7 @@ export class AuthService implements OnInit {
 
   logOut(): void {
     localStorage.removeItem('currentUser');
+    this.user = null;
   }
 
   isAuthenticated(): boolean {

@@ -37,6 +37,6 @@ export class LoginScreenComponent implements OnInit {
         error => {
           this.error = error;
         });
-    console.log(this.loginForm.get('userEmail').value, this.loginForm.get('userPassword').value);
+    // console.log(this.loginForm.get('userEmail').value, this.loginForm.get('userPassword').value);
   }
 }

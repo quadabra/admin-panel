@@ -16,6 +16,7 @@ import {ContentModule} from './content/content.module';
 
 import {ApiService} from './_api/api.service';
 import {LoginScreenComponent} from './login-screen/login-screen.component';
+import {AuthGuardService} from './_guards/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import {LoginScreenComponent} from './login-screen/login-screen.component';
     MainNavModule,
     ContentModule,
   ],
-  providers: [ApiService],
+  providers: [ApiService, AuthGuardService],
 })
 export class AppModule {
 }

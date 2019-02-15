@@ -23,26 +23,43 @@ import {CatalogResolverService} from './content/catalog/catalog-products/catalog
 import {ProductResolverService} from './content/catalog/catalog-products/product-resolver.service';
 import {CatalogBrandsResolverService} from './content/catalog/catalog-brands/catalog-brands-resolver.service';
 
+//  services
+import {AuthGuardService} from './_guards/auth-guard.service';
+import {LoginScreenComponent} from './login-screen/login-screen.component';
+import {MainNavComponent} from './main-nav/main-nav.component';
+
 const routes: Routes = [
   {
-    path: 'index',
-    component: WelcomeComponent,
-    data: {
-      displayName: 'index'
-    }
+    path: 'login',
+    component: LoginScreenComponent,
   },
   {
+    path: 'index',
+    component: MainNavComponent,
+    canActivate: [AuthGuardService]
+  },
+  // {
+  //   path: 'index',
+  //   component: WelcomeComponent,
+  //   outlet: 'main',
+  //   data: {
+  //     displayName: 'index'
+  //   }
+  // },
+  {
     path: 'catalog',
+    outlet: 'main',
     children: [
       {
         path: '',
+        outlet: 'main',
         component: WelcomeComponent,
-        data: {
-          displayName: 'Admin-panel'
-        },
+        canActivate: [AuthGuardService],
+        data: {displayName: 'Admin-panel'},
       },
       {
         path: 'products',
+        outlet: 'main',
         children: [
           {
             path: '',
