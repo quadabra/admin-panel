@@ -1,24 +1,22 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
-import {WelcomeComponent} from './welcome/welcome.component';
-
+import {MainNavModule} from './main-nav/main-nav.module';
 import {CatalogModule} from './catalog/catalog.module';
-import {WhModule} from './wh/wh.module';
+import {ContentRoutingModule} from './content-routing.module';
+
+import {ContentComponent} from './content.component';
 
 @NgModule({
   declarations: [
-    WelcomeComponent,
+    ContentComponent
   ],
   imports: [
     CommonModule,
-    RouterModule,
-    WhModule,
+    CatalogModule,
+    MainNavModule,
+    ContentRoutingModule,
   ],
   exports: [
-    WelcomeComponent,
-    CatalogModule,
-    WhModule,
   ],
 })
 export class ContentModule {

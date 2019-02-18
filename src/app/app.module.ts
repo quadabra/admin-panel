@@ -11,17 +11,16 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LayoutModule} from '@angular/cdk/layout';
 
-import {MainNavModule} from './main-nav/main-nav.module';
-import {ContentModule} from './content/content.module';
+
 
 import {ApiService} from './_api/api.service';
-import {LoginScreenComponent} from './login-screen/login-screen.component';
 import {AuthGuardService} from './_guards/auth-guard.service';
+import {LoginComponent} from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginScreenComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,
@@ -34,8 +33,6 @@ import {AuthGuardService} from './_guards/auth-guard.service';
     MaterialModule,
     AppRoutingModule,
     LayoutModule,
-    MainNavModule,
-    ContentModule,
   ],
   providers: [ApiService, AuthGuardService],
 })

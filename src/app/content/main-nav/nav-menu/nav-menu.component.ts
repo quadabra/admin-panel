@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NavList} from '../../_model/nav/nav-list';
+import {NavList} from '../../../_model/nav/nav-list';
 
 @Component({
   selector: 'app-nav-menu',

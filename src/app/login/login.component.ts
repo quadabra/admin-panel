@@ -5,11 +5,11 @@ import {first} from 'rxjs/operators';
 import {UserLogin} from '../_model/interface/user-login';
 
 @Component({
-  selector: 'app-login-screen',
-  templateUrl: './login-screen.component.html',
-  styleUrls: ['./login-screen.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class LoginScreenComponent implements OnInit {
+export class LoginComponent implements OnInit {
   hide = true;
   loginForm: FormGroup;
   error = '';

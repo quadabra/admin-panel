@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {MaterialModule} from '../../material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {CatalogRoutingModule} from './catalog-routing.module';
 
 //  components
 import {CatalogBrandsComponent} from './catalog-brands/catalog-brands.component';
@@ -25,6 +26,7 @@ import {CatalogDeliveryEditComponent} from './catalog-delivery/catalog-delivery-
 import {CatalogResolverService} from './catalog-products/catalog-resolver.service';
 import {ProductResolverService} from './catalog-products/product-resolver.service';
 import {CatalogBrandsResolverService} from './catalog-brands/catalog-brands-resolver.service';
+import { CatalogComponent } from './catalog.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import {CatalogBrandsResolverService} from './catalog-brands/catalog-brands-reso
     ManufacturerEditComponent,
     BrandEditComponent,
     CatalogDeliveryComponent,
-    CatalogDeliveryEditComponent
+    CatalogDeliveryEditComponent,
+    CatalogComponent
   ],
   imports: [
     CommonModule,
@@ -50,11 +53,12 @@ import {CatalogBrandsResolverService} from './catalog-brands/catalog-brands-reso
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    CatalogRoutingModule,
   ],
   providers: [
-    CatalogResolverService,
-    ProductResolverService,
-    CatalogBrandsResolverService
+    // CatalogResolverService,
+    // ProductResolverService,
+    // CatalogBrandsResolverService
   ]
 })
 export class CatalogModule {
