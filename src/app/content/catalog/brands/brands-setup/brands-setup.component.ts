@@ -1,15 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {IManufacturer} from '../../../_model/interface/manufacturer';
+import {IManufacturer} from '../../../../_model/interface/manufacturer';
 import {ActivatedRoute} from '@angular/router';
-import {ApiService} from '../../../_api/api.service';
+import {ApiService} from '../../../../_api/api.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-catalog-brands',
-  templateUrl: './catalog-brands.component.html',
-  styleUrls: ['./catalog-brands.component.css']
+  templateUrl: './brands-setup.component.html',
+  styleUrls: ['./brands-setup.component.css']
 })
-export class CatalogBrandsComponent implements OnInit {
+export class BrandsSetupComponent implements OnInit {
   dataSource: IManufacturer[];
   manufacturersList: IManufacturer[];
   brandList;

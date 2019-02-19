@@ -5,10 +5,14 @@ import {CatalogModule} from './catalog/catalog.module';
 import {ContentRoutingModule} from './content-routing.module';
 
 import {ContentComponent} from './content.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
-    ContentComponent
+    ContentComponent,
+    NotFoundComponent,
+    WelcomeComponent,
   ],
   imports: [
     CommonModule,
