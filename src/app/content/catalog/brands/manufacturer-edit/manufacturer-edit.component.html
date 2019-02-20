@@ -1,34 +1,139 @@
-<form [formGroup]="manufacturerForm" class="manufacturer-edit" autocomplete="off">
+<form
+  novalidate
+  [formGroup]="manufacturerForm"
+  (ngSubmit)="save()"
+  class="manufacturer-edit"
+  autocomplete="off">
   <mat-card>
     <div class="manufacturer-edit__header-container">
+
       <mat-form-field
         appearance="outline"
         class="manufacturer-edit__header-input">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Enter name" value="{{dataSource.name}}">
+        <input
+          matInput
+          placeholder="Enter name"
+          value="{{manufacturer.name}}"
+          formControlName="name">
       </mat-form-field>
+
       <mat-form-field
         appearance="outline"
         class="manufacturer-edit__header-input">
         <mat-label>Added value</mat-label>
-        <input matInput placeholder="Enter name" value="{{dataSource.addedValue}}" type="number">
+        <input
+          matInput
+          placeholder="Enter name"
+          value="{{manufacturer.added_value}}"
+          type="number"
+          formControlName="added_value">
       </mat-form-field>
+
       <mat-form-field
         appearance="outline"
         class="manufacturer-edit__header-input">
         <mat-label>Color</mat-label>
-        <input id="zzd" matInput placeholder="Enter name" value="{{dataSource.addedValue}}" type="color" formControlName="bgColor">
+        <input
+          id="zzd"
+          matInput
+          placeholder="Enter name"
+          value="{{manufacturer.color}}"
+          type="color"
+          formControlName="color">
       </mat-form-field>
+
     </div>
-    <div class="manufacturer-edit__form">
-      <div *ngFor="let item of dataSource.info" class="manufacturer-edit__form-item">
-          <mat-form-field
-            appearance="outline"
-            class="manufacturer-edit__input">
-            <mat-label>{{item.name}}</mat-label>
-            <input matInput placeholder="Enter name" value="{{item.value}}">
-          </mat-form-field>
-      </div>
-    </div>
+    <ul class="manufacturer-edit__form">
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Contacts</mat-label>
+          <input matInput placeholder="Enter name" value="{{manufacturer.contact_person}}" formControlName="contact_person">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Site</mat-label>
+          <input matInput placeholder="Enter web address" value="{{manufacturer.site}}" formControlName="site">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Enter email" value="{{manufacturer.email}}" formControlName="email">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>VK</mat-label>
+          <input matInput placeholder="Enter vk link" value="{{manufacturer.vk}}" formControlName="vk">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="Enter phone number" value="{{manufacturer.phone}}" formControlName="phone">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Bank</mat-label>
+          <input matInput placeholder="Enter bank data" value="{{manufacturer.bank}}" formControlName="bank">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Contract</mat-label>
+          <input matInput placeholder="Enter contract data" value="{{manufacturer.contract}}" formControlName="contract">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Discount</mat-label>
+          <input matInput placeholder="Enter discount" value="{{manufacturer.sales}}" formControlName="sales">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Address</mat-label>
+          <input matInput placeholder="Enter address" value="{{manufacturer.address}}" formControlName="address">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Delivery</mat-label>
+          <input matInput placeholder="Enter address" value="{{manufacturer.shipping}}" formControlName="shipping">
+        </mat-form-field>
+      </li>
+      <li class="manufacturer-edit__form-item">
+        <mat-form-field
+          appearance="outline"
+          class="manufacturer-edit__input">
+          <mat-label>Comment</mat-label>
+          <input matInput placeholder="Enter text" value="{{manufacturer.comment}}" formControlName="comment">
+        </mat-form-field>
+      </li>
+    </ul>
   </mat-card>
+  <button type="submit" mat-raised-button color="accent">save</button>
 </form>

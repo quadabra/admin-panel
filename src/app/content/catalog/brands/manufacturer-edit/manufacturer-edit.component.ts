@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {IManufacturer} from '../../../../_model/interface/manufacturer';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ManufacturerApiService} from './manufacturer-api.service';
 
 @Component({
   selector: 'app-manufacturer-edit',
@@ -7,31 +10,40 @@ import {FormBuilder, FormGroup} from '@angular/forms';
   styleUrls: ['./manufacturer-edit.component.css']
 })
 export class ManufacturerEditComponent implements OnInit {
+  manufacturer: IManufacturer;
   manufacturerForm: FormGroup;
-  dataSource = {
-    name: 'SSO/',
-    addedValue: 70,
-    color: '#437588',
-    info: [
-      {name: 'Contacts', value: ''},
-      {name: 'Site', value: ''},
-      {name: 'Email', value: ''},
-      {name: 'VK', value: ''},
-      {name: 'Phone', value: ''},
-      {name: 'Bank', value: ''},
-      {name: 'Contract', value: ''},
-      {name: 'Discount', value: ''},
-      {name: 'Address', value: ''},
-      {name: 'Delivery', value: ''},
-      {name: 'Comment', value: ''},
-    ],
-  };
-  constructor(private fb: FormBuilder) {
+
+  constructor(private fb: FormBuilder,
+              private route: ActivatedRoute,
+              private router: Router,
+              private api: ManufacturerApiService) {
   }
 
   ngOnInit() {
     this.manufacturerForm = this.fb.group({
-      bgColor: [''],
+      name: ['', [Validators.required]],
+      added_value: ['', [Validators.required]],
+      color: [''],
+      contact_person: [],
+      site: [''],
+      email: [],
+      vk: [''],
+      phone: [''],
+      bank: [''],
+      contract: [''],
+      sales: [''],
+      address: [''],
+      shipping: [''],
+      comment: [''],
     });
+    this.manufacturer = this.route.snapshot.data['manufacturer'];
+    console.log(this.manufacturer);
+  }
+
+  save(): void {
+    if (!this.manufacturer.entry) {
+    this.api.createManufacturer(this.manufacturerForm.value);
+    console.log(this.manufacturerForm.value);
+    }
   }
 }

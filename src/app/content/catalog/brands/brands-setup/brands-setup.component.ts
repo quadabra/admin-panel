@@ -10,22 +10,18 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
   styleUrls: ['./brands-setup.component.css']
 })
 export class BrandsSetupComponent implements OnInit {
-  dataSource: IManufacturer[];
   manufacturersList: IManufacturer[];
-  brandList;
-  errorMessage;
+  brandsList;
+  newManufacturerID = 0;
+  newBrandID = 0;
 
   constructor(private route: ActivatedRoute,
               private api: ApiService) {
   }
 
   ngOnInit() {
-    this.dataSource = this.route.snapshot.data['manufacturers'];
-    this.manufacturersList = this.dataSource.map(data =>  data);
-    this.api.getAllBrands()
-      .subscribe(brands => this.brandList = brands,
-        error => this.errorMessage = <any>error);
-    console.log(this.brandList);
+    this.manufacturersList = this.route.snapshot.data['manufacturers'];
+    this.brandsList = this.route.snapshot.data['brands'];
   }
 
   drop(event: CdkDragDrop<string[]>) {

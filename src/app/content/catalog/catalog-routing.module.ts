@@ -8,8 +8,6 @@ import {ProductDetailsComponent} from './catalog-products/product-details/produc
 // Resolvers
 import {CatalogResolverService} from './catalog-products/catalog-resolver.service';
 import {ProductResolverService} from './catalog-products/product-resolver.service';
-import {ManufacturersResolverService} from './brands/brands-setup/manufacturers-resolver.service';
-
 
 const routes: Routes = [
   {
@@ -45,7 +43,6 @@ const routes: Routes = [
   providers: [
     CatalogResolverService,
     ProductResolverService,
-    ManufacturersResolverService,
   ],
 })
 export class CatalogRoutingModule {

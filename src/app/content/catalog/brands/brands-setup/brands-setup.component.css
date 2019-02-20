@@ -2,7 +2,7 @@
   padding: 5px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+  grid-gap: 5px;
 }
 
 .brands-setup__container-manufacturers {
@@ -15,10 +15,10 @@
 
 .manufacturers-list {
   height: 80vh;
-  margin-top: 20px;
+  margin-top: 5px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
+  grid-gap: 5px;
   overflow-y: auto;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .manufacturers-list__item {
-  padding: 10px;
+  padding: 5px;
   height: 370px;
   border-radius: 4px;
 }
@@ -64,17 +64,18 @@
 
 .example-list::-webkit-scrollbar-track
 {
-  -webkit-box-shadow: inset 0 0 3px rgba(0,80,80,0.6);
-  background-color: #CCCCCC;
+  /*-webkit-box-shadow: inset 0 0 3px rgba(0,80,80,0.6);*/
+  background-color: transparent;
 }
 
 .example-list::-webkit-scrollbar
 {
   width: 5px;
-  background-color: #F5F5F5;
+  background-color: transparent;
 }
 
 .example-list::-webkit-scrollbar-thumb {
+  border-radius: 2px;
   background-color: #FFF;
   background-image: -webkit-linear-gradient(90deg,
   rgba(0, 80, 80, 1) 0%,

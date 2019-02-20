@@ -4,7 +4,7 @@
       <div class="heading">
         <h4 class="heading-title">Manufacturers</h4>
         <span class="spacer"></span>
-        <a mat-raised-button [routerLink]="['./edit']" color="accent">
+        <a mat-raised-button [routerLink]="['manufacturer', newManufacturerID]" color="accent">
           <mat-icon>add</mat-icon>
         </a>
       </div>
@@ -15,7 +15,7 @@
         <div class="heading">
           <p>{{manufacturer.name}}</p>
           <span class="spacer"></span>
-          <a mat-raised-button [routerLink]="['./edit']" color="accent">
+          <a mat-raised-button [routerLink]="['manufacturer', manufacturer.entry]" color="accent">
             <mat-icon>edit</mat-icon>
           </a>
         </div>
@@ -41,21 +41,21 @@
       <div class="heading">
         <h4 class="heading-title">Brands</h4>
         <span class="spacer"></span>
-        <a mat-raised-button [routerLink]="['./brand']" color="accent">
+        <a mat-raised-button [routerLink]="['brand', newBrandID]" color="accent">
           <mat-icon>add</mat-icon>
         </a>
       </div>
 
       <div
         cdkDropList
-        [cdkDropListData]="brandList"
+        [cdkDropListData]="brandsList"
         class="example-list mat-elevation-z4"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of brandList" cdkDrag>
+        <div class="example-box" *ngFor="let brand of brandsList" cdkDrag>
           <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
-          <span>{{item.name}}</span>
+          <span>{{brand.name}}</span>
           <span class="spacer"></span>
-          <a mat-raised-button [routerLink]="['./brand']" color="accent">
+          <a mat-raised-button [routerLink]="['brand', brand.entry]" color="accent">
             <mat-icon>edit</mat-icon>
           </a>
         </div>

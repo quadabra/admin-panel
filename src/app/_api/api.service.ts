@@ -40,15 +40,12 @@ export class ApiService {
     return this.http.get<IManufacturer[]>(this._apiUrl.manufacturers);
   }
 
+  getManufacturer(id: number): Observable<IManufacturer> {
+    return this.http.get<IManufacturer>(this._apiUrl.manufacturers + '/' + id);
+  }
+
   getAllBrands(): Observable<any> {
-    return this.http.get(this._apiUrl.brands)
-      .map(data => {
-        if (data) {
-          return data;
-        }
-      })
-      .do(data => console.log('getProducts: ' + JSON.stringify(data)))
-      .catch(this.handleError);
+    return this.http.get<IBrand[]>(this._apiUrl.brands);
   }
 
   getImageByHash(hash: string): Observable<any> {
