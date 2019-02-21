@@ -40,10 +40,26 @@ export class ManufacturerEditComponent implements OnInit {
     console.log(this.manufacturer);
   }
 
+  onSaveComplete(): void {
+    console.log('done!');
+  }
+
   save(): void {
     if (!this.manufacturer.entry) {
-    this.api.createManufacturer(this.manufacturerForm.value);
-    console.log(this.manufacturerForm.value);
+      this.api.createManufacturer(this.manufacturerForm.value).subscribe(
+        () => this.onSaveComplete(),
+        (error: any) => console.log(error)
+      );
+      console.log(this.manufacturerForm.value);
+      this.router.navigate(['/catalog/brands']);
+    } else {
+      this.manufacturerForm.value.brands = this.manufacturer.brands;
+      this.api.updateManufacturer(this.manufacturerForm.value).subscribe(
+        () => this.onSaveComplete(),
+        (error: any) => console.log(error)
+      );
+      console.log(this.manufacturerForm.value);
+      this.router.navigate(['/catalog/brands']);
     }
   }
 }
