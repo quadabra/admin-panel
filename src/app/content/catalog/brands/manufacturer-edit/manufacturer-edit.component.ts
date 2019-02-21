@@ -24,7 +24,7 @@ export class ManufacturerEditComponent implements OnInit {
       name: ['', [Validators.required]],
       added_value: ['', [Validators.required]],
       color: [''],
-      contact_person: [],
+      contact_person: [''],
       site: [''],
       email: [],
       vk: [''],
@@ -54,6 +54,7 @@ export class ManufacturerEditComponent implements OnInit {
       this.router.navigate(['/catalog/brands']);
     } else {
       this.manufacturerForm.value.brands = this.manufacturer.brands;
+      this.manufacturerForm.value.entry = this.manufacturer.entry;
       this.api.updateManufacturer(this.manufacturerForm.value).subscribe(
         () => this.onSaveComplete(),
         (error: any) => console.log(error)
