@@ -24,7 +24,7 @@ export class ManufacturerApiService {
 
   createManufacturer(manufacturer: IManufacturer): Observable<IManufacturer> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.http.post<IManufacturer>(this.url, JSON.stringify(manufacturer), {headers: headers});
+    return this.http.post<IManufacturer>(this.url, manufacturer.toString(), {headers: headers});
   }
 
   updateManufacturer(manufacturer: IManufacturer): Observable<IManufacturer> {
