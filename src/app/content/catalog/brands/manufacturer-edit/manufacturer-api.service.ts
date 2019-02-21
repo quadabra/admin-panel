@@ -29,7 +29,7 @@ export class ManufacturerApiService {
 
   updateManufacturer(manufacturer: IManufacturer): Observable<IManufacturer> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.http.put<IManufacturer>(this.url + '/' + manufacturer.entry , JSON.stringify(manufacturer), {headers: headers});
+    return this.http.put<IManufacturer>(this.url + '/' + manufacturer.entry , manufacturer.toString(), {headers: headers});
   }
 
   private initNewManufacturer(): IManufacturer {

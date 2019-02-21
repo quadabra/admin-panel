@@ -50,7 +50,7 @@ export class ManufacturerEditComponent implements OnInit {
         () => this.onSaveComplete(),
         (error: any) => console.log(error)
       );
-      console.log(this.manufacturerForm.value);
+      console.log(...this.manufacturerForm.value);
       this.router.navigate(['/catalog/brands']);
     } else {
       this.manufacturerForm.value.brands = this.manufacturer.brands;
