@@ -13,6 +13,10 @@ export class HeaderControlsService {
     this.title = title;
   }
 
+  set Title(str) {
+    this.title = str;
+  }
+
   getTitle(): Observable<string> {
     return Observable.of(this.title);
   }

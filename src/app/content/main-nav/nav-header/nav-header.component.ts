@@ -7,14 +7,14 @@ import {HeaderControlsService} from './header-controls.service';
   styleUrls: ['./nav-header.component.css']
 })
 export class NavHeaderComponent implements OnInit {
-  title;
+  title = '';
 
   constructor(private controls: HeaderControlsService) {
   }
 
   ngOnInit() {
-    this.title = this.controls.getTitle();
-    // this.title.subscribe(() => this.controls.getTitle());
+    // this.title = this.controls.getTitle();
+    this.controls.getTitle().subscribe(title => this.title = title);
     console.log(this.title);
   }
 }
