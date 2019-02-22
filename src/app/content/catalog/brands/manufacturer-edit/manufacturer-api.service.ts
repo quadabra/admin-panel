@@ -15,6 +15,8 @@ export class ManufacturerApiService {
   constructor(private http: HttpClient) {
   }
 
+  toUrlEncoded = obj => Object.keys(obj).map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k])).join('&');
+
   getManufacturer(id: number): Observable<IManufacturer> {
     if (id === 0) {
       return of(this.initNewManufacturer());
@@ -23,13 +25,19 @@ export class ManufacturerApiService {
   }
 
   createManufacturer(manufacturer: IManufacturer): Observable<IManufacturer> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.http.post<IManufacturer>(this.url, manufacturer.toString(), {headers: headers});
+    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    return this.http.post<IManufacturer>(this.url, this.toUrlEncoded(manufacturer), {headers: headers});
   }
 
   updateManufacturer(manufacturer: IManufacturer): Observable<IManufacturer> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.http.put<IManufacturer>(this.url + '/' + manufacturer.entry , manufacturer.toString(), {headers: headers});
+    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    return this.http.put<IManufacturer>(this.url + '/' + manufacturer.entry,
+      this.toUrlEncoded(manufacturer), {headers: headers});
+  }
+
+  deleteManufacturer(id): Observable<any> {
+    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    return this.http.delete(this.url + '/' + id, {headers: headers});
   }
 
   private initNewManufacturer(): IManufacturer {

@@ -7,6 +7,7 @@ import {ContentRoutingModule} from './content-routing.module';
 import {ContentComponent} from './content.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import {HeaderControlsService} from './main-nav/nav-header/header-controls.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
   ],
   exports: [
   ],
+  providers: [HeaderControlsService]
 })
 export class ContentModule {
 }
