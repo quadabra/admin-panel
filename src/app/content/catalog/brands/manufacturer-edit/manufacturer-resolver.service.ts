@@ -10,11 +10,11 @@ import {IManufacturer} from '../../../../_model/interface/manufacturer';
 @Injectable()
 export class ManufacturerResolverService implements Resolve<IManufacturer> {
 
-  constructor (private apiService: ManufacturerApiService, private router: Router) {}
+  constructor (private api: ManufacturerApiService, private router: Router) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IManufacturer> {
     const id = route.paramMap.get('id');
-    return this.apiService.getManufacturer(+id)
+    return this.api.getManufacturer(+id)
       .map(manufacturer => {
         if (manufacturer) {
           return manufacturer;

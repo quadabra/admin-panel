@@ -58,3 +58,13 @@
   align-items: stretch;
   justify-content: space-between;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+:host ::ng-deep .ck-editor__editable {
+  min-height: 300px;
+  background: none !important;
+}

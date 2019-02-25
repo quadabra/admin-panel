@@ -11,12 +11,13 @@
                 appearance="outline"
                 class="example-full-width">
                 <mat-label>Name of brand</mat-label>
-                <input matInput placeholder="Enter name" value="">
+                <input matInput placeholder="Enter name" [value]="brand.name[lang]">
               </mat-form-field>
-              <mat-form-field appearance="outline" class="description__text-input">
-                <mat-label>Description</mat-label>
-                <textarea matInput placeholder="Description" [value]="" rows="10"></textarea>
-              </mat-form-field>
+              <ckeditor [editor]="Editor" [data]="brand.description[lang]"></ckeditor>
+              <!--<mat-form-field appearance="outline" class="description__text-input">-->
+                <!--<mat-label>Description</mat-label>-->
+                <!--<textarea matInput placeholder="Description" [value]="brand.description[lang]" rows="10"></textarea>-->
+              <!--</mat-form-field>-->
             </div>
           </mat-tab>
         </mat-tab-group>
@@ -27,7 +28,8 @@
             <h5 class="heading-title">Logo</h5>
           </div>
           <div class="brand-options__image">
-            <input type="file" placeholder="image here">
+            <input *ngIf="!brand.logo" type="file" placeholder="image here">
+            <img [src]="brand.logo" alt="">
           </div>
         </div>
         <div class="brand-options__props-container">

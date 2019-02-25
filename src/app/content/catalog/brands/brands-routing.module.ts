@@ -11,6 +11,7 @@ import {ManufacturerEditComponent} from './manufacturer-edit/manufacturer-edit.c
 import {ManufacturersResolverService} from './brands-setup/manufacturers-resolver.service';
 import {BrandsResolverService} from './brands-setup/brands-resolver.service';
 import {ManufacturerResolverService} from './manufacturer-edit/manufacturer-resolver.service';
+import {BrandResolverService} from './brand-edit/brand-resolver.service';
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ const routes: Routes = [
       {
         path: 'brand/:id',
         component: BrandEditComponent,
+        resolve: {brand: BrandResolverService}
       }
     ]
   }
@@ -42,7 +44,7 @@ const routes: Routes = [
   declarations: [],
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [ManufacturersResolverService, BrandsResolverService, ManufacturerResolverService]
+  providers: [ManufacturersResolverService, BrandsResolverService, ManufacturerResolverService, BrandResolverService]
 })
 export class BrandsRoutingModule {
 }

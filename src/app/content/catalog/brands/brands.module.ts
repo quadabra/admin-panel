@@ -8,6 +8,8 @@ import {BrandEditComponent} from './brand-edit/brand-edit.component';
 import {ManufacturerEditComponent} from './manufacturer-edit/manufacturer-edit.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ManufacturerApiService} from './manufacturer-edit/manufacturer-api.service';
+import {BrandApiService} from './brand-edit/brand-api.service';
+import {SharedModule} from '../../../_shared/shared.module';
 
 const components = [
   BrandsComponent,
@@ -24,9 +26,11 @@ const components = [
     FormsModule,
     ReactiveFormsModule,
     BrandsRoutingModule,
+    SharedModule
   ],
   providers: [
-    ManufacturerApiService
+    ManufacturerApiService,
+    BrandApiService,
   ]
 })
 export class BrandsModule {

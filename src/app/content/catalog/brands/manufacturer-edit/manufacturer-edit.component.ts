@@ -45,20 +45,9 @@ export class ManufacturerEditComponent implements OnInit {
     console.log(this.manufacturer);
   }
 
-  // patch(obj): any {
-  //   return Object.keys(obj).map(key => {
-  //     if (obj[key] !== '' && obj[key] !== null) {
-  //       return key: obj[key];
-  //     }
-  //   });
-  // }
-
   onSaveComplete(): void {
     console.log('done!');
-  }
-
-  goBack(): void {
-    this.controls.goBack(this.parentRoute);
+    this.router.navigate(['/catalog/brands']);
   }
 
   save(): void {
@@ -68,7 +57,6 @@ export class ManufacturerEditComponent implements OnInit {
         (error: any) => console.log(error)
       );
       console.log(...this.manufacturerForm.value);
-      this.goBack();
     } else {
       // this.manufacturerForm.value.brands = this.manufacturer.brands;
       // this.manufacturerForm.value.entry = this.manufacturer.entry;
@@ -77,7 +65,6 @@ export class ManufacturerEditComponent implements OnInit {
         (error: any) => console.log(error)
       );
       console.log({...this.manufacturer, ...this.manufacturerForm.value});
-      this.goBack();
     }
   }
 
@@ -86,6 +73,5 @@ export class ManufacturerEditComponent implements OnInit {
       () => this.onSaveComplete(),
       (error: any) => console.log(error)
     );
-    this.goBack();
   }
 }
