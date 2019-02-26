@@ -42,6 +42,20 @@ export class BrandApiService {
   }
 
   private initNewBrand(): IBrandMultiLang {
-    return {} as IBrandMultiLang;
+    return {
+      id: 0,
+      logo: '',
+      name: {
+        EN: '',
+        RU: '',
+      },
+      description: {
+        EN: '',
+        RU: '',
+      },
+      priority: '',
+      priority_power: '',
+      manufacturer_entry: null,
+    };
   }
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ManufacturerApiService} from '../manufacturer-edit/manufacturer-api.service';
 import {HeaderControlsService} from '../../../main-nav/nav-header/header-controls.service';
 import {IBrand} from '../../../../_model/interface/brand';
@@ -14,6 +14,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export class BrandEditComponent implements OnInit {
   langs = ['EN', 'RU'];
   brand: IBrand;
+  brandForm: FormGroup;
   public Editor = ClassicEditor;
 
   constructor(private fb: FormBuilder,
@@ -26,6 +27,12 @@ export class BrandEditComponent implements OnInit {
   ngOnInit() {
     this.brand = this.route.snapshot.data['brand'];
     console.log(this.brand);
+    this.brandForm = this.fb.group({
+      name: ['', [Validators.required]],
+      priority: [''],
+      priority_power: [''],
+      seo_keyword: [''],
+    });
   }
 
 }

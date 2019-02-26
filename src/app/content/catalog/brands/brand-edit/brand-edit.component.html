@@ -11,7 +11,7 @@
                 appearance="outline"
                 class="example-full-width">
                 <mat-label>Name of brand</mat-label>
-                <input matInput placeholder="Enter name" [value]="brand.name[lang]">
+                <input matInput placeholder="Enter name" value="{{brand.name[lang]}}">
               </mat-form-field>
               <ckeditor [editor]="Editor" [data]="brand.description[lang]"></ckeditor>
               <!--<mat-form-field appearance="outline" class="description__text-input">-->
@@ -41,13 +41,13 @@
               appearance="outline"
               class="">
               <mat-label>Priority</mat-label>
-              <input matInput placeholder="Priority" value="" type="number">
+              <input matInput placeholder="Priority" value="{{brand.priority}}" type="number">
             </mat-form-field>
             <mat-form-field
               appearance="outline"
               class="">
               <mat-label>Power of priority</mat-label>
-              <input matInput placeholder="Enter power" value="">
+              <input matInput placeholder="Enter power" value="{{brand.priority_power}}">
             </mat-form-field>
             <mat-form-field
               appearance="outline"
