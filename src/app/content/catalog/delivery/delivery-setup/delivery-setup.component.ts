@@ -3,10 +3,10 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-catalog-delivery',
-  templateUrl: './catalog-delivery.component.html',
-  styleUrls: ['./catalog-delivery.component.css']
+  templateUrl: './delivery-setup.component.html',
+  styleUrls: ['./delivery-setup.component.css']
 })
-export class CatalogDeliveryComponent implements OnInit {
+export class DeliverySetupComponent implements OnInit {
   deliveryTypes = [
     {
       name: 'UPS',

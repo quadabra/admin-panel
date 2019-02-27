@@ -3,10 +3,10 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-catalog-options-edit',
-  templateUrl: './catalog-options-edit.component.html',
-  styleUrls: ['./catalog-options-edit.component.css']
+  templateUrl: './options-edit.component.html',
+  styleUrls: ['./options-edit.component.css']
 })
-export class CatalogOptionsEditComponent implements OnInit {
+export class OptionsEditComponent implements OnInit {
   hide = false;
   optionForm: FormGroup;
   selected = 'Color';

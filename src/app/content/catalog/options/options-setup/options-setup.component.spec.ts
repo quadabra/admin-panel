@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CatalogOptionsComponent } from './catalog-options.component';
+import { OptionsSetupComponent } from './options-setup.component';
 
-describe('CatalogOptionsComponent', () => {
-  let component: CatalogOptionsComponent;
-  let fixture: ComponentFixture<CatalogOptionsComponent>;
+describe('OptionsSetupComponent', () => {
+  let component: OptionsSetupComponent;
+  let fixture: ComponentFixture<OptionsSetupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CatalogOptionsComponent ]
+      declarations: [ OptionsSetupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CatalogOptionsComponent);
+    fixture = TestBed.createComponent(OptionsSetupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

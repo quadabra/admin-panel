@@ -3,10 +3,10 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-catalog-delivery-edit',
-  templateUrl: './catalog-delivery-edit.component.html',
-  styleUrls: ['./catalog-delivery-edit.component.css']
+  templateUrl: './delivery-edit.component.html',
+  styleUrls: ['./delivery-edit.component.css']
 })
-export class CatalogDeliveryEditComponent implements OnInit {
+export class DeliveryEditComponent implements OnInit {
   deliveryForm: FormGroup;
   langs = ['Ru', 'En'];
   weightType: string;

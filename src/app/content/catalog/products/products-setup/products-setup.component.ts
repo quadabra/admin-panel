@@ -2,12 +2,12 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {IProduct} from '../../../_model/interface/product';
+import {IProduct} from '../../../../_model/interface/product';
 
 @Component({
   selector: 'app-catalog-products',
-  templateUrl: './catalog-products.component.html',
-  styleUrls: ['./catalog-products.component.css'],
+  templateUrl: './products-setup.component.html',
+  styleUrls: ['./products-setup.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({height: '0px', minHeight: '0', visibility: 'hidden'})),
@@ -16,7 +16,7 @@ import {IProduct} from '../../../_model/interface/product';
     ]),
   ],
 })
-export class CatalogProductsComponent implements OnInit {
+export class ProductsSetupComponent implements OnInit {
   displayedColumns: string[] = ['id', 'image', 'name', 'brand', 'buy', 'sell', 'status', 'edit'];
   expandedElement: any;
   dataSource: MatTableDataSource<IProduct[]>;

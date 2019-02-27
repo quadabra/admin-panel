@@ -1,13 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+
 //  Components
 import {CatalogComponent} from './catalog.component';
-import {CatalogProductsComponent} from './catalog-products/catalog-products.component';
-import {ProductDetailsComponent} from './catalog-products/product-details/product-details.component';
-
-// Resolvers
-import {CatalogResolverService} from './catalog-products/catalog-resolver.service';
-import {ProductResolverService} from './catalog-products/product-resolver.service';
 
 const routes: Routes = [
   {
@@ -16,22 +11,19 @@ const routes: Routes = [
     children: [
       {
         path: 'products',
-        children: [
-          {
-            path: '',
-            component: CatalogProductsComponent,
-            resolve: {productList: CatalogResolverService},
-          },
-          {
-            path: ':id',
-            component: ProductDetailsComponent,
-            resolve: {product: ProductResolverService}
-          }
-        ]
+        loadChildren: './products/products.module#ProductsModule'
       },
       {
         path: 'brands',
         loadChildren: './brands/brands.module#BrandsModule',
+      },
+      {
+        path: 'delivery',
+        loadChildren: './delivery/delivery.module#DeliveryModule',
+      },
+      {
+        path: 'options',
+        loadChildren: './options/options.module#OptionsModule',
       }
     ]
   }
@@ -40,10 +32,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  providers: [
-    CatalogResolverService,
-    ProductResolverService,
-  ],
 })
 export class CatalogRoutingModule {
 }

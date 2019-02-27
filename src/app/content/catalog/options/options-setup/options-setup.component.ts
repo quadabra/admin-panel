@@ -5,8 +5,8 @@ import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-catalog-options',
-  templateUrl: './catalog-options.component.html',
-  styleUrls: ['./catalog-options.component.css'],
+  templateUrl: './options-setup.component.html',
+  styleUrls: ['./options-setup.component.css'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0', visibility: 'hidden' })),
@@ -15,7 +15,7 @@ import { Observable, of } from 'rxjs';
     ]),
   ],
 })
-export class CatalogOptionsComponent implements OnInit {
+export class OptionsSetupComponent implements OnInit {
   displayedColumns = ['id', 'name', 'priority', 'actions'];
   dataSource: Option[] = [
     { id: 1, name: 'color', priority: 1 },
