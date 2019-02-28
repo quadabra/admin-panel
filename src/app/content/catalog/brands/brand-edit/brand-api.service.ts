@@ -5,13 +5,12 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
-import {baseUrl, versionUrl} from '../../../../_api/url';
 import {IBrand} from '../../../../_model/interface/brand';
 import {IBrandMultiLang} from '../../../../_model/interface/brandMultiLang';
 
 @Injectable()
 export class BrandApiService {
-  private url = baseUrl + versionUrl + 'brand';
+  private url = 'https://api.grey-shop.com/v1/brand';
 
   constructor(private http: HttpClient) {
   }

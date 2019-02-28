@@ -3,7 +3,6 @@ import {IManufacturer} from '../../../../_model/interface/manufacturer';
 import {ActivatedRoute} from '@angular/router';
 import {ApiService} from '../../../../_api/api.service';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import {HeaderControlsService} from '../../../main-nav/nav-header/header-controls.service';
 
 @Component({
   selector: 'app-catalog-brands',
@@ -18,11 +17,10 @@ export class BrandsSetupComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private api: ApiService,
-              private controls: HeaderControlsService) {
+              ) {
   }
 
   ngOnInit() {
-    this.controls.setTitle('Brands setup');
     this.manufacturersList = this.route.snapshot.data['manufacturers'];
     this.brandsList = this.route.snapshot.data['brands'];
   }

@@ -16,6 +16,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 import {ApiService} from './_api/api.service';
 import {AuthGuardService} from './_guards/auth-guard.service';
 import {LoginComponent} from './login/login.component';
+import {UrlConfigService} from './_api/urlConfig.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import {LoginComponent} from './login/login.component';
     AppRoutingModule,
     LayoutModule,
   ],
-  providers: [ApiService, AuthGuardService],
+  providers: [ApiService, AuthGuardService, UrlConfigService],
 })
 export class AppModule {
 }

@@ -6,11 +6,10 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import {IManufacturer} from '../../../../_model/interface/manufacturer';
-import {baseUrl, versionUrl} from '../../../../_api/url';
 
 @Injectable()
 export class ManufacturerApiService {
-  private url = baseUrl + versionUrl + 'manufacturer';
+  private url = 'https://api.grey-shop.com/v1/manufacturer';
 
   constructor(private http: HttpClient) {
   }

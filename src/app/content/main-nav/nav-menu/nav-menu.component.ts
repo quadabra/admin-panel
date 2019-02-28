@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NavList} from '../../../_model/nav/nav-list';
+import {AuthService} from '../../../_api/auth.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -8,9 +9,12 @@ import {NavList} from '../../../_model/nav/nav-list';
 })
 export class NavMenuComponent implements OnInit {
   navList = new NavList();
-  constructor() {
+  constructor(private auth: AuthService) {
   }
 
+  logout(): void {
+    this.auth.logOut();
+  }
   ngOnInit() {
   }
 

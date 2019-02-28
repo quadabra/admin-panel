@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HeaderControlsService} from './header-controls.service';
 
 @Component({
   selector: 'app-nav-header',
@@ -9,12 +8,12 @@ import {HeaderControlsService} from './header-controls.service';
 export class NavHeaderComponent implements OnInit {
   title = '';
 
-  constructor(private controls: HeaderControlsService) {
+  constructor() {
   }
 
   ngOnInit() {
     // this.title = this.controls.getTitle();
-    this.controls.getTitle().subscribe(title => this.title = title);
-    console.log(this.title);
+    // this.controls.getTitle().subscribe(title => this.title = title);
+    // console.log(this.title);
   }
 }

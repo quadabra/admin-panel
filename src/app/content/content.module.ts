@@ -5,9 +5,8 @@ import {CatalogModule} from './catalog/catalog.module';
 import {ContentRoutingModule} from './content-routing.module';
 
 import {ContentComponent} from './content.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import {HeaderControlsService} from './main-nav/nav-header/header-controls.service';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {WelcomeComponent} from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +20,8 @@ import {HeaderControlsService} from './main-nav/nav-header/header-controls.servi
     MainNavModule,
     ContentRoutingModule,
   ],
-  exports: [
-  ],
-  providers: [HeaderControlsService]
+  exports: [],
+  providers: []
 })
 export class ContentModule {
 }

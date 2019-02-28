@@ -1,9 +1,10 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ApiService} from './api.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {IUser} from '../_model/interface/user';
 import {Router} from '@angular/router';
+import {UrlConfigService} from './urlConfig.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class AuthService {
 
   constructor(private _api: ApiService,
               private _http: HttpClient,
-              private router: Router) {
+              private router: Router,
+              private urlConfig: UrlConfigService) {
   }
 
   logIn(login: string, password: string) {
@@ -24,7 +26,7 @@ export class AuthService {
         'Authorization': 'Basic ' + btoa(login + ':' + password)
       })
     };
-    return this._http.post<any>(this._api.getAuthLink(), {}, httpOptions)
+    return this._http.post<any>(this.urlConfig.getAuthUrl(), {}, httpOptions)
       .pipe(map(user => {
         if (user && user.auth_key) {
           localStorage.setItem('currentUser', JSON.stringify(user));

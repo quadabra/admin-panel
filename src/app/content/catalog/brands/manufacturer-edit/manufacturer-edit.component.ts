@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {IManufacturer} from '../../../../_model/interface/manufacturer';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ManufacturerApiService} from './manufacturer-api.service';
-import {HeaderControlsService} from '../../../main-nav/nav-header/header-controls.service';
 
 @Component({
   selector: 'app-manufacturer-edit',
@@ -19,7 +18,7 @@ export class ManufacturerEditComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router,
               private api: ManufacturerApiService,
-              private controls: HeaderControlsService) {
+              ) {
   }
 
   ngOnInit() {
@@ -41,7 +40,7 @@ export class ManufacturerEditComponent implements OnInit {
       comment: [''],
     });
     this.manufacturerForm.patchValue(this.manufacturer);
-    this.controls.setTitle(!this.manufacturer.entry ? 'Create new' : 'Edit ' + this.manufacturer.name);
+    // this.controls.setTitle(!this.manufacturer.entry ? 'Create new' : 'Edit ' + this.manufacturer.name);
     console.log(this.manufacturer);
   }
 
