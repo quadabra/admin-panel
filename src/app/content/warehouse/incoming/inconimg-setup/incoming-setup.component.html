@@ -1,0 +1,112 @@
+<div>
+  <mat-card>
+    <form class="incoming-filters" autocomplete="off">
+
+      <mat-form-field class="incoming-filters__input" appearance="outline">
+        <mat-label>№</mat-label>
+        <input matInput type="text" placeholder="Incoming number">
+      </mat-form-field>
+
+      <mat-form-field class="incoming-filters__input" appearance="outline">
+        <mat-label>Start date</mat-label>
+        <input matInput [matDatepicker]="pickerStart" placeholder="Choose a start date">
+        <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="incoming-filters__input" appearance="outline">
+        <mat-label>End date</mat-label>
+        <input matInput [matDatepicker]="pickerEnd" placeholder="Choose a end date">
+        <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="incoming-filters__input" appearance="outline">
+        <mat-select placeholder="Manufacturers" [formControl]="manufacturers" multiple>
+          <mat-option value="">None</mat-option>
+          <mat-option *ngFor="let manufacturer of manufacturerList" [value]="manufacturer">{{manufacturer}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="incoming-filters__input" appearance="outline">
+        <mat-select placeholder="Items" [formControl]="items" multiple>
+          <mat-option value="">None</mat-option>
+          <mat-option *ngFor="let item of itemList" [value]="item">{{item}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <span class="spacer"></span>
+      <button mat-raised-button type="reset" (click)="filterReset()">Reset</button>
+    </form>
+  </mat-card>
+  <div class="flex" style="margin-top: 10px">
+    <span class="spacer"></span>
+    <a mat-raised-button [routerLink]="['./edit']">New Incoming</a>
+  </div>
+  <div class="incoming-table">
+    <table mat-table
+           [dataSource]="dataSource" multiTemplateDataRows
+           class="mat-elevation-z8">
+
+      <ng-container matColumnDef="number">
+        <th mat-header-cell *matHeaderCellDef> Number</th>
+        <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Time</th>
+        <td mat-cell *matCellDef="let element"> {{element.time}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="manufacturers">
+        <th mat-header-cell *matHeaderCellDef> Manufacturers</th>
+        <td mat-cell *matCellDef="let element"><span *ngFor="let item of element.manufacturers"> {{item}} ;</span></td>
+      </ng-container>
+
+      <ng-container matColumnDef="invoice">
+        <th mat-header-cell *matHeaderCellDef> Invoice</th>
+        <td mat-cell *matCellDef="let element"> {{element.invoice}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status</th>
+        <td mat-cell *matCellDef="let element"> {{element.isAccepted}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="comment">
+      <th mat-header-cell *matHeaderCellDef> Comment</th>
+      <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+    </ng-container>
+
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action</th>
+        <td mat-cell *matCellDef="let element">
+          <a mat-raised-button color="accent" [routerLink]="['./check']">Check</a>
+        </td>
+      </ng-container>
+
+      <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+          <div class="example-element-detail"
+               [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <app-wh-incoming-expand [dataDetails]="element.invoiceItems"></app-wh-incoming-expand>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
+          class="example-element-row"
+          [class.example-expanded-row]="expandedElement === element"
+          (click)="expandedElement = expandedElement === element ? null : element">
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    </table>
+  </div>
+</div>

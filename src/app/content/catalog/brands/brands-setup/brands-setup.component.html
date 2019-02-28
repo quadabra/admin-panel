@@ -28,7 +28,7 @@
             <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
             <span>{{item.name}}</span>
             <span class="spacer"></span>
-            <a mat-raised-button [routerLink]="['./brand']" color="accent">
+            <a mat-raised-button [routerLink]="['brand', item.id]" color="accent">
               <mat-icon>edit</mat-icon>
             </a>
           </div>

@@ -2,24 +2,22 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {MaterialModule} from '../../material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {CatalogRoutingModule} from './catalog-routing.module';
+import {WarehouseRoutingModule} from './warehouse-routing.module';
 
-//  components
-import { CatalogComponent } from './catalog.component';
+//  Components
+import {WarehouseComponent} from './warehouse.component';
 
 const modules = [
   CommonModule,
   MaterialModule,
   FormsModule,
   ReactiveFormsModule,
-  CatalogRoutingModule,
+  WarehouseRoutingModule
 ];
 
 @NgModule({
-  declarations: [
-    CatalogComponent
-  ],
+  declarations: [WarehouseComponent],
   imports: [...modules],
 })
-export class CatalogModule {
+export class WarehouseModule {
 }

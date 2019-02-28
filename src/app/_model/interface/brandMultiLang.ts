@@ -12,4 +12,5 @@ export interface IBrandMultiLang {
   priority: string;
   priority_power: string;
   manufacturer_entry: number;
+  seo_keyword: string;
 }

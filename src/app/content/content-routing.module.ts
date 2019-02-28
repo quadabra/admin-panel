@@ -18,6 +18,10 @@ const routes: Routes = [
         loadChildren: './catalog/catalog.module#CatalogModule'
       },
       {
+        path: 'warehouse',
+        loadChildren: './warehouse/warehouse.module#WarehouseModule',
+      },
+      {
         path: '',
         redirectTo: 'welcome',
         pathMatch: 'full'

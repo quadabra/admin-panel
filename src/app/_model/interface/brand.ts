@@ -6,4 +6,5 @@ export interface IBrand {
   priority: string;
   priority_power: string;
   manufacturer_entry: number;
+  seo_keyword: string;
 }

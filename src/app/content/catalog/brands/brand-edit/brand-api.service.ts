@@ -56,6 +56,7 @@ export class BrandApiService {
       priority: '',
       priority_power: '',
       manufacturer_entry: null,
+      seo_keyword: '',
     };
   }
 }
