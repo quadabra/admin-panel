@@ -29,8 +29,6 @@
     "@angular/platform-server": "~7.0.0",
     "@angular/router": "~7.0.0",
     "@angular/service-worker": "^7.0.4",
-    "@ckeditor/ckeditor5-angular": "^1.0.1",
-    "@ckeditor/ckeditor5-build-classic": "^11.2.0",
     "@ng-toolkit/universal": "^1.1.47",
     "@ngrx/store": "^7.2.0",
     "@nguniversal/express-engine": "~7.0.0",
