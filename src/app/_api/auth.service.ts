@@ -3,6 +3,7 @@ import {ApiService} from './api.service';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {IUser} from '../_model/interface/user';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class AuthService {
   user: IUser;
 
   constructor(private _api: ApiService,
-              private _http: HttpClient) {
+              private _http: HttpClient,
+              private router: Router) {
   }
 
   logIn(login: string, password: string) {
@@ -27,6 +29,7 @@ export class AuthService {
         if (user && user.auth_key) {
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.setUser(user);
+          this.router.navigate(['/welcome']);
         }
         return user;
       }));
