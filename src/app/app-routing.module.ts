@@ -17,6 +17,11 @@ const routes: Routes = [
     canActivate: [AuthGuardService],
     loadChildren: '../app/content/content.module#ContentModule',
   },
+  // {
+  //   path: '',
+  //   redirectTo: 'content',
+  //   pathMatch: 'full',
+  // },
   {
     path: '**',
     redirectTo: '',

@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
-import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
+// import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 
 @NgModule({
   declarations: [],
-  imports: [CKEditorModule],
-  exports: [CKEditorModule],
+  imports: [],
+  exports: [],
   providers: []
 })
 export class SharedModule {
