@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ManufacturerApiService} from '../manufacturer-edit/manufacturer-api.service';
 import {HeaderControlsService} from '../../../main-nav/nav-header/header-controls.service';
 import {IBrand} from '../../../../_model/interface/brand';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+// import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-brand-edit',
@@ -15,7 +15,7 @@ export class BrandEditComponent implements OnInit {
   langs = ['EN', 'RU'];
   brand: IBrand;
   brandForm: FormGroup;
-  public Editor = ClassicEditor;
+  // public Editor = ClassicEditor;
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
