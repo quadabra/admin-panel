@@ -1,7 +1,7 @@
 import {NgtUniversalModule} from '@ng-toolkit/universal';
 import {CommonModule} from '@angular/common';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -17,6 +17,7 @@ import {ApiService} from './_api/api.service';
 import {AuthGuardService} from './_guards/auth-guard.service';
 import {LoginComponent} from './login/login.component';
 import {UrlConfigService} from './_api/urlConfig.service';
+import {ApiInterceptor} from './_api/api.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,16 @@ import {UrlConfigService} from './_api/urlConfig.service';
     AppRoutingModule,
     LayoutModule,
   ],
-  providers: [ApiService, AuthGuardService, UrlConfigService],
+  providers: [
+    ApiService,
+    AuthGuardService,
+    UrlConfigService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor,
+      multi: true
+    },
+    ],
 })
 export class AppModule {
 }

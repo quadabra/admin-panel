@@ -20,6 +20,10 @@ export class ApiService {
   constructor(private http: HttpClient) {
   }
 
+  getData(url): Observable<any> {
+    return this.http.get<any>(url);
+  }
+
   getAuthLink(): string {
     return this._apiUrl.auth;
   }
@@ -40,7 +44,7 @@ export class ApiService {
     return this.http.get<IManufacturer>(this._apiUrl.manufacturers + '/' + id);
   }
 
-  getAllBrands(): Observable<any> {
+  getAllBrands(): Observable<IBrand[]> {
     return this.http.get<IBrand[]>(this._apiUrl.brands);
   }
 
