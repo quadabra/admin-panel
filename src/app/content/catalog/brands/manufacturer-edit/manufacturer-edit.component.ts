@@ -40,7 +40,6 @@ export class ManufacturerEditComponent implements OnInit {
       comment: [''],
     });
     this.manufacturerForm.patchValue(this.manufacturer);
-    // this.controls.setTitle(!this.manufacturer.entry ? 'Create new' : 'Edit ' + this.manufacturer.name);
     console.log(this.manufacturer);
   }
 
@@ -57,8 +56,6 @@ export class ManufacturerEditComponent implements OnInit {
       );
       console.log(...this.manufacturerForm.value);
     } else {
-      // this.manufacturerForm.value.brands = this.manufacturer.brands;
-      // this.manufacturerForm.value.entry = this.manufacturer.entry;
       this.api.updateManufacturer({...this.manufacturer, ...this.manufacturerForm.value}).subscribe(
         () => this.onSaveComplete(),
         (error: any) => console.log(error)
