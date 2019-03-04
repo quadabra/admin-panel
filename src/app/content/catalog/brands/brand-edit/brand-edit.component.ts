@@ -22,12 +22,10 @@ export class BrandEditComponent implements OnInit {
   }
 
   getLangs(): {} {
-    const name = {};
-    this.langs.forEach(lang => {
-      Object.keys(name).push(lang);
-      name[lang] = '';
-    });
-    return name;
+    return this.langs.reduce((acc, key) => {
+      acc[key] = '';
+      return acc;
+    }, {});
   }
 
   save(): void {
