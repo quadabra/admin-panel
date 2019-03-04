@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ManufacturerApiService} from '../manufacturer-edit/manufacturer-api.service';
 import {IBrand} from '../../../../_model/interface/brand';
-// import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-brand-edit',
@@ -11,10 +10,9 @@ import {IBrand} from '../../../../_model/interface/brand';
   styleUrls: ['./brand-edit.component.css']
 })
 export class BrandEditComponent implements OnInit {
-  langs = ['EN', 'RU'];
+  langs = ['EN', 'ES'];
   brand: IBrand;
   brandForm: FormGroup;
-  // public Editor = ClassicEditor;
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
@@ -23,15 +21,29 @@ export class BrandEditComponent implements OnInit {
               ) {
   }
 
+  getLangs(): {} {
+    const name = {};
+    this.langs.forEach(lang => {
+      Object.keys(name).push(lang);
+      name[lang] = '';
+    });
+    return name;
+  }
+
+  save(): void {
+    console.log({...this.brand, ...this.brandForm.value});
+  }
+
   ngOnInit() {
     this.brand = this.route.snapshot.data['brand'];
     console.log(this.brand);
     this.brandForm = this.fb.group({
-      name: ['', [Validators.required]],
-      priority: [''],
+      name: this.fb.group(this.getLangs()),
+      priority: ['', Validators.required],
       priority_power: [''],
       seo_keyword: [''],
     });
+    this.brandForm.patchValue(this.brand);
   }
 
 }

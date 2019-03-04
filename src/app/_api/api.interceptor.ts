@@ -1,7 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
-import {HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse, HttpErrorResponse} from '@angular/common/http';
+import {
+  HttpEvent,
+  HttpInterceptor,
+  HttpHandler,
+  HttpRequest,
+  HttpResponse,
+  HttpErrorResponse,
+  HttpHeaders
+} from '@angular/common/http';
 
 @Injectable()
 export class ApiInterceptor implements HttpInterceptor {
@@ -10,7 +18,7 @@ export class ApiInterceptor implements HttpInterceptor {
     const UpdatedRequest = req.clone({
       headers: req.headers.set('Content-type', 'application/x-www-form-urlencoded')
     });
-    if (req.method === 'post') {}
+    if (req.method === 'POST') {}
     return next.handle(req).pipe(
       tap(
         event => {

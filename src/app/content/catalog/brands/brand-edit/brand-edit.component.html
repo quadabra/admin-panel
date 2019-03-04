@@ -1,19 +1,18 @@
-<form class="brand-form">
+<form class="brand-form" [formGroup]="brandForm" novalidate (ngSubmit)="save()">
   <mat-card>
     <div class="brand-container">
       <div class="brand-description">
         <mat-tab-group>
           <mat-tab
             *ngFor="let lang of langs"
-            label="{{lang}}">
+            label="{{lang}}" formGroupName="name">
             <div class="brand-lang__tab-container">
               <mat-form-field
                 appearance="outline"
                 class="example-full-width">
                 <mat-label>Name of brand</mat-label>
-                <input matInput placeholder="Enter name" value="{{brand.name[lang]}}">
+                <input matInput placeholder="Enter name" formControlName="{{lang}}">
               </mat-form-field>
-              <!--<ckeditor [editor]="Editor" [data]="brand.description[lang]"></ckeditor>-->
               <!--<mat-form-field appearance="outline" class="description__text-input">-->
                 <!--<mat-label>Description</mat-label>-->
                 <!--<textarea matInput placeholder="Description" [value]="brand.description[lang]" rows="10"></textarea>-->
@@ -60,4 +59,5 @@
       </div>
     </div>
   </mat-card>
+  <button type="submit" mat-raised-button color="accent">save</button>
 </form>
