@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ManufacturerApiService} from '../manufacturer-edit/manufacturer-api.service';
+import {BrandApiService} from './brand-api.service';
 import {IBrand} from '../../../../_model/interface/brand';
 import {LanguageService} from '../../../../_api/language.service';
-import {Observable} from 'rxjs';
-import {map, catchError} from 'rxjs/operators';
 import {ILanguage} from '../../../../_model/interface/language';
 
 @Component({
@@ -14,28 +12,50 @@ import {ILanguage} from '../../../../_model/interface/language';
   styleUrls: ['./brand-edit.component.css']
 })
 export class BrandEditComponent implements OnInit {
-  langs = ['EN', 'ES'];
-  productLanguage: Observable<ILanguage[]>;
+  productLanguage: ILanguage[];
   brand: IBrand;
   brandForm: FormGroup;
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
               private router: Router,
-              private api: ManufacturerApiService,
+              private api: BrandApiService,
               private languages: LanguageService,
-              ) {
+  ) {
   }
 
   getLangs(): {} {
-    return this.langs.reduce((acc, key) => {
+    return this.productLanguage.map(data => data.code).reduce((acc, key) => {
       acc[key] = '';
       return acc;
     }, {});
   }
 
+  onSaveComplete(): void {
+    console.log('done!');
+    this.router.navigate(['/catalog/brands']);
+  }
+
   save(): void {
-    console.log({...this.brand, ...this.brandForm.value});
+    if (!this.brand.id) {
+      this.api.createBrand(this.brandForm.value).subscribe(
+        () => this.onSaveComplete(),
+        (error: any) => console.log(error)
+      );
+    } else {
+      this.api.updateBrand({...this.brand, ...this.brandForm.value}).subscribe(
+        () => this.onSaveComplete(),
+        (error: any) => console.log(error)
+      );
+      console.log({...this.brand, ...this.brandForm.value});
+    }
+  }
+
+  del(): void {
+    this.api.deleteBrand(this.brand.id).subscribe(
+      () => this.onSaveComplete(),
+      (error: any) => console.log(error)
+    );
   }
 
   ngOnInit() {

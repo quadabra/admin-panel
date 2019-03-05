@@ -4,14 +4,14 @@
       <div class="brand-description">
         <mat-tab-group>
           <mat-tab
-            *ngFor="let lang of langs"
-            label="{{lang}}" formGroupName="name">
+            *ngFor="let lang of productLanguage"
+            label="{{lang.code}}" formGroupName="name">
             <div class="brand-lang__tab-container">
               <mat-form-field
                 appearance="outline"
                 class="example-full-width">
                 <mat-label>Name of brand</mat-label>
-                <input matInput placeholder="Enter name" formControlName="{{lang}}">
+                <input matInput placeholder="Enter name" formControlName="{{lang.code}}">
               </mat-form-field>
               <!--<mat-form-field appearance="outline" class="description__text-input">-->
                 <!--<mat-label>Description</mat-label>-->
@@ -40,19 +40,19 @@
               appearance="outline"
               class="">
               <mat-label>Priority</mat-label>
-              <input matInput placeholder="Priority" value="{{brand.priority}}" type="number">
+              <input matInput placeholder="Priority" value="{{brand.priority}}" type="number" formControlName="priority">
             </mat-form-field>
             <mat-form-field
               appearance="outline"
               class="">
               <mat-label>Power of priority</mat-label>
-              <input matInput placeholder="Enter power" value="{{brand.priority_power}}">
+              <input matInput placeholder="Enter power" value="{{brand.priority_power}}" formControlName="priority_power">
             </mat-form-field>
             <mat-form-field
               appearance="outline"
               class="">
               <mat-label>Seo keyword</mat-label>
-              <input matInput placeholder="Enter word" value="{{brand.seo_keyword}}">
+              <input matInput placeholder="Enter word" value="{{brand.seo_keyword}}" formControlName="seo_keyword">
             </mat-form-field>
           </div>
         </div>
