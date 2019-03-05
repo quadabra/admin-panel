@@ -4,7 +4,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {IUser} from '../_model/interface/user';
 import {Router} from '@angular/router';
-import {UrlConfigService} from './urlConfig.service';
+import {UrlConfigService} from './url-config.service';
 
 @Injectable({
   providedIn: 'root'

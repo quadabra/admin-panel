@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {IUser} from './_model/interface/user';
 import {AuthService} from './_api/auth.service';
 import {Router} from '@angular/router';
+import {LanguageService} from './_api/language.service';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,13 @@ export class AppComponent implements OnInit {
   user: IUser;
 
   constructor(private auth: AuthService,
-              private router: Router) {
-  }
+              private router: Router,
+              private languages: LanguageService) {}
 
   ngOnInit() {
     this.auth.initUser();
     console.log(this.auth.getUser());
+    this.languages.setProductLangs();
     // if (this.auth.isAuthenticated()) {
     //   this.router.navigate(['/welcome']);
     // }

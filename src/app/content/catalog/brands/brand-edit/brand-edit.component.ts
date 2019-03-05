@@ -1,8 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ManufacturerApiService} from '../manufacturer-edit/manufacturer-api.service';
 import {IBrand} from '../../../../_model/interface/brand';
+import {LanguageService} from '../../../../_api/language.service';
+import {Observable} from 'rxjs';
+import {map, catchError} from 'rxjs/operators';
+import {ILanguage} from '../../../../_model/interface/language';
 
 @Component({
   selector: 'app-brand-edit',
@@ -11,6 +15,7 @@ import {IBrand} from '../../../../_model/interface/brand';
 })
 export class BrandEditComponent implements OnInit {
   langs = ['EN', 'ES'];
+  productLanguage: Observable<ILanguage[]>;
   brand: IBrand;
   brandForm: FormGroup;
 
@@ -18,6 +23,7 @@ export class BrandEditComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router,
               private api: ManufacturerApiService,
+              private languages: LanguageService,
               ) {
   }
 
@@ -33,6 +39,7 @@ export class BrandEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.productLanguage = this.languages.getProductLangs();
     this.brand = this.route.snapshot.data['brand'];
     console.log(this.brand);
     this.brandForm = this.fb.group({

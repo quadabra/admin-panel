@@ -8,7 +8,8 @@ export class UrlConfigService {
     menu: 'menu',
     product: 'product',
     manufacturer: 'manufacturer',
-    brand: 'brand'
+    brand: 'brand',
+    langs: 'language'
   };
   private SUFFIX = {
 
