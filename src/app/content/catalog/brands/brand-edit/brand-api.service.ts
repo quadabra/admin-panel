@@ -21,8 +21,8 @@ export class BrandApiService {
   }
 
   createBrand(brand: IBrand): Observable<IBrand> {
-    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.post<IBrand>(this.url, this.toUrlEncoded(brand), {headers: headers});
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post<IBrand>(this.url, brand, {headers: headers});
     // const headers = new HttpHeaders({'Content-Type': 'application/json'});
     // return this.http.post<IBrand>('http://localhost:3000/brands', brand, {headers: headers});
   }
@@ -40,7 +40,7 @@ export class BrandApiService {
 
   private initNewBrand(): IBrandMultiLang {
     return {
-      id: 0,
+      id: null,
       logo: '',
       name: {
         EN: '',
