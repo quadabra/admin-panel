@@ -21,21 +21,21 @@ export class BrandApiService {
   }
 
   createBrand(brand: IBrand): Observable<IBrand> {
-    const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.post<IBrand>(this.url, brand, {headers: headers});
+    // const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post<IBrand>(this.url, brand, {});
     // const headers = new HttpHeaders({'Content-Type': 'application/json'});
     // return this.http.post<IBrand>('http://localhost:3000/brands', brand, {headers: headers});
   }
 
   updateBrand(brand: IBrand): Observable<IBrand> {
-    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    // const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
     return this.http.put<IBrand>(this.url + '/' + brand.id,
-      this.toUrlEncoded(brand), {headers: headers});
+      this.toUrlEncoded(brand), {});
   }
 
   deleteBrand(id): Observable<any> {
-    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.delete(this.url + '/' + id, {headers: headers});
+    // const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    return this.http.delete(this.url + '/' + id, {});
   }
 
   private initNewBrand(): IBrandMultiLang {

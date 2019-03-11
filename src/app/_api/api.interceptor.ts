@@ -15,10 +15,13 @@ import {
 export class ApiInterceptor implements HttpInterceptor {
   constructor() {}
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const UpdatedRequest = req.clone({
-      headers: req.headers.set('Content-type', 'application/x-www-form-urlencoded')
-    });
-    if (req.method === 'POST') {}
+    if (req.method === 'POST' || req.method === 'PUT') {
+      req = req.clone({
+        setHeaders: {'Content-Type': 'application/json; charset=utf-8'}
+      });
+      console.log('api post request:', req);
+    }
+    // if (req.method === 'POST') {}
     return next.handle(req).pipe(
       tap(
         event => {

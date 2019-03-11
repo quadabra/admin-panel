@@ -28,7 +28,7 @@
           </div>
           <div class="brand-options__image">
             <input *ngIf="!brand.logo" type="file" placeholder="image here">
-            <img [src]="brand.logo" alt="">
+            <img src="{{brand.logo || 'http://grey-shop.ru/image/no_image.jpg'}}" alt="">
           </div>
         </div>
         <div class="brand-options__props-container">
@@ -61,3 +61,4 @@
   </mat-card>
   <button type="submit" mat-raised-button color="accent">save</button>
 </form>
+<button mat-raised-button color="warn" (click)="del()">delete</button>
