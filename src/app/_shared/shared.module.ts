@@ -1,10 +1,8 @@
 import {NgModule} from '@angular/core';
-import { ImageLoaderDirective } from './directives/image-loader.directive';
-// import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
-
+import { ImageLoaderComponent } from './components/image-loader/image-loader.component';
 
 @NgModule({
-  declarations: [ImageLoaderDirective],
+  declarations: [ImageLoaderComponent],
   imports: [],
   exports: [],
   providers: []

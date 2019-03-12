@@ -64,6 +64,7 @@ export class BrandEditComponent implements OnInit {
     console.log(this.brand);
     this.brandForm = this.fb.group({
       name: this.fb.group(this.getLangs()),
+      description: this.fb.group(this.getLangs()),
       priority: ['', Validators.required],
       priority_power: [''],
       seo_keyword: [''],

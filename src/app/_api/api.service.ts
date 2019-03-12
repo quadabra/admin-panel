@@ -7,14 +7,15 @@ import {IBrand} from '../_model/interface/brand';
 
 @Injectable()
 export class ApiService {
-  private _apiUrl = {
+  private apiUrl = {
     menu: 'https://api.grey-shop.com/v1/menu',
     products: 'https://api.grey-shop.com/v1/product?category_id=',
     product: 'https://api.grey-shop.com/v1/product/',
     image: 'https://img.grey-line.com/g/',
     auth: 'https://auth.grey-shop.com/app/login',
     manufacturers: 'https://api.grey-shop.com/v1/manufacturer',
-    brands: 'https://api.grey-shop.com/v1/brand'
+    brands: 'https://api.grey-shop.com/v1/brand',
+    imageUpload: 'https://img.grey-line.com/upload/',
   };
 
   constructor(private http: HttpClient) {
@@ -24,32 +25,36 @@ export class ApiService {
     return this.http.get<any>(url);
   }
 
+  imageUpload(data): Observable<{}> {
+    return this.http.post(this.apiUrl.imageUpload, data);
+  }
+
   getAuthLink(): string {
-    return this._apiUrl.auth;
+    return this.apiUrl.auth;
   }
 
   getProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>(this._apiUrl.products + '40');
+    return this.http.get<IProduct[]>(this.apiUrl.products + '40');
   }
 
   getProduct(prod_id: number): Observable<IProduct> {
-    return this.http.get<IProduct>(this._apiUrl.product + prod_id);
+    return this.http.get<IProduct>(this.apiUrl.product + prod_id);
   }
 
   getAllManufacturers(): Observable<IManufacturer[]> {
-    return this.http.get<IManufacturer[]>(this._apiUrl.manufacturers);
+    return this.http.get<IManufacturer[]>(this.apiUrl.manufacturers);
   }
 
   getManufacturer(id: number): Observable<IManufacturer> {
-    return this.http.get<IManufacturer>(this._apiUrl.manufacturers + '/' + id);
+    return this.http.get<IManufacturer>(this.apiUrl.manufacturers + '/' + id);
   }
 
   getAllBrands(): Observable<IBrand[]> {
-    return this.http.get<IBrand[]>(this._apiUrl.brands);
+    return this.http.get<IBrand[]>(this.apiUrl.brands);
   }
 
   getImageByHash(hash: string): Observable<any> {
-    return this.http.get(this._apiUrl.image + hash + '?s=medium');
+    return this.http.get(this.apiUrl.image + hash + '?s=medium');
   }
 
   private handleError(err: HttpErrorResponse) {

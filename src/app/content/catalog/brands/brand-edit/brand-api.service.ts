@@ -30,7 +30,7 @@ export class BrandApiService {
   updateBrand(brand: IBrand): Observable<IBrand> {
     // const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
     return this.http.put<IBrand>(this.url + '/' + brand.id,
-      this.toUrlEncoded(brand), {});
+      brand, {});
   }
 
   deleteBrand(id): Observable<any> {

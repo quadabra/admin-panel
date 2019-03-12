@@ -21,13 +21,13 @@ export class ManufacturerApiService {
 
   createManufacturer(manufacturer: IManufacturer): Observable<IManufacturer> {
     const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
-    return this.http.post<IManufacturer>(this.url, this.toUrlEncoded(manufacturer), {headers: headers});
+    return this.http.post<IManufacturer>(this.url, manufacturer, {headers: headers});
   }
 
   updateManufacturer(manufacturer: IManufacturer): Observable<IManufacturer> {
     const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
     return this.http.put<IManufacturer>(this.url + '/' + manufacturer.entry,
-      this.toUrlEncoded(manufacturer), {headers: headers});
+      manufacturer, {headers: headers});
   }
 
   deleteManufacturer(id): Observable<any> {
