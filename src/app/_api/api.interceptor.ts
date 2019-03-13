@@ -15,12 +15,12 @@ import {
 export class ApiInterceptor implements HttpInterceptor {
   constructor() {}
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    // if (req.method === 'POST' || req.method === 'PUT' && req.url !== 'http://img.grey-line.com/upload/') {
-    //   req = req.clone({
-    //     setHeaders: {'Content-Type': 'application/json; charset=utf-8'}
-    //   });
-    //   console.log('api post request:', req);
-    // }
+    if (req.method === 'POST' || req.method === 'PUT' && req.url !== 'http://img.grey-line.com/upload/') {
+      req = req.clone({
+        setHeaders: {'Content-Type': 'application/json; charset=utf-8'}
+      });
+      console.log('api post request:', req);
+    }
     return next.handle(req).pipe(
       tap(
         event => {
