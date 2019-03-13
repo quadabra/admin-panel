@@ -1,3 +1,36 @@
-<p>
-  image-loader works!
-</p>
+<div class="image-container">
+  <div>
+    <img [src]="getImageAddress()" alt="">
+  </div>
+  <div class="image-controls">
+    <input
+      class="image-controls__input"
+      type="file"
+      #fileInput
+      (change)="onFileSelect($event)">
+    <button
+      mat-raised-button
+      matTooltip="select image"
+      type="button"
+      color="primary"
+      (click)="fileInput.click()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button
+      *ngIf="imageHash"
+      mat-raised-button
+      matTooltip="delete image"
+      type="button"
+      color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button
+      *ngIf="!imageHash"
+      mat-raised-button
+      matTooltip="save"
+      type="button"
+      color="accent" (click)="onUpload()">
+      <mat-icon>check</mat-icon>
+    </button>
+  </div>
+</div>

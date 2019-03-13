@@ -11,11 +11,11 @@ export class ApiService {
     menu: 'https://api.grey-shop.com/v1/menu',
     products: 'https://api.grey-shop.com/v1/product?category_id=',
     product: 'https://api.grey-shop.com/v1/product/',
-    image: 'https://img.grey-line.com/g/',
+    image: 'http://img.grey-line.com/g/',
     auth: 'https://auth.grey-shop.com/app/login',
     manufacturers: 'https://api.grey-shop.com/v1/manufacturer',
     brands: 'https://api.grey-shop.com/v1/brand',
-    imageUpload: 'https://img.grey-line.com/upload/',
+    imageUpload: 'http://img.grey-line.com/upload/',
   };
 
   constructor(private http: HttpClient) {
@@ -53,8 +53,8 @@ export class ApiService {
     return this.http.get<IBrand[]>(this.apiUrl.brands);
   }
 
-  getImageByHash(hash: string): Observable<any> {
-    return this.http.get(this.apiUrl.image + hash + '?s=medium');
+  getImageByHash(hash: string): string {
+    return hash ? this.apiUrl.image + hash : 'http://grey-shop.ru/image/no_image.jpg';
   }
 
   private handleError(err: HttpErrorResponse) {

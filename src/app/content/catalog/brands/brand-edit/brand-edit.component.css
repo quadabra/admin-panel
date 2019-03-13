@@ -16,6 +16,10 @@
   align-items: stretch;
 }
 
+.brand-lang__input-container {
+  width: 100%;
+}
+
 .brand-options {
   width: 49%;
   padding: 5px;
@@ -41,6 +45,10 @@
   align-items: center;
   justify-content: center;
   background-color: #F5F5F5;
+}
+
+.brand-options__image-input {
+  display: none;
 }
 
 .brand-options__props-container {

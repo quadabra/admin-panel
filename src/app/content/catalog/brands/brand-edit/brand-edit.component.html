@@ -5,18 +5,22 @@
         <mat-tab-group>
           <mat-tab
             *ngFor="let lang of productLanguage"
-            label="{{lang.code}}" formGroupName="name">
+            label="{{lang.code}}">
             <div class="brand-lang__tab-container">
-              <mat-form-field
-                appearance="outline"
-                class="example-full-width">
-                <mat-label>Name of brand</mat-label>
-                <input matInput placeholder="Enter name" formControlName="{{lang.code}}">
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="description__text-input">
-                <mat-label>Description</mat-label>
-                <textarea matInput placeholder="Description" [value]="brand.description[lang.code]" rows="10"></textarea>
-              </mat-form-field>
+              <div formGroupName="name">
+                <mat-form-field
+                  appearance="outline"
+                  class="brand-lang__input-container">
+                  <mat-label>Name of brand</mat-label>
+                  <input matInput placeholder="Enter name" formControlName="{{lang.code}}">
+                </mat-form-field>
+              </div>
+              <div formGroupName="description">
+                <mat-form-field appearance="outline" class="description__text-input brand-lang__input-container">
+                  <mat-label>Description</mat-label>
+                  <textarea matInput placeholder="Description" formControlName="{{lang.code}}" rows="10"></textarea>
+                </mat-form-field>
+              </div>
             </div>
           </mat-tab>
         </mat-tab-group>
@@ -27,18 +31,7 @@
             <h5 class="heading-title">Logo</h5>
           </div>
           <div class="brand-options__image">
-            <div>
-              <img src="{{brand.logo || 'http://grey-shop.ru/image/no_image.jpg'}}" alt="">
-            </div>
-            <div>
-              <input type="file">
-              <button mat-raised-button type="button" color="accent">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button *ngIf="brand.logo" mat-raised-button type="button" color="warn">
-                <mat-icon>delete</mat-icon>
-              </button>
-            </div>
+            <app-image-loader [imageHash]="brand.logo"></app-image-loader>
           </div>
         </div>
         <div class="brand-options__props-container">

@@ -1,10 +1,12 @@
 import {NgModule} from '@angular/core';
-import { ImageLoaderComponent } from './components/image-loader/image-loader.component';
+import {CommonModule} from '@angular/common';
+import {MaterialModule} from '../material.module';
+import {ImageLoaderComponent} from './components/image-loader/image-loader.component';
 
 @NgModule({
   declarations: [ImageLoaderComponent],
-  imports: [],
-  exports: [],
+  imports: [CommonModule, MaterialModule],
+  exports: [ImageLoaderComponent],
   providers: []
 })
 export class SharedModule {

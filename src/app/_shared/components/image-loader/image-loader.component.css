@@ -1,0 +1,32 @@
+:host {
+  width: 100%;
+  position: relative;
+}
+
+.image-container {
+  width: 100%;
+  min-height: 300px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.image-controls {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  width: 50%;
+  display: none;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.image-container:hover .image-controls {
+  display: flex;
+}
+
+.image-controls__input {
+  display: none;
+}

@@ -21,8 +21,7 @@ export class BrandEditComponent implements OnInit {
               private router: Router,
               private api: BrandApiService,
               private languages: LanguageService,
-  ) {
-  }
+  ) {}
 
   getLangs(): {} {
     return this.productLanguage.map(data => data.code).reduce((acc, key) => {
@@ -61,6 +60,9 @@ export class BrandEditComponent implements OnInit {
   ngOnInit() {
     this.productLanguage = this.languages.getProductLangs();
     this.brand = this.route.snapshot.data['brand'];
+    if (this.brand.logo) {
+      this.brand.logo = this.brand.logo.split('http://img.grey-line.com/g/').pop();
+    }
     console.log(this.brand);
     this.brandForm = this.fb.group({
       name: this.fb.group(this.getLangs()),
