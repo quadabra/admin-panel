@@ -15,7 +15,7 @@ export class ApiService {
     auth: 'https://auth.grey-shop.com/app/login',
     manufacturers: 'https://api.grey-shop.com/v1/manufacturer',
     brands: 'https://api.grey-shop.com/v1/brand',
-    imageUpload: 'http://img.grey-line.com/upload/',
+    imageUpload: 'http://api.grey-shop.com/v1/upload',
   };
 
   constructor(private http: HttpClient) {

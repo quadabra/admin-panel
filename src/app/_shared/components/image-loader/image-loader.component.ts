@@ -29,7 +29,7 @@ export class ImageLoaderComponent implements OnInit {
 
   onUpload() {
     const data = new FormData();
-    data.append('file', this.selectedFile);
+    data.append('image_file', this.selectedFile, this.selectedFile.name);
     this.api.imageUpload(data)
       .subscribe(res => {
           console.log('upload res:', res);
