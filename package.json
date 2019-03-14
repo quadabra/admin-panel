@@ -7,7 +7,7 @@
     "e2e": "ng e2e",
     "ng": "ng",
     "start": "npm run server",
-    "build": "ng build",
+    "build": "ng run admin-panel:server && webpack --config webpack.server.config.js --progress --colors && ng build --prod",
     "build:server:prod": "ng run admin-panel:server && webpack --config webpack.server.config.js --progress --colors",
     "build:browser:prod": "ng build --prod",
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
