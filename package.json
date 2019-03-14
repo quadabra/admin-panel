@@ -12,7 +12,7 @@
     "build:browser:prod": "ng build --prod",
     "build:prod": "npm run build:server:prod && npm run build:browser:prod",
     "server": "node local.js",
-    "postinstall": "npm run build:prod"
+    "heroku-run-build-script": "npm run build:prod"
   },
   "private": true,
   "dependencies": {
