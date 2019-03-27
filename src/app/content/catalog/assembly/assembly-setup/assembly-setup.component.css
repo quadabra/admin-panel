@@ -1,0 +1,51 @@
+.assembly-orders__list {
+  margin: 5px 10px 150px 10px;
+  padding: 20px;
+  min-height: 500px;
+  border-radius: 4px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fill, 50px);
+  grid-gap: 20px;
+}
+
+.orders-list__item {
+  min-width: 150px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  opacity: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.order-list__link {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  opacity: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-item__id {
+  align-self: center;
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.list-item__weight {
+  align-self: flex-end;
+  font-size: 14px;
+}
+
+.assembly-bottom {
+  height: 150px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: orange;
+  border-top: 2px solid #CCCCCC;
+}

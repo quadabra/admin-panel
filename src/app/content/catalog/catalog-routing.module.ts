@@ -32,7 +32,11 @@ const routes: Routes = [
       {
         path: 'orders',
         loadChildren: './orders/orders.module#OrdersModule',
-      }
+      },
+      {
+        path: 'assembly',
+        loadChildren: './assembly/assembly.module#AssemblyModule'
+      },
     ]
   }
 ];

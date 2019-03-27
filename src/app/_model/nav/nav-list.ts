@@ -48,7 +48,7 @@ export class NavList {
         {
           displayName: 'assembling',
           iconName: 'android',
-          route: 'temp'
+          route: 'assembly'
         },
         {
           displayName: 'Check/send',
