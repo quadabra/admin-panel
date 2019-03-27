@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class IncomingExpandComponent implements OnInit {
   @Input() dataDetails;
-  displayedColumns = ['item', 'color', 'amount', 'brand']
+  displayedColumns = ['item', 'color', 'amount', 'brand'];
   constructor() { }
 
   ngOnInit() {

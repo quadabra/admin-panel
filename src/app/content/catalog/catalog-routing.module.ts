@@ -24,6 +24,14 @@ const routes: Routes = [
       {
         path: 'options',
         loadChildren: './options/options.module#OptionsModule',
+      },
+      {
+        path: 'incoming',
+        loadChildren: './incoming/incoming.module#IncomingModule',
+      },
+      {
+        path: 'orders',
+        loadChildren: './orders/orders.module#OrdersModule',
       }
     ]
   }

@@ -1,15 +1,10 @@
 export class NavList {
   items = [
     {
-      displayName: 'Catalog',
+      displayName: 'Razdel1',
       iconName: 'reorder',
       route: 'catalog',
       children: [
-        {
-          displayName: 'Products',
-          iconName: 'list',
-          route: 'products'
-        },
         {
           displayName: 'Brands',
           iconName: 'star_border',
@@ -24,18 +19,26 @@ export class NavList {
           displayName: 'Delivery',
           iconName: 'flight',
           route: 'delivery'
-        }
-      ]
-    },
-    {
-      displayName: 'Warehouse',
-      iconName: 'send',
-      route: 'warehouse',
-      children: [
+        },
         {
-          displayName: 'Store',
+          displayName: 'Money',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Payments',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Products',
           iconName: 'list',
-          route: 'store'
+          route: 'products'
+        },
+        {
+          displayName: 'Incoming',
+          iconName: 'settings',
+          route: 'incoming'
         },
         {
           displayName: 'Orders',
@@ -43,10 +46,82 @@ export class NavList {
           route: 'orders'
         },
         {
-          displayName: 'Incoming',
-          iconName: 'settings',
-          route: 'incoming'
-        }
+          displayName: 'assembling',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Check/send',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Menu',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Orion Store',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Logs',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Ebay',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'autopurchase',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Users',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Returns',
+          iconName: 'android',
+          route: 'temp'
+        },
+      ]
+    },
+    {
+      displayName: 'Razdel2',
+      iconName: 'send',
+      route: 'warehouse',
+      children: [
+        {
+          displayName: 'Task managment',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Inventory Check',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Marketing',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Sales',
+          iconName: 'android',
+          route: 'temp'
+        },
+        {
+          displayName: 'Content Mastering',
+          iconName: 'android',
+          route: 'temp'
+        },
       ]
     },
     // {

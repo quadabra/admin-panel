@@ -8,16 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: WarehouseComponent,
-    children: [
-      {
-        path: 'incoming',
-        loadChildren: './incoming/incoming.module#IncomingModule',
-      },
-      {
-        path: 'orders',
-        loadChildren: './orders/orders.module#OrdersModule',
-      }
-    ]
+    children: []
   }
 ];
 
