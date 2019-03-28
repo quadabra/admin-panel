@@ -1,0 +1,55 @@
+<div>
+  <mat-card>
+    <div class="heading">
+      <span class="assembly-active__color_dot" [ngStyle]="{'background-color': 'orange'}"></span>
+      <h4 class="heading-title">432453</h4>
+      <span class="spacer"></span>
+      <mat-slide-toggle [checked]="isLargeImages" (change)="toggleImageSize()">Large images</mat-slide-toggle>
+    </div>
+  </mat-card>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="image">
+      <mat-header-cell *matHeaderCellDef> Image</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <img
+          class="assembly-active__list-image"
+          [ngClass]="{'assembly-active__list-image_small': !isLargeImages, 'assembly-active__list-image_large': isLargeImages}"
+          src="../../../../../assets/img/color.png" alt="">
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="manufacturer">
+      <mat-header-cell *matHeaderCellDef> Manufacturer</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.manufacturer}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="options">
+      <mat-header-cell *matHeaderCellDef> Options</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <span *ngFor="let option of objectKeys(element.options)">|{{option}}: {{element.options[option]}}|&nbsp;</span>
+      </mat-cell>
+    </ng-container>
+    <!-- check column-->
+    <ng-container matColumnDef="check">
+      <mat-header-cell *matHeaderCellDef> Checked</mat-header-cell>
+      <mat-cell *matCellDef="let element" matRipple (click)="checked.toggle()" style="cursor: pointer">
+          <mat-checkbox #checked (click)="$event.stopPropagation()">Checked</mat-checkbox>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <div class="assembly-active__box-select">
+    <mat-card></mat-card>
+  </div>
+</div>

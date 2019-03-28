@@ -4,6 +4,7 @@ import {RouterModule, Routes} from '@angular/router';
 //  Components
 import {AssemblyComponent} from './assembly.component';
 import {AssemblySetupComponent} from './assembly-setup/assembly-setup.component';
+import {AssemblyActiveComponent} from './assembly-active/assembly-active.component';
 
 // Resolvers
 
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: '',
         component: AssemblySetupComponent
+      },
+      {
+        path: 'active',
+        component: AssemblyActiveComponent
       }
     ],
   }

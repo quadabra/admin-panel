@@ -5,13 +5,13 @@
   border-radius: 4px;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   grid-template-rows: repeat(auto-fill, 50px);
   grid-gap: 20px;
 }
 
 .orders-list__item {
-  min-width: 150px;
+  min-width: 170px;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -42,10 +42,23 @@
 }
 
 .assembly-bottom {
-  height: 150px;
+  height: 15vh;
   position: fixed;
   bottom: 0;
   width: 100%;
   background-color: orange;
   border-top: 2px solid #CCCCCC;
+}
+
+.assembly-bottom__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.assembly-bottom__button {
+  margin: 20px auto;
+  font-size: 32px;
+  text-transform: uppercase;
 }

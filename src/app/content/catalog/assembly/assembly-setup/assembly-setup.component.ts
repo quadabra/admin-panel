@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-assembly-setup',
@@ -149,10 +150,13 @@ export class AssemblySetupComponent implements OnInit {
     },
     ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     console.log(this.orderList);
   }
 
+  activateAssembly(): void {
+    this.router.navigate(['catalog/assembly/active']);
+  }
 }

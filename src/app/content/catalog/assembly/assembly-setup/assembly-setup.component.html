@@ -1,16 +1,25 @@
 <div>
   <ul class="assembly-orders__list order-list">
-    <li  *ngFor="let item of orderList">
-      <a href="#" class="order-list__link">
-      <mat-card class="orders-list__item" [ngStyle]="{'background-color': item.type_color}">
+    <li *ngFor="let item of orderList">
+      <a [routerLink]="['active']" class="order-list__link">
+        <mat-card class="orders-list__item" [ngStyle]="{'background-color': item.type_color}">
           <span class="list-item__id">{{item.id}}</span>
           <span class="spacer"></span>
-          <span class="list-item__weight">{{item.weight}}</span>
-      </mat-card>
+          <span class="list-item__weight">{{item.weight}}kg</span>
+        </mat-card>
       </a>
     </li>
   </ul>
-<div class="assembly-bottom">
-  <button mat-raised-button>ololol</button>
-</div>
+  <div class="assembly-bottom">
+    <div class="assembly-bottom__container">
+      <a
+        class="assembly-bottom__button"
+        [routerLink]="['active']" mat-raised-button>
+        <h3>
+          Collect:
+          <span>423553</span>
+        </h3>
+      </a>
+    </div>
+  </div>
 </div>
