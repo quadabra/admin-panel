@@ -1,20 +1,39 @@
-.assembly-active__color_dot {
+.assembly-active {
+  position: relative;
+}
+
+/*.assembly-active__color-dot {*/
+  /*display: block;*/
+  /*width: 20px;*/
+  /*height: 20px;*/
+  /*border-radius: 50%;*/
+/*}*/
+
+.heading-title {
+  font-size: 42px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.assembly-active__color-dot {
   display: block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  border-bottom: 2px solid black;
 }
 
 .assembly-active__list-image {
   display: block;
 }
 
-.assembly-active__list-image_small {
-  width: 50px;
-  height: 50px;
+.assembly-active__list-image_desktop {
+  width: 100%;
 }
 
-.assembly-active__list-image_large {
+.assembly-active__list-image_handset {
   width: 200px;
   height: 200px;
 }
@@ -29,4 +48,70 @@
 .assembly-active__box-select > mat-card {
   width: 100%;
   height: 7.5vh;
+}
+
+.assembly-active__list {
+  margin: 10px auto;
+  padding: 0;
+  width: 99%;
+  background-color: #CCCCCC;
+}
+
+.assembly-active__list-item {
+  display: grid;
+  grid-gap: 1px;
+}
+
+.assembly-active__list-item:not(:last-child) {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+.assembly-active__list-item_desktop {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.list-item__container {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-item__container > span {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.list-item__container_vertical {
+  flex-direction: column;
+}
+
+.list-item__checkbox {
+  position: relative;
+  display: block;
+  width: 30%;
+  height: 30%;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.list-item__checkbox::before {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -5%;
+  width: 100%;
+  height: 60%;
+  border-left: 15px solid greenyellow;
+  border-bottom: 15px solid greenyellow;
+  transform: rotate(-45deg);
+}
+
+.list-item__container > input {
+  display: none;
+}
+
+.list-item__container > input:checked ~ label::before {
+  display: block;
 }

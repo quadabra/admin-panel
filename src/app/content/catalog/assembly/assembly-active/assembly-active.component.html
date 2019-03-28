@@ -1,54 +1,83 @@
-<div>
+<div class="assembly-active">
   <mat-card>
     <div class="heading">
-      <span class="assembly-active__color_dot" [ngStyle]="{'background-color': 'orange'}"></span>
-      <h4 class="heading-title">432453</h4>
+      <span class="assembly-active__color-dot" [ngStyle]="{'background-color': 'orange'}"></span>
+      <h4 class="heading-title">12453</h4>
       <span class="spacer"></span>
-      <mat-slide-toggle [checked]="isLargeImages" (change)="toggleImageSize()">Large images</mat-slide-toggle>
+      <!--<mat-slide-toggle [checked]="isLargeImages" (change)="toggleImageSize()">Large images</mat-slide-toggle>-->
     </div>
   </mat-card>
-  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <!-- Position Column -->
-    <ng-container matColumnDef="image">
-      <mat-header-cell *matHeaderCellDef> Image</mat-header-cell>
-      <mat-cell *matCellDef="let element">
+  <!--<mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
+  <!--&lt;!&ndash; Position Column &ndash;&gt;-->
+  <!--<ng-container matColumnDef="image">-->
+  <!--<mat-header-cell *matHeaderCellDef> Image</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element">-->
+  <!--<img-->
+  <!--class="assembly-active__list-image"-->
+  <!--[ngClass]="{'assembly-active__list-image_small': !isLargeImages, 'assembly-active__list-image_large': isLargeImages}"-->
+  <!--src="../../../../../assets/img/color.png" alt="">-->
+  <!--</mat-cell>-->
+  <!--</ng-container>-->
+
+  <!--&lt;!&ndash; Name Column &ndash;&gt;-->
+  <!--<ng-container matColumnDef="name">-->
+  <!--<mat-header-cell *matHeaderCellDef> Name</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>-->
+  <!--</ng-container>-->
+
+  <!--&lt;!&ndash; Weight Column &ndash;&gt;-->
+  <!--<ng-container matColumnDef="manufacturer">-->
+  <!--<mat-header-cell *matHeaderCellDef> Manufacturer</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element"> {{element.manufacturer}} </mat-cell>-->
+  <!--</ng-container>-->
+
+  <!--&lt;!&ndash; Symbol Column &ndash;&gt;-->
+  <!--<ng-container matColumnDef="options">-->
+  <!--<mat-header-cell *matHeaderCellDef> Options</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element">-->
+  <!--<span *ngFor="let option of objectKeys(element.options)">|{{option}}: {{element.options[option]}}|&nbsp;</span>-->
+  <!--</mat-cell>-->
+  <!--</ng-container>-->
+  <!--&lt;!&ndash; check column&ndash;&gt;-->
+  <!--<ng-container matColumnDef="check">-->
+  <!--<mat-header-cell *matHeaderCellDef> Checked</mat-header-cell>-->
+  <!--<mat-cell *matCellDef="let element" matRipple (click)="checked.toggle()" style="cursor: pointer">-->
+  <!--<mat-checkbox #checked (click)="$event.stopPropagation()">Checked</mat-checkbox>-->
+  <!--</mat-cell>-->
+  <!--</ng-container>-->
+
+  <!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
+  <!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
+  <!--</mat-table>-->
+
+  <ul class="assembly-active__list">
+    <li
+      class="assembly-active__list-item"
+      *ngFor="let item of dataSource; index as i"
+      [ngClass]="isHandset$ ? 'assembly-active__list-item_desktop' : 'assembly-active__list-item_handset'">
+      <div class="list-item__container">
         <img
-          class="assembly-active__list-image"
-          [ngClass]="{'assembly-active__list-image_small': !isLargeImages, 'assembly-active__list-image_large': isLargeImages}"
-          src="../../../../../assets/img/color.png" alt="">
-      </mat-cell>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="manufacturer">
-      <mat-header-cell *matHeaderCellDef> Manufacturer</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.manufacturer}} </mat-cell>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="options">
-      <mat-header-cell *matHeaderCellDef> Options</mat-header-cell>
-      <mat-cell *matCellDef="let element">
-        <span *ngFor="let option of objectKeys(element.options)">|{{option}}: {{element.options[option]}}|&nbsp;</span>
-      </mat-cell>
-    </ng-container>
-    <!-- check column-->
-    <ng-container matColumnDef="check">
-      <mat-header-cell *matHeaderCellDef> Checked</mat-header-cell>
-      <mat-cell *matCellDef="let element" matRipple (click)="checked.toggle()" style="cursor: pointer">
-          <mat-checkbox #checked (click)="$event.stopPropagation()">Checked</mat-checkbox>
-      </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+          src="../../../../../assets/img/shmotka.jpg"
+          alt="item"
+          [ngClass]="isHandset ? '.assembly-active__list-image_handset' : 'assembly-active__list-image_desktop'">
+      </div>
+      <div class="list-item__container list-item__container_vertical">
+        <span>{{item.name}}</span>
+        <span style="font-size: 18px; opacity: 0.6;">{{item.nameRu}}</span>
+      </div>
+      <div class="list-item__container">
+        <span>{{item.manufacturer}}</span>
+      </div>
+      <div class="list-item__container list-item__container_vertical">
+        <span *ngFor="let option of objectKeys(item.options)">{{option}}: {{item.options[option]}}</span>
+      </div>
+      <div class="list-item__container">
+        <input type="checkbox" [id]="i">
+        <label [htmlFor]="i" class="list-item__checkbox">
+        </label>
+      </div>
+    </li>
+  </ul>
   <div class="assembly-active__box-select">
     <mat-card></mat-card>
   </div>
