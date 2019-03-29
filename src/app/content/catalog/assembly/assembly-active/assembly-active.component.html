@@ -76,6 +76,16 @@
     </li>
   </ul>
   <div class="assembly-active__box-select">
-    <mat-card></mat-card>
+    <mat-card>
+      <div class="assembly-active__bottom">
+      <mat-slider
+        class="assembly-active__slider"
+        thumbLabel
+        [displayWith]="formatLabel"
+        min="0"
+        max="100"></mat-slider>
+        <button mat-raised-button color="accent">to Box</button>
+      </div>
+    </mat-card>
   </div>
 </div>

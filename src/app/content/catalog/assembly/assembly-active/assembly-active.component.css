@@ -24,19 +24,6 @@
   height: 10px;
 }
 
-.assembly-active__list-image {
-}
-
-.assembly-active__list-image_desktop {
-  width: 100%;
-  object-fit: cover;
-}
-
-.assembly-active__list-image_handset {
-  width: 100%;
-  object-fit: cover;
-}
-
 .assembly-active__box-select {
   position: fixed;
   height: 7.5vh;
@@ -51,16 +38,21 @@
 
 .assembly-active__list {
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0 100px 0;
   width: 99%;
-  background-color: #CCCCCC;
 }
 
 .assembly-active__list-item {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 1fr;
-  grid-gap: 1px;
+  grid-gap: 3px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+}
+
+.assembly-active__list-item:not(:last-child) {
+  border-bottom: none;
 }
 
 .assembly-active__list-item::before {
@@ -74,18 +66,6 @@
 .assembly-active__list-item > *:first-child {
   grid-row: 1 / 1;
   grid-column: 1 / 1;
-}
-
-.assembly-active__list-item {
-
-}
-
-.assembly-active__list-item:not(:last-child) {
-  border-bottom: 1px solid #CCCCCC;
-}
-
-.assembly-active__list-item_desktop {
-
 }
 
 .list-item__container {
@@ -103,7 +83,7 @@
 }
 
 .list-item__container.checked {
-  background-color: rgb(40, 200, 40);
+  background-color: rgba(40, 200, 40, 0.3);
 }
 
 .list-item__container_vertical {
@@ -129,6 +109,7 @@
   height: 20%;
   border-left: 15px solid greenyellow;
   border-bottom: 15px solid greenyellow;
+  z-index: 1;
 }
 
 .list-item__checkbox::after {
@@ -150,4 +131,31 @@
 
 .list-item__container > input:checked ~ .list-item__checkbox::before {
   display: block;
+}
+
+.assembly-active__slider {
+  width: 30vw;
+  margin-right: 20px;
+}
+
+.assembly-active__bottom {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .list-item__container > span {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .list-item__container > span {
+    font-weight: 400;
+    font-size: 12px;
+  }
 }

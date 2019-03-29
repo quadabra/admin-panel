@@ -75,6 +75,13 @@ export class AssemblyActiveComponent implements OnInit {
   ngOnInit() {
   }
 
+  formatLabel(value: number | null) {
+    if (!value) {
+      return 0;
+    }
+    return value;
+  }
+
   toggleImageSize(): void {
     this.isLargeImages = !this.isLargeImages;
   }
