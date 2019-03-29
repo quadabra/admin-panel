@@ -19,6 +19,7 @@ export class AssemblyActiveComponent implements OnInit {
       name: 'razraz',
       nameRu: 'азазаза',
       manufacturer: 'akakaka',
+      checked: false,
       options: {
         size: '32',
         height: '43',
@@ -30,6 +31,7 @@ export class AssemblyActiveComponent implements OnInit {
       name: 'razraz',
       nameRu: 'азазаза',
       manufacturer: 'akakaka',
+      checked: false,
       options: {
         size: '32',
         height: '43',
@@ -41,6 +43,7 @@ export class AssemblyActiveComponent implements OnInit {
       name: 'razraz',
       nameRu: 'азазаза',
       manufacturer: 'akakaka',
+      checked: false,
       options: {
         size: '32',
         height: '43',
@@ -52,6 +55,7 @@ export class AssemblyActiveComponent implements OnInit {
       name: 'razraz',
       nameRu: 'азазаза',
       manufacturer: 'akakaka',
+      checked: false,
       options: {
         size: '32',
         height: '43',

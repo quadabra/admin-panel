@@ -1,12 +1,13 @@
 <div class="assembly-active">
-  <mat-card>
-    <div class="heading">
-      <span class="assembly-active__color-dot" [ngStyle]="{'background-color': 'orange'}"></span>
-      <h4 class="heading-title">12453</h4>
-      <span class="spacer"></span>
-      <!--<mat-slide-toggle [checked]="isLargeImages" (change)="toggleImageSize()">Large images</mat-slide-toggle>-->
-    </div>
-  </mat-card>
+  <span class="assembly-active__color-dot" [ngStyle]="{'background-color': 'orange'}"></span>
+  <!--<mat-card>-->
+  <!--<div class="heading">-->
+  <!---->
+  <!--<h4 class="heading-title">12453</h4>-->
+  <!--<span class="spacer"></span>-->
+  <!--<mat-slide-toggle [checked]="isLargeImages" (change)="toggleImageSize()">Large images</mat-slide-toggle>-->
+  <!--</div>-->
+  <!--</mat-card>-->
   <!--<mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
   <!--&lt;!&ndash; Position Column &ndash;&gt;-->
   <!--<ng-container matColumnDef="image">-->
@@ -55,25 +56,21 @@
       class="assembly-active__list-item"
       *ngFor="let item of dataSource; index as i"
       [ngClass]="isHandset$ ? 'assembly-active__list-item_desktop' : 'assembly-active__list-item_handset'">
-      <div class="list-item__container">
-        <img
-          src="../../../../../assets/img/shmotka.jpg"
-          alt="item"
-          [ngClass]="isHandset ? '.assembly-active__list-image_handset' : 'assembly-active__list-image_desktop'">
+      <div class="list-item__container" style="background-image: url('../../../../../assets/img/shmotka.jpg');">
       </div>
-      <div class="list-item__container list-item__container_vertical">
+      <div [ngClass]="{'checked': item.checked}" class="list-item__container list-item__container_vertical">
         <span>{{item.name}}</span>
         <span style="font-size: 18px; opacity: 0.6;">{{item.nameRu}}</span>
       </div>
-      <div class="list-item__container">
+      <div [ngClass]="{'checked': item.checked}" class="list-item__container">
         <span>{{item.manufacturer}}</span>
       </div>
-      <div class="list-item__container list-item__container_vertical">
+      <div [ngClass]="{'checked': item.checked}" class="list-item__container list-item__container_vertical">
         <span *ngFor="let option of objectKeys(item.options)">{{option}}: {{item.options[option]}}</span>
       </div>
-      <div class="list-item__container">
-        <input type="checkbox" [id]="i">
-        <label [htmlFor]="i" class="list-item__checkbox">
+      <div [ngClass]="{'checked': item.checked}" class="list-item__container">
+        <input [id]="i" type="checkbox" [(ngModel)]="item.checked">
+        <label [htmlFor]="i" class="list-item__checkbox" matRipple>
         </label>
       </div>
     </li>

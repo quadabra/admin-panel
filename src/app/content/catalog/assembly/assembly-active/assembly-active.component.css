@@ -22,20 +22,19 @@
   left: 0;
   width: 100%;
   height: 10px;
-  border-bottom: 2px solid black;
 }
 
 .assembly-active__list-image {
-  display: block;
 }
 
 .assembly-active__list-image_desktop {
   width: 100%;
+  object-fit: cover;
 }
 
 .assembly-active__list-image_handset {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .assembly-active__box-select {
@@ -51,7 +50,7 @@
 }
 
 .assembly-active__list {
-  margin: 10px auto;
+  margin: 0 auto;
   padding: 0;
   width: 99%;
   background-color: #CCCCCC;
@@ -59,7 +58,26 @@
 
 .assembly-active__list-item {
   display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
   grid-gap: 1px;
+}
+
+.assembly-active__list-item::before {
+  content: '';
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.assembly-active__list-item > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.assembly-active__list-item {
+
 }
 
 .assembly-active__list-item:not(:last-child) {
@@ -67,8 +85,7 @@
 }
 
 .assembly-active__list-item_desktop {
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr;
+
 }
 
 .list-item__container {
@@ -76,11 +93,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .list-item__container > span {
   font-weight: 500;
   font-size: 24px;
+}
+
+.list-item__container.checked {
+  background-color: rgb(40, 200, 40);
 }
 
 .list-item__container_vertical {
@@ -90,28 +113,41 @@
 .list-item__checkbox {
   position: relative;
   display: block;
-  width: 30%;
-  height: 30%;
-  border: 5px solid black;
-  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
 .list-item__checkbox::before {
   display: none;
   content: '';
   position: absolute;
-  top: -5%;
-  width: 100%;
-  height: 60%;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  width: 30%;
+  height: 20%;
   border-left: 15px solid greenyellow;
   border-bottom: 15px solid greenyellow;
-  transform: rotate(-45deg);
+}
+
+.list-item__checkbox::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 5px solid #555555;
+  border-radius: 5px;
+  width: 30%;
+  height: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .list-item__container > input {
   display: none;
 }
 
-.list-item__container > input:checked ~ label::before {
+.list-item__container > input:checked ~ .list-item__checkbox::before {
   display: block;
 }
