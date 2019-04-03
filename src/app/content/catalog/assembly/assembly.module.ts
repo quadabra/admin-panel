@@ -7,6 +7,7 @@ import {AssemblyRoutingModule} from './assembly-routing.module';
 
 import { AssemblyComponent } from './assembly.component';
 import { AssemblySetupComponent } from './assembly-setup/assembly-setup.component';
+import { AssemblyActiveComponent } from './assembly-active/assembly-active.component';
 
 const modules = [
   CommonModule,
@@ -23,7 +24,7 @@ const components = [
 ];
 
 @NgModule({
-  declarations: [...components],
+  declarations: [...components, AssemblyActiveComponent],
   imports: [...modules],
   providers: [],
 })
