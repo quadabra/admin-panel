@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-currency-setup',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./currency-setup.component.css']
 })
 export class CurrencySetupComponent implements OnInit {
+  currencyForm: FormGroup;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private fb: FormBuilder) {
   }
 
+  ngOnInit() {
+    this.currencyForm = this.fb.group({
+      values: this.fb.group({
+        name: '',
+        value: '',
+      })
+    });
+  }
+
+  formSave(): void {
+  }
 }
