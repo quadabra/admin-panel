@@ -17,7 +17,7 @@ const modules = [
 
 @NgModule({
   declarations: [
-    CatalogComponent
+    CatalogComponent,
   ],
   imports: [...modules],
 })

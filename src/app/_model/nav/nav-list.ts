@@ -26,6 +26,11 @@ export class NavList {
           route: 'temp'
         },
         {
+          displayName: 'Currency',
+          iconName: 'attach_money',
+          route: 'currency'
+        },
+        {
           displayName: 'Payments',
           iconName: 'android',
           route: 'temp'
@@ -47,7 +52,7 @@ export class NavList {
         },
         {
           displayName: 'assembling',
-          iconName: 'android',
+          iconName: 'build',
           route: 'assembly'
         },
         {

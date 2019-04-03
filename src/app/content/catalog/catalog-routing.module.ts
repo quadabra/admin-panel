@@ -37,6 +37,10 @@ const routes: Routes = [
         path: 'assembly',
         loadChildren: './assembly/assembly.module#AssemblyModule'
       },
+      {
+        path: 'currency',
+        loadChildren: './currency/currency.module#CurrencyModule'
+      }
     ]
   }
 ];

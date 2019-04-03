@@ -12,6 +12,7 @@ const routes: Routes = [
       {
         path: 'welcome',
         component: WelcomeComponent,
+        pathMatch: 'full',
       },
       {
         path: 'catalog',
@@ -24,7 +25,7 @@ const routes: Routes = [
       {
         path: '',
         redirectTo: 'welcome',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },
       {
         path: '**',
