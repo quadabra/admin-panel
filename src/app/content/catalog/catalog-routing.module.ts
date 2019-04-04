@@ -19,7 +19,7 @@ const routes: Routes = [
       },
       {
         path: 'delivery',
-        loadChildren: './delivery/delivery.module#DeliveryModule',
+        loadChildren: './delivery/delivery.module#PaymentsModule',
       },
       {
         path: 'options',
@@ -40,6 +40,10 @@ const routes: Routes = [
       {
         path: 'currency',
         loadChildren: './currency/currency.module#CurrencyModule'
+      },
+      {
+        path: 'payments',
+        loadChildren: './payments/payments.module#PaymentsModule'
       }
     ]
   }

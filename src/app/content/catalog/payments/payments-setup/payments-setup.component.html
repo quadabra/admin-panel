@@ -1,0 +1,46 @@
+<div>
+  <mat-card>
+    <div class="heading">
+      <h4 class="heading-title">
+        Manage delivery
+      </h4>
+      <span class="spacer"></span>
+      <a mat-raised-button color="accent">
+        <mat-icon>add</mat-icon>
+      </a>
+    </div>
+  </mat-card>
+  <div
+    cdkDropList
+    class="delivery-info mat-elevation-z4"
+    (cdkDropListDropped)="drop($event)">
+    <div
+      class="delivery-info__box mat-elevation-z4"
+      [ngClass]="[!delivery.isEnabled ? 'delivery-info__box_disabled' : '']"
+      *ngFor="let delivery of deliveryTypes; let i = index"
+      cdkDrag>
+      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      <div class="delivery-info__container">
+        <div class="delivery-info__details">
+          <div class="delivery-info__image">image</div>
+          <div class="delivery-info__status-container">
+            <h4>{{delivery.name+': ' + (i+1)}} </h4>
+            <p class="delivery-info__status">
+              Status:
+              <span [ngClass]="[delivery.isEnabled ? 'delivery-info__status_enabled' : 'delivery-info__status_disabled']">
+                {{delivery.isEnabled ? 'Enabled' : 'Disabled'}}
+              </span>
+            </p>
+          </div>
+        </div>
+        <span class="spacer"></span>
+        <button mat-raised-button (click)="switch(i)" color="warn">
+          <mat-icon>{{delivery.isEnabled ? 'visibility' : 'visibility_off'}}</mat-icon>
+        </button>
+        <a mat-raised-button color="accent" [routerLink]="['./edit']">
+          <mat-icon>edit</mat-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

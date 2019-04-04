@@ -1,0 +1,67 @@
+<form class="delivery-edit">
+  <mat-card>
+    <div class="delivery-edit__container">
+      <div class="delivery-edit__description">
+        <mat-tab-group>
+          <mat-tab *ngFor="let lang of productLanguage" label="{{lang.code}}">
+            <mat-form-field
+              class="full-width"
+              appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput type="text" placeholder="Enter name">
+            </mat-form-field>
+            <mat-form-field
+              class="full-width"
+              appearance="outline">
+              <mat-label>Description</mat-label>
+              <textarea matInput name="" id="a" rows="10" placeholder="Write some"></textarea>
+            </mat-form-field>
+            <mat-form-field
+              class="full-width"
+              appearance="outline">
+              <mat-label>Short Description</mat-label>
+              <textarea matInput name="" id="b" rows="4" placeholder="Write some"></textarea>
+            </mat-form-field>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+      <div class="delivery-edit__image-container">
+        <img class="delivery-edit__image" src="" alt="no image" width="300" height="300" style="border: 1px solid black">
+      </div>
+      <div class="payments-edit__shop-control">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <!-- shop Column -->
+          <ng-container matColumnDef="shop">
+            <mat-header-cell *matHeaderCellDef> Shop </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+          </ng-container>
+
+          <!-- discount Column -->
+          <ng-container matColumnDef="discount">
+            <mat-header-cell *matHeaderCellDef> Discount </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.discount + '%'}} </mat-cell>
+          </ng-container>
+
+          <!-- status Column -->
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+            <mat-cell *matCellDef="let element" matRipple (click)="checked.toggle()" style="cursor: pointer">
+                <mat-checkbox
+                  (click)="$event.stopPropagation()"
+                  class="example-margin"
+                  #checked
+                  [(ngModel)]="element.isEnabled"
+                  [ngModelOptions]="{standalone: true}">
+                  <span *ngIf="element.isEnabled">Enabled</span>
+                  <span *ngIf="!element.isEnabled">Disabled</span>
+                </mat-checkbox>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+      </div>
+    </div>
+  </mat-card>
+</form>

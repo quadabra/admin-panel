@@ -32,8 +32,8 @@ export class NavList {
         },
         {
           displayName: 'Payments',
-          iconName: 'android',
-          route: 'temp'
+          iconName: 'euro_symbol',
+          route: 'payments'
         },
         {
           displayName: 'Products',
