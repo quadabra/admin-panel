@@ -5,8 +5,8 @@
     autocomplete="off"
     novalidate
     [formGroup]="currencyForm"
-    (ngSubmit)="formSave()" *ngFor="let value of values.controls; let i=index">
-    <div formArrayName="values">
+    (ngSubmit)="formSave()">
+    <div formArrayName="values" *ngFor="let value of values.controls; let i=index">
       <div class="flex" [formGroupName]="i">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
