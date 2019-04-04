@@ -33,6 +33,10 @@ export class CurrencySetupComponent implements OnInit {
     this.values.push(this.buildValues());
   }
 
+  delValues(i: number): void {
+    this.values.removeAt(i);
+  }
+
   formSave(): void {
   }
 }

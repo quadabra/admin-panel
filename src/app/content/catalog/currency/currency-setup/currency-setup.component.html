@@ -1,21 +1,22 @@
 <div>
-  <button mat-raised-button color="accent" (click)="addValues()">add</button>
-  <button mat-raised-button color="primary" type="submit">save</button>
   <form
     autocomplete="off"
     novalidate
     [formGroup]="currencyForm"
     (ngSubmit)="formSave()">
+    <button mat-raised-button color="accent" (click)="addValues()">add</button>
+    <button mat-raised-button color="warn" type="submit">save</button>
     <div formArrayName="values" *ngFor="let value of values.controls; let i=index">
-      <div class="flex" [formGroupName]="i">
-        <mat-form-field appearance="outline">
+      <div class="flex currency__input-block" [formGroupName]="i">
+        <mat-form-field appearance="legacy">
           <mat-label>Name</mat-label>
           <input matInput type="text" formControlName="name">
         </mat-form-field>
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="legacy">
           <mat-label>Value</mat-label>
           <input matInput type="text" formControlName="value">
         </mat-form-field>
+        <button class="currency__delete-btn" mat-mini-fab color="warn" (click)="delValues(i)">del</button>
       </div>
     </div>
   </form>
