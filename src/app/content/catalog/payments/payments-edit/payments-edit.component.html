@@ -39,7 +39,9 @@
           <!-- discount Column -->
           <ng-container matColumnDef="discount">
             <mat-header-cell *matHeaderCellDef> Discount </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.discount + '%'}} </mat-cell>
+            <mat-cell *matCellDef="let element">
+              <input type="number" [defaultValue]="element.discount">
+            </mat-cell>
           </ng-container>
 
           <!-- status Column -->

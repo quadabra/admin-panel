@@ -44,7 +44,11 @@ const routes: Routes = [
       {
         path: 'payments',
         loadChildren: './payments/payments.module#PaymentsModule'
-      }
+      },
+      {
+        path: 'purchase',
+        loadChildren: './purchase/purchase.module#PurchaseModule'
+      },
     ]
   }
 ];

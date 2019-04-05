@@ -81,9 +81,9 @@ export class NavList {
           route: 'temp'
         },
         {
-          displayName: 'autopurchase',
-          iconName: 'android',
-          route: 'temp'
+          displayName: 'purchase',
+          iconName: 'done_all',
+          route: 'purchase'
         },
         {
           displayName: 'Users',

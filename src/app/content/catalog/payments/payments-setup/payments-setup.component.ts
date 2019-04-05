@@ -7,26 +7,86 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   styleUrls: ['./payments-setup.component.css']
 })
 export class PaymentsSetupComponent implements OnInit {
-  deliveryTypes = [
+  dataSource = [
     {
       name: 'paypal',
-      isEnabled: true
+      isEnabled: true,
+      shopData: [
+        {
+          name: 'Grey-shop.ru',
+          discount: 5,
+          isEnabled: false,
+        },
+        {
+          name: 'Orion-spec.ru',
+          discount: 0,
+          isEnabled: true,
+        },
+      ],
     },
     {
       name: 'option1',
-      isEnabled: false
+      isEnabled: false,
+      shopData: [
+        {
+          name: 'Grey-shop.ru',
+          discount: 5,
+          isEnabled: false,
+        },
+        {
+          name: 'Orion-spec.ru',
+          discount: 0,
+          isEnabled: true,
+        },
+      ],
     },
     {
       name: 'hren2',
-      isEnabled: true
+      isEnabled: true,
+      shopData: [
+        {
+          name: 'Grey-shop.ru',
+          discount: 5,
+          isEnabled: false,
+        },
+        {
+          name: 'Orion-spec.ru',
+          discount: 0,
+          isEnabled: true,
+        },
+      ],
     },
     {
       name: 'vzhopy',
-      isEnabled: false
+      isEnabled: false,
+      shopData: [
+        {
+          name: 'Grey-shop.ru',
+          discount: 5,
+          isEnabled: false,
+        },
+        {
+          name: 'Orion-spec.ru',
+          discount: 0,
+          isEnabled: true,
+        },
+      ],
     },
     {
       name: 'slow babki',
-      isEnabled: false
+      isEnabled: false,
+      shopData: [
+        {
+          name: 'Grey-shop.ru',
+          discount: 5,
+          isEnabled: false,
+        },
+        {
+          name: 'Orion-spec.ru',
+          discount: 0,
+          isEnabled: true,
+        },
+      ],
     },
   ];
 
@@ -37,10 +97,10 @@ export class PaymentsSetupComponent implements OnInit {
   }
 
   switch(i): void {
-    this.deliveryTypes[i].isEnabled = !this.deliveryTypes[i].isEnabled;
+    this.dataSource[i].isEnabled = !this.dataSource[i].isEnabled;
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.deliveryTypes, event.previousIndex, event.currentIndex);
+    moveItemInArray(this.dataSource, event.previousIndex, event.currentIndex);
   }
 }

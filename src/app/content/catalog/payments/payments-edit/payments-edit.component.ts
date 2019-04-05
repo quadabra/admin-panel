@@ -12,12 +12,12 @@ export class PaymentsEditComponent implements OnInit {
   dataSource = [
     {
       name: 'Grey-shop.ru',
-      discount: '5',
+      discount: 5,
       isEnabled: false,
     },
     {
       name: 'Orion-spec.ru',
-      discount: '0',
+      discount: 0,
       isEnabled: true,
     },
   ];
