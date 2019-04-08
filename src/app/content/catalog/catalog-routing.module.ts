@@ -19,7 +19,7 @@ const routes: Routes = [
       },
       {
         path: 'delivery',
-        loadChildren: './delivery/delivery.module#PaymentsModule',
+        loadChildren: './delivery/delivery.module#DeliveryModule',
       },
       {
         path: 'options',
