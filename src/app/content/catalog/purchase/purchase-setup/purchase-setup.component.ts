@@ -1,5 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-purchase-setup',
@@ -8,11 +7,8 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 })
 export class PurchaseSetupComponent implements OnInit {
   tabs: string[] = ['purchase', 'auto', 'files'];
-  displayedColumns = ['status', 'manufacturer', 'name', 'article', 'color', ''];
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
-  data = [
+  dataSource = [
     {
       brand: 'sso',
       name: 'suit azaza',
@@ -33,19 +29,10 @@ export class PurchaseSetupComponent implements OnInit {
   ];
 
   constructor() {
-    this.dataSource = new MatTableDataSource(this.data);
   }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
 }

@@ -35,19 +35,19 @@ const routes: Routes = [
       },
       {
         path: 'assembly',
-        loadChildren: './assembly/assembly.module#AssemblyModule'
+        loadChildren: './assembly/assembly.module#AssemblyModule',
       },
       {
         path: 'currency',
-        loadChildren: './currency/currency.module#CurrencyModule'
+        loadChildren: './currency/currency.module#CurrencyModule',
       },
       {
         path: 'payments',
-        loadChildren: './payments/payments.module#PaymentsModule'
+        loadChildren: './payments/payments.module#PaymentsModule',
       },
       {
         path: 'purchase',
-        loadChildren: './purchase/purchase.module#PurchaseModule'
+        loadChildren: './purchase/purchase.module#PurchaseModule',
       },
     ]
   }
