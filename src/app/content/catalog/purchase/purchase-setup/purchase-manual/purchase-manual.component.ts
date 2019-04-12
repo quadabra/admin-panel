@@ -11,6 +11,7 @@ export class PurchaseManualComponent implements OnInit {
       brand: 'sso',
       name: 'suit azaza',
       type: 'suit',
+      ordered: true,
       options: [
         {
           name: 'size',
@@ -28,6 +29,7 @@ export class PurchaseManualComponent implements OnInit {
       brand: 'ana',
       name: 'suit azaza',
       type: 'suit',
+      ordered: false,
       options: [
         {
           name: 'size',

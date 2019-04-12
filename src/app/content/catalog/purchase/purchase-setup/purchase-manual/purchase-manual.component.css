@@ -18,9 +18,17 @@ mat-selection-list {
 }
 
 h4 {
-  margin: 5px;
+  padding: 5px;
+}
+
+.purchase-ordered {
+  background: rgba(55, 199, 75, 0.6);
 }
 
 mat-list-option[aria-selected="true"] {
+  background: rgba(50, 199, 139, 0.6);
+}
+
+mat-list-option[aria-selected="true"].purchase-ordered {
   background: rgba(0, 139, 139, 0.6);
 }

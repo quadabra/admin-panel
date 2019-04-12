@@ -15,7 +15,7 @@
           <mat-list-option
             *ngFor="let item of data; index as i"
             checkboxPosition="before"
-            [ngClass]="">
+            [ngClass]="{'purchase-ordered': item.ordered}">
             <p class="selection-item">
               <span>{{item.brand}}</span>
               <span>{{item.name}}</span>
@@ -45,7 +45,7 @@
           <mat-list-option
             *ngFor="let item of data; index as i"
             checkboxPosition="before"
-            [ngClass]="">
+            [ngClass]="{'purchase-ordered': item.ordered}">
             <p class="selection-item">
               <span>{{item.brand}}</span>
               <span>{{item.name}}</span>
