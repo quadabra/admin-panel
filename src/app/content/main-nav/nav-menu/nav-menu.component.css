@@ -10,3 +10,21 @@
 .header-title {
   padding-top: 3px;
 }
+
+.menu-item {
+  border-radius: 4px;
+  transition-duration: 0.15s;
+  margin-top: 2px;
+}
+
+.menu-item_active, .menu-item_active:focus {
+  background-color: rgb(244, 67, 5);
+  box-shadow: rgba(0, 0, 0, 0.024) 0px 0.619965px 3.09982px 0px,
+  rgba(244, 67, 54, 0.063) 0px 1.08494px 1.54991px -0.774956px,
+  0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(244, 67, 54, 0.4);
+  color: #FFFFFF;
+}
+
+.menu-item_active:hover {
+  background-color: rgb(234, 62, 4);
+}
