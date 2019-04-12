@@ -1,0 +1,26 @@
+.selection-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, auto);
+  grid-template-rows: repeat(1, auto);
+}
+
+.purchase-list {
+  margin-top: 20px;
+}
+
+.purchase-filter__text {
+  margin-left: 10px;
+}
+
+mat-selection-list {
+  width: 100%;
+}
+
+h4 {
+  margin: 5px;
+}
+
+mat-list-option[aria-selected="true"] {
+  background: rgba(0, 139, 139, 0.6);
+}
