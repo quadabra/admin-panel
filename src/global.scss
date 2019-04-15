@@ -1,0 +1,52 @@
+//temporiary for sidenav
+
+.mat-drawer-inner-container::-webkit-scrollbar-track {
+   background-color: transparent;
+ }
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+  background-color: transparent;
+  width: 4px;
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(244, 67, 54,.65);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.heading-title {
+  margin: 0 0 0 10px;
+}
+
+.text_large {
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.text_medium {
+  font-size: 18px;
+}
+
+.text_small {
+  font-size: 10px;
+}

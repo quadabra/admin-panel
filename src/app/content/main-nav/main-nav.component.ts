@@ -16,8 +16,4 @@ export class MainNavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {
   }
-
-  menuToggle(callback): void {
-    return callback();
-  }
 }

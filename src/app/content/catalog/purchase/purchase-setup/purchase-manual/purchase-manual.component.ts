@@ -1,5 +1,4 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-purchase-manual',
@@ -12,14 +11,15 @@ export class PurchaseManualComponent implements OnInit {
       brand: 'sso',
       name: 'suit azaza',
       type: 'suit',
+      ordered: true,
       options: [
         {
-          optionName: 'size',
-          optionValue: '44-46'
+          name: 'size',
+          value: '44-46'
         },
         {
-          optionName: 'color',
-          optionValue: 'green'
+          name: 'color',
+          value: 'green'
         }
       ],
       details: 'hlam',
@@ -29,39 +29,32 @@ export class PurchaseManualComponent implements OnInit {
       brand: 'ana',
       name: 'suit azaza',
       type: 'suit',
+      ordered: false,
       options: [
         {
-          optionName: 'size',
-          optionValue: '44-46'
+          name: 'size',
+          value: '44-46'
         },
         {
-          optionName: 'color',
-          optionValue: 'green'
+          name: 'color',
+          value: 'green'
         }
       ],
       details: 'hlam',
       quantity: 44,
     }
   ];
-  displayedColumns = ['status', 'manufacturer', 'name', 'article', 'color'];
-  dataSource;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
   constructor() {
-    this.dataSource = new MatTableDataSource(this.data);
   }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  }
+
+  drawoptions(options): void {
+    console.log(options);
   }
 
   applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
   }
 }

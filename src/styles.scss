@@ -1,42 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "custom-theme.scss";
+@import "global";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-* {
-  box-sizing: border-box;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-.spacer {
-  flex: 1 1 auto;
-}
-
-.heading {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.heading-title {
-  margin: 0 0 0 10px;
-}
-
-.text_large {
-  font-size: 28px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-.text_medium {
-  font-size: 18px;
-}
-
-.text_small {
-  font-size: 10px;
-}
